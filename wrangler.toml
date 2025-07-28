@@ -1,7 +1,0 @@
-name = "study-notes-website"
-compatibility_date = "2023-12-01"
-
-[env.production]
-routes = [
-  { pattern = "yourdomain.com/*", zone_name = "yourdomain.com" }
-]
