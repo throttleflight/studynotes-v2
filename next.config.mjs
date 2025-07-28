@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Disable build cache for Cloudflare Pages
+  generateBuildId: () => 'build-' + Date.now(),
 }
 
 export default nextConfig
+module.exports = nextConfig
