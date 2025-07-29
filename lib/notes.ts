@@ -36,50 +36,96 @@ const mockNotes: Note[] = [
       {
         id: "limits",
         title: "Understanding Limits",
-        content: `A fundamental concept in calculus is the limit. The limit of a function f(x) as x approaches a value c is the value that f(x) gets arbitrarily close to as x gets arbitrarily close to c. This is written as lim(x→c) f(x) = L, where L is the limit.
+        content: `A fundamental concept in calculus is the **limit**. The limit of a function $f(x)$ as $x$ approaches a value $c$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to $c$. This is written as:
+
+        $$\\lim_{x \\to c} f(x) = L$$
+
+        where $L$ is the limit.
 
         Limits are essential because they allow us to define derivatives and integrals rigorously. Without limits, we couldn't handle situations where functions are undefined at certain points or where we need to find instantaneous rates of change.
 
-        Key properties of limits include:
-        - The limit of a sum is the sum of the limits
-        - The limit of a product is the product of the limits
-        - The limit of a quotient is the quotient of the limits (provided the denominator limit is not zero)
+        **Key properties of limits include:**
+
+        - The limit of a sum: $\\lim_{x \\to c} [f(x) + g(x)] = \\lim_{x \\to c} f(x) + \\lim_{x \\to c} g(x)$
+        - The limit of a product: $\\lim_{x \\to c} [f(x) \\cdot g(x)] = \\lim_{x \\to c} f(x) \\cdot \\lim_{x \\to c} g(x)$
+        - The limit of a quotient: $\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to c} f(x)}{\\lim_{x \\to c} g(x)}$ (provided the denominator limit is not zero)
+
+        **Example:** Consider the limit $\\lim_{x \\to 2} (3x + 1)$. As $x$ approaches 2, the expression $3x + 1$ approaches $3(2) + 1 = 7$.
 
         Understanding limits is crucial for mastering calculus concepts.`,
       },
       {
         id: "derivatives",
         title: "Derivatives and Differentiation",
-        content: `The derivative of a function f(x) with respect to x is defined as the limit of the difference quotient [f(x+h) - f(x)]/h as h approaches 0. It represents the rate of change of the function at a particular point.
+        content: `The **derivative** of a function $f(x)$ with respect to $x$ is defined as the limit of the difference quotient as $h$ approaches 0:
+
+        $$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$
+
+        It represents the **instantaneous rate of change** of the function at a particular point.
 
         Geometrically, the derivative at a point gives us the slope of the tangent line to the curve at that point. This concept is fundamental in understanding how quantities change.
 
-        Common derivative rules include:
-        - Power Rule: d/dx(x^n) = nx^(n-1)
-        - Product Rule: d/dx(uv) = u'v + uv'
-        - Chain Rule: d/dx(f(g(x))) = f'(g(x)) · g'(x)
-        - Quotient Rule: d/dx(u/v) = (u'v - uv')/v²
+        **Common derivative rules include:**
 
-        Applications of derivatives include finding maximum and minimum values, analyzing motion, and optimization problems.`,
+        - **Power Rule:** $\\frac{d}{dx}(x^n) = nx^{n-1}$
+        - **Product Rule:** $\\frac{d}{dx}(uv) = u'v + uv'$
+        - **Chain Rule:** $\\frac{d}{dx}(f(g(x))) = f'(g(x)) \\cdot g'(x)$
+        - **Quotient Rule:** $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}$
+
+        **Example:** Find the derivative of $f(x) = x^3 + 2x^2 - 5x + 1$
+
+        Using the power rule:
+        $$f'(x) = 3x^2 + 4x - 5$$
+
+        **Applications of derivatives include:**
+        - Finding maximum and minimum values
+        - Analyzing motion (velocity and acceleration)
+        - Optimization problems
+        - Related rates problems`,
       },
       {
         id: "integrals",
         title: "Integrals and Integration",
-        content: `The integral of a function f(x) from a to b is defined as the limit of the sum of the areas of rectangles under the curve as the width of the rectangles approaches 0. It represents the accumulated change over an interval.
+        content: `The **integral** of a function $f(x)$ represents the accumulated change over an interval. There are two main types of integrals:
 
-        There are two main types of integrals:
-        - Definite integrals: ∫[a to b] f(x)dx - gives a numerical value
-        - Indefinite integrals: ∫f(x)dx - gives a family of functions (antiderivatives)
+        **Definite Integrals:** 
+        $$\\int_a^b f(x)\\,dx$$
+        This gives a numerical value representing the signed area under the curve from $x = a$ to $x = b$.
 
-        The Fundamental Theorem of Calculus connects derivatives and integrals, stating that differentiation and integration are inverse operations.
+        **Indefinite Integrals (Antiderivatives):**
+        $$\\int f(x)\\,dx = F(x) + C$$
+        This gives a family of functions where $F'(x) = f(x)$ and $C$ is the constant of integration.
 
-        Common integration techniques include:
-        - Substitution method
-        - Integration by parts
-        - Partial fractions
-        - Trigonometric substitution
+        **The Fundamental Theorem of Calculus** connects derivatives and integrals:
 
-        Applications include finding areas under curves, volumes of solids, and solving differential equations.`,
+        If $F(x) = \\int_a^x f(t)\\,dt$, then $F'(x) = f(x)$
+
+        This means differentiation and integration are inverse operations.
+
+        **Common integration formulas:**
+
+        - $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (for $n \\neq -1$)
+        - $\\int e^x\\,dx = e^x + C$
+        - $\\int \\sin(x)\\,dx = -\\cos(x) + C$
+        - $\\int \\cos(x)\\,dx = \\sin(x) + C$
+
+        **Integration techniques include:**
+        - **Substitution method:** Used when the integrand contains a function and its derivative
+        - **Integration by parts:** $\\int u\\,dv = uv - \\int v\\,du$
+        - **Partial fractions:** For rational functions
+        - **Trigonometric substitution:** For expressions involving $\\sqrt{a^2 - x^2}$, $\\sqrt{a^2 + x^2}$, etc.
+
+        **Example:** Evaluate $\\int_0^2 (3x^2 + 2x)\\,dx$
+
+        First, find the antiderivative: $\\int (3x^2 + 2x)\\,dx = x^3 + x^2 + C$
+
+        Then apply the limits: $[x^3 + x^2]_0^2 = (8 + 4) - (0 + 0) = 12$
+
+        **Applications include:**
+        - Finding areas under curves
+        - Calculating volumes of solids of revolution
+        - Solving differential equations
+        - Computing work and energy in physics`,
       },
     ],
     category: "math",
@@ -205,22 +251,22 @@ const mockNotes: Note[] = [
 
         **Alkanes (Saturated hydrocarbons):**
         - Contain only single bonds
-        - General formula: CnH2n+2
-        - Examples: methane (CH4), ethane (C2H6), propane (C3H8)
+        - General formula: $C_nH_{2n+2}$
+        - Examples: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$)
 
         **Alkenes (Unsaturated hydrocarbons):**
         - Contain at least one double bond
-        - General formula: CnH2n
-        - Examples: ethene (C2H4), propene (C3H6)
+        - General formula: $C_nH_{2n}$
+        - Examples: ethene ($C_2H_4$), propene ($C_3H_6$)
 
         **Alkynes:**
         - Contain at least one triple bond
-        - General formula: CnH2n-2
-        - Examples: ethyne (C2H2), propyne (C3H4)
+        - General formula: $C_nH_{2n-2}$
+        - Examples: ethyne ($C_2H_2$), propyne ($C_3H_4$)
 
         **Aromatic hydrocarbons:**
         - Contain a benzene ring or similar aromatic system
-        - Examples: benzene (C6H6), toluene (C7H8)`,
+        - Examples: benzene ($C_6H_6$), toluene ($C_7H_8$)`,
       },
       {
         id: "functional-groups",
@@ -231,27 +277,27 @@ const mockNotes: Note[] = [
 
         **Alcohols (-OH):**
         - Hydroxyl group attached to carbon
-        - Examples: methanol, ethanol
+        - Examples: methanol ($CH_3OH$), ethanol ($C_2H_5OH$)
         - Properties: polar, can form hydrogen bonds
 
         **Aldehydes (-CHO):**
         - Carbonyl group at the end of a carbon chain
-        - Examples: formaldehyde, acetaldehyde
+        - Examples: formaldehyde ($HCHO$), acetaldehyde ($CH_3CHO$)
         - Properties: reactive, can be oxidized to carboxylic acids
 
         **Ketones (C=O):**
         - Carbonyl group within a carbon chain
-        - Examples: acetone, butanone
+        - Examples: acetone ($CH_3COCH_3$), butanone ($CH_3COC_2H_5$)
         - Properties: less reactive than aldehydes
 
         **Carboxylic acids (-COOH):**
         - Carboxyl group combining carbonyl and hydroxyl
-        - Examples: acetic acid, formic acid
+        - Examples: acetic acid ($CH_3COOH$), formic acid ($HCOOH$)
         - Properties: acidic, can donate protons
 
-        **Amines (-NH2, -NHR, -NR2):**
+        **Amines (-NH₂, -NHR, -NR₂):**
         - Nitrogen-containing groups
-        - Examples: methylamine, aniline
+        - Examples: methylamine ($CH_3NH_2$), aniline ($C_6H_5NH_2$)
         - Properties: basic, can accept protons`,
       },
       {
@@ -314,16 +360,16 @@ const mockNotes: Note[] = [
         content: `**Arrays** are a collection of elements identified by index or key. They are stored in contiguous memory locations, which makes accessing elements by their index very efficient.
 
         Array characteristics:
-        - **Access time:** O(1) - constant time access by index
-        - **Insertion/Deletion:** O(n) - may require shifting elements
+        - **Access time:** $O(1)$ - constant time access by index
+        - **Insertion/Deletion:** $O(n)$ - may require shifting elements
         - **Memory:** Contiguous allocation
         - **Cache performance:** Excellent due to locality
 
         **Linked Lists** consist of nodes where each node contains a data field and a reference (link) to the next node in the sequence.
 
         Linked List characteristics:
-        - **Access time:** O(n) - must traverse from head
-        - **Insertion/Deletion:** O(1) - at known position
+        - **Access time:** $O(n)$ - must traverse from head
+        - **Insertion/Deletion:** $O(1)$ - at known position
         - **Memory:** Non-contiguous allocation
         - **Cache performance:** Poor due to scattered memory
 
@@ -339,10 +385,10 @@ const mockNotes: Note[] = [
         content: `**Stacks** are a collection of elements with two principal operations: push (add element) and pop (remove element). They follow the Last In, First Out (LIFO) principle.
 
         Stack operations:
-        - **Push:** Add element to top - O(1)
-        - **Pop:** Remove element from top - O(1)
-        - **Peek/Top:** View top element without removing - O(1)
-        - **isEmpty:** Check if stack is empty - O(1)
+        - **Push:** Add element to top - $O(1)$
+        - **Pop:** Remove element from top - $O(1)$
+        - **Peek/Top:** View top element without removing - $O(1)$
+        - **isEmpty:** Check if stack is empty - $O(1)$
 
         Stack applications:
         - Function call management (call stack)
@@ -353,10 +399,10 @@ const mockNotes: Note[] = [
         **Queues** follow the First In, First Out (FIFO) principle. Elements are added at the rear and removed from the front.
 
         Queue operations:
-        - **Enqueue:** Add element to rear - O(1)
-        - **Dequeue:** Remove element from front - O(1)
-        - **Front:** View front element - O(1)
-        - **isEmpty:** Check if queue is empty - O(1)
+        - **Enqueue:** Add element to rear - $O(1)$
+        - **Dequeue:** Remove element from front - $O(1)$
+        - **Front:** View front element - $O(1)$
+        - **isEmpty:** Check if queue is empty - $O(1)$
 
         Queue applications:
         - Process scheduling in operating systems
@@ -373,10 +419,10 @@ const mockNotes: Note[] = [
 
         **Binary Trees:** Each node has at most two children (left and right).
         - **Binary Search Trees (BST):** Left child < parent < right child
-        - **Search/Insert/Delete:** O(log n) average, O(n) worst case
+        - **Search/Insert/Delete:** $O(\\log n)$ average, $O(n)$ worst case
         - **Applications:** Database indexing, expression parsing
 
-        **Balanced Trees:** Maintain balance to ensure O(log n) operations
+        **Balanced Trees:** Maintain balance to ensure $O(\\log n)$ operations
         - **AVL Trees:** Height-balanced binary search trees
         - **Red-Black Trees:** Used in many standard libraries
         - **B-Trees:** Used in databases and file systems
@@ -390,9 +436,9 @@ const mockNotes: Note[] = [
         **Hash Tables** use a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
 
         Hash Table characteristics:
-        - **Average case:** O(1) for search, insert, delete
-        - **Worst case:** O(n) when many collisions occur
-        - **Space complexity:** O(n)
+        - **Average case:** $O(1)$ for search, insert, delete
+        - **Worst case:** $O(n)$ when many collisions occur
+        - **Space complexity:** $O(n)$
 
         Collision resolution techniques:
         - **Chaining:** Store multiple elements in linked lists
@@ -598,9 +644,11 @@ const mockNotes: Note[] = [
         - Earned Einstein the Nobel Prize
 
         **De Broglie Wavelength:**
-        - All matter has an associated wavelength: λ = h/p
-        - Where h is Planck's constant and p is momentum
-        - Explains why wave properties are only noticeable for very small particles
+        All matter has an associated wavelength given by:
+        $$\\lambda = \\frac{h}{p}$$
+        where $h$ is Planck's constant and $p$ is momentum.
+
+        This explains why wave properties are only noticeable for very small particles.
 
         **Implications:**
         - No clear distinction between waves and particles at quantum scale
@@ -616,16 +664,16 @@ const mockNotes: Note[] = [
         content: `The Heisenberg Uncertainty Principle states that there is a fundamental limit to the precision with which complementary variables, such as position and momentum, can be known simultaneously. This is not due to limitations in measurement technology, but is inherent in the nature of quantum systems.
 
         **Mathematical Formulation:**
-        Δx · Δp ≥ ℏ/2
+        $$\\Delta x \\cdot \\Delta p \\geq \\frac{\\hbar}{2}$$
 
         Where:
-        - Δx = uncertainty in position
-        - Δp = uncertainty in momentum  
-        - ℏ = reduced Planck's constant (h/2π)
+        - $\\Delta x$ = uncertainty in position
+        - $\\Delta p$ = uncertainty in momentum  
+        - $\\hbar$ = reduced Planck's constant $(h/2\\pi)$
 
         **Other Uncertainty Relations:**
-        - Energy and time: ΔE · Δt ≥ ℏ/2
-        - Angular momentum components: ΔLx · ΔLy ≥ ℏ/2|⟨Lz⟩|
+        - Energy and time: $\\Delta E \\cdot \\Delta t \\geq \\frac{\\hbar}{2}$
+        - Angular momentum components: $\\Delta L_x \\cdot \\Delta L_y \\geq \\frac{\\hbar}{2}|\\langle L_z \\rangle|$
 
         **Physical Interpretation:**
         - The more precisely we know position, the less precisely we can know momentum
@@ -659,9 +707,10 @@ const mockNotes: Note[] = [
         - Illustrates the absurdity of applying quantum rules to macroscopic objects
 
         **Mathematical Representation:**
-        |ψ⟩ = α|0⟩ + β|1⟩
+        A quantum state can be written as:
+        $$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$$
 
-        Where α and β are complex probability amplitudes, and |α|² + |β|² = 1
+        Where $\\alpha$ and $\\beta$ are complex probability amplitudes, and $|\\alpha|^2 + |\\beta|^2 = 1$
 
         **Applications of Superposition:**
         - Quantum computing uses superposition for parallel processing

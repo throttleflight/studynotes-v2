@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { LatexRenderer } from "@/components/latex-renderer"
 import { getNoteById } from "@/lib/notes"
 
 export default function NotePage() {
@@ -171,13 +172,9 @@ export default function NotePage() {
                 </div>
               </div>
 
-              {/* Section Content */}
-              <div className="prose dark:prose-invert max-w-none mb-12">
-                {currentSection.content.split("\n\n").map((paragraph, index) => (
-                  <p key={index} className="mb-4 leading-relaxed">
-                    {paragraph.trim()}
-                  </p>
-                ))}
+              {/* Section Content with LaTeX Support */}
+              <div className="mb-12">
+                <LatexRenderer content={currentSection.content} />
               </div>
 
               {/* Navigation */}
