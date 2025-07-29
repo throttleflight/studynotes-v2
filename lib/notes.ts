@@ -36,23 +36,27 @@ const mockNotes: Note[] = [
       {
         id: "limits",
         title: "Understanding Limits",
-        content: `A fundamental concept in calculus is the **limit**. The limit of a function $f(x)$ as $x$ approaches a value $c$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to $c$. This is written as:
+        content: `A fundamental concept in calculus is the **limit**. 
 
-        $$\\lim_{x \\to c} f(x) = L$$
+  **Definition:** The **limit** of a function $f(x)$ as $x$ approaches a value $c$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to $c$. This is written as:
 
-        where $L$ is the limit.
+  $$\\lim_{x \\to c} f(x) = L$$
 
-        Limits are essential because they allow us to define derivatives and integrals rigorously. Without limits, we couldn't handle situations where functions are undefined at certain points or where we need to find instantaneous rates of change.
+  where $L$ is the limit.
 
-        **Key properties of limits include:**
+  A **continuous function** is defined as a function where the limit at every point equals the function value at that point.
 
-        - The limit of a sum: $\\lim_{x \\to c} [f(x) + g(x)] = \\lim_{x \\to c} f(x) + \\lim_{x \\to c} g(x)$
-        - The limit of a product: $\\lim_{x \\to c} [f(x) \\cdot g(x)] = \\lim_{x \\to c} f(x) \\cdot \\lim_{x \\to c} g(x)$
-        - The limit of a quotient: $\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to c} f(x)}{\\lim_{x \\to c} g(x)}$ (provided the denominator limit is not zero)
+  Limits are essential because they allow us to define derivatives and integrals rigorously. Without limits, we couldn't handle situations where functions are undefined at certain points or where we need to find instantaneous rates of change.
 
-        **Example:** Consider the limit $\\lim_{x \\to 2} (3x + 1)$. As $x$ approaches 2, the expression $3x + 1$ approaches $3(2) + 1 = 7$.
+  **Key properties of limits include:**
 
-        Understanding limits is crucial for mastering calculus concepts.`,
+  - The limit of a sum: $\\lim_{x \\to c} [f(x) + g(x)] = \\lim_{x \\to c} f(x) + \\lim_{x \\to c} g(x)$
+  - The limit of a product: $\\lim_{x \\to c} [f(x) \\cdot g(x)] = \\lim_{x \\to c} f(x) \\cdot \\lim_{x \\to c} g(x)$
+  - The limit of a quotient: $\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to c} f(x)}{\\lim_{x \\to c} g(x)}$ (provided the denominator limit is not zero)
+
+  **Example:** Consider the limit $\\lim_{x \\to 2} (3x + 1)$. As $x$ approaches 2, the expression $3x + 1$ approaches $3(2) + 1 = 7$.
+
+  Understanding limits is crucial for mastering calculus concepts.`,
       },
       {
         id: "derivatives",
@@ -606,7 +610,7 @@ const mockNotes: Note[] = [
         content: `Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles. It was developed in the early 20th century when classical physics could not explain certain phenomena.
 
         **Historical Context:**
-        - Developed between 1900-1930 by physicists like Planck, Einstein, Bohr, Heisenberg, and Schrödinger
+        - Developed between 1000-1930 by physicists like Planck, Einstein, Bohr, Heisenberg, and Schrödinger
         - Arose from the need to explain blackbody radiation, photoelectric effect, and atomic spectra
         - Revolutionized our understanding of matter and energy
 

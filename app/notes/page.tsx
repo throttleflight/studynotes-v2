@@ -6,7 +6,6 @@ import { BookOpen, Search, ChevronRight, Tag, Clock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -106,70 +105,50 @@ export default function NotesPage() {
         </div>
 
         <div className="flex-1 p-4 md:p-6 lg:p-8 xl:p-12">
-          <Tabs defaultValue="all" className="w-full">
-            <div className="flex items-center justify-between mb-4">
-              <TabsList>
-                <TabsTrigger value="all">All Notes</TabsTrigger>
-                <TabsTrigger value="recent">Recent</TabsTrigger>
-                <TabsTrigger value="favorites">Favorites</TabsTrigger>
-              </TabsList>
-              <div className="text-sm text-gray-500 dark:text-gray-400">{filteredNotes.length} notes</div>
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-2xl font-bold">Study Notes</h1>
+            <div className="text-sm text-gray-500 dark:text-gray-400">{filteredNotes.length} notes</div>
+          </div>
+
+          {filteredNotes.length > 0 ? (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+              {filteredNotes.map((note) => (
+                <Link href={`/notes/${note.id}`} key={note.id} className="block group">
+                  <Card className="h-full transition-all group-hover:shadow-md">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between">
+                        <CardTitle className="line-clamp-2">{note.title}</CardTitle>
+                      </div>
+                      <CardDescription className="line-clamp-2">{note.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="pb-3">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                        <Tag className="h-3.5 w-3.5" />
+                        <span>{note.categoryName}</span>
+                      </div>
+                    </CardContent>
+                    <CardFooter className="pt-0 flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-3.5 w-3.5" />
+                        <span>{note.date}</span>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-gray-400 group-hover:text-primary transition-colors" />
+                    </CardFooter>
+                  </Card>
+                </Link>
+              ))}
             </div>
-
-            <TabsContent value="all" className="space-y-4">
-              {filteredNotes.length > 0 ? (
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-                  {filteredNotes.map((note) => (
-                    <Link href={`/notes/${note.id}`} key={note.id} className="block group">
-                      <Card className="h-full transition-all group-hover:shadow-md">
-                        <CardHeader className="pb-3">
-                          <div className="flex items-start justify-between">
-                            <CardTitle className="line-clamp-2">{note.title}</CardTitle>
-                          </div>
-                          <CardDescription className="line-clamp-2">{note.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="pb-3">
-                          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                            <Tag className="h-3.5 w-3.5" />
-                            <span>{note.categoryName}</span>
-                          </div>
-                        </CardContent>
-                        <CardFooter className="pt-0 flex justify-between items-center text-xs text-gray-500 dark:text-gray-400">
-                          <div className="flex items-center gap-1">
-                            <Clock className="h-3.5 w-3.5" />
-                            <span>{note.date}</span>
-                          </div>
-                          <ChevronRight className="h-4 w-4 text-gray-400 group-hover:text-primary transition-colors" />
-                        </CardFooter>
-                      </Card>
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="rounded-full bg-gray-100 p-3 dark:bg-gray-800">
-                    <Search className="h-6 w-6 text-gray-500 dark:text-gray-400" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold">No notes found</h3>
-                  <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                    We couldn&apos;t find any notes matching your search.
-                  </p>
-                </div>
-              )}
-            </TabsContent>
-
-            <TabsContent value="recent">
-              <div className="text-center py-12">
-                <p className="text-gray-500 dark:text-gray-400">Your recently viewed notes will appear here.</p>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-12 text-center">
+              <div className="rounded-full bg-gray-100 p-3 dark:bg-gray-800">
+                <Search className="h-6 w-6 text-gray-500 dark:text-gray-400" />
               </div>
-            </TabsContent>
-
-            <TabsContent value="favorites">
-              <div className="text-center py-12">
-                <p className="text-gray-500 dark:text-gray-400">Your favorite notes will appear here.</p>
-              </div>
-            </TabsContent>
-          </Tabs>
+              <h3 className="mt-4 text-lg font-semibold">No notes found</h3>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                We couldn&apos;t find any notes matching your search.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

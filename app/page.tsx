@@ -21,14 +21,14 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link href="/early-access" passHref>
+                  <Link href="/notes" passHref>
                     <Button className="gap-1">
-                      Get Early Access <ArrowRight className="h-4 w-4" />
+                      Browse Notes <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/early-access" passHref>
-                    <Button className="gap-1">
-                      Request Early Access <ArrowRight className="h-4 w-4" />
+                  <Link href="/about" passHref>
+                    <Button variant="outline" className="gap-1 bg-transparent">
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -55,11 +55,8 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
-                      <Link
-                        href="/early-access"
-                        className="text-primary hover:underline text-sm flex items-center gap-1"
-                      >
-                        Request access <ArrowRight className="h-3 w-3" />
+                      <Link href="/notes" className="text-primary hover:underline text-sm flex items-center gap-1">
+                        View all notes <ArrowRight className="h-3 w-3" />
                       </Link>
                     </div>
                   </div>
@@ -110,9 +107,9 @@ export default function Home() {
                   <Lock className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Secure Access</h3>
+                  <h3 className="text-xl font-bold">Free Access</h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    Your notes are protected with secure authentication and access controls.
+                    All study materials are freely available to help you succeed in your academic journey.
                   </p>
                 </div>
               </div>

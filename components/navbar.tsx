@@ -3,38 +3,20 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BookOpen, Menu, Moon, Sun, LogOut, User } from "lucide-react"
+import { BookOpen, Menu, Moon, Sun } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { useTheme } from "next-themes"
-import { getCurrentUser, logout } from "@/lib/auth"
 
 export function Navbar() {
   const pathname = usePathname()
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const [user, setUser] = useState<{ id: string; email: string; name: string } | null>(null)
 
   useEffect(() => {
     setMounted(true)
-    setUser(getCurrentUser())
-
-    // Listen for auth state changes
-    const handleAuthChange = () => {
-      setUser(getCurrentUser())
-    }
-
-    window.addEventListener("authStateChanged", handleAuthChange)
-    return () => window.removeEventListener("authStateChanged", handleAuthChange)
   }, [])
 
   const routes = [
@@ -47,13 +29,6 @@ export function Navbar() {
       href: "/notes",
       label: "Notes",
       active: pathname === "/notes" || pathname.startsWith("/notes/"),
-      requiresAuth: true,
-    },
-    {
-      href: "/early-access",
-      label: "Early Access",
-      active: pathname === "/early-access",
-      hideWhenAuthenticated: true,
     },
     {
       href: "/about",
@@ -70,17 +45,6 @@ export function Navbar() {
     }
   }
 
-  const handleLogout = () => {
-    logout()
-    setUser(null)
-  }
-
-  const visibleRoutes = routes.filter((route) => {
-    if (route.requiresAuth && !user) return false
-    if (route.hideWhenAuthenticated && user) return false
-    return true
-  })
-
   if (!mounted) {
     return (
       <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -93,10 +57,15 @@ export function Navbar() {
             <Link href="/" className="text-sm font-medium text-muted-foreground">
               Home
             </Link>
+            <Link href="/notes" className="text-sm font-medium text-muted-foreground">
+              Notes
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-muted-foreground">
+              About
+            </Link>
           </nav>
           <div className="flex items-center ml-auto">
             <div className="mr-2 w-10 h-10" />
-            <div className="w-32 h-10" />
           </div>
         </div>
       </header>
@@ -111,15 +80,14 @@ export function Navbar() {
           <span>Study Notes</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6 ml-6">
-          {visibleRoutes.map((route) => (
+          {routes.map((route) => (
             <Link
               key={route.href}
               href={route.href}
-              className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+              className={`text-sm font-medium transition-colors hover:text-primary ${
                 route.active ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              {route.icon && <route.icon className="h-4 w-4" />}
               {route.label}
             </Link>
           ))}
@@ -130,43 +98,6 @@ export function Navbar() {
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="hidden md:flex bg-transparent">
-                  <User className="h-4 w-4 mr-2" />
-                  {user.name || "Account"}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuItem disabled>
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium">{user.name}</p>
-                    <p className="text-xs text-muted-foreground">{user.email}</p>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem disabled>
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-xs text-muted-foreground">Early Access User</p>
-                    <p className="text-xs font-medium text-green-600">✓ Authenticated</p>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={handleLogout} className="text-red-600 focus:text-red-600">
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <div className="hidden md:flex items-center gap-2">
-              <Link href="/early-access">
-                <Button>Get Early Access</Button>
-              </Link>
-            </div>
-          )}
-
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden ml-2">
               <Button variant="outline" size="icon">
@@ -176,45 +107,16 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="flex flex-col space-y-6 mt-6">
-                {visibleRoutes.map((route) => (
+                {routes.map((route) => (
                   <Link
                     key={route.href}
                     href={route.href}
-                    className="text-lg font-medium flex items-center gap-2"
+                    className="text-lg font-medium"
                     onClick={() => setIsOpen(false)}
                   >
-                    {route.icon && <route.icon className="h-5 w-5" />}
                     {route.label}
                   </Link>
                 ))}
-
-                {user ? (
-                  <div className="pt-4 border-t">
-                    <div className="mb-4">
-                      <p className="text-sm font-medium">{user.name}</p>
-                      <p className="text-xs text-muted-foreground">{user.email}</p>
-                      <p className="text-xs text-green-600 mt-1">✓ Early Access User</p>
-                    </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        handleLogout()
-                        setIsOpen(false)
-                      }}
-                      className="w-full justify-start bg-transparent text-red-600 border-red-200 hover:bg-red-50 hover:text-red-700"
-                    >
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="pt-4 border-t space-y-3">
-                    <Link href="/early-access" className="block" onClick={() => setIsOpen(false)}>
-                      <Button className="w-full">Get Early Access</Button>
-                    </Link>
-                  </div>
-                )}
 
                 <div className="pt-4 border-t">
                   <Button variant="ghost" size="sm" onClick={toggleTheme} className="w-full justify-start">

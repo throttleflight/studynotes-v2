@@ -39,9 +39,9 @@ export default function AboutPage() {
                   subjects and achieve their academic goals.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link href="/early-access">
+                  <Link href="/notes">
                     <Button className="gap-1">
-                      Join Our Community <ArrowRight className="h-4 w-4" />
+                      Explore Notes <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -237,9 +237,9 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">🔒 Secure Access</h3>
+                  <h3 className="text-xl font-bold">📖 Free Access</h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    Your progress and personal information are protected with industry-standard security measures.
+                    All study materials are freely available to support your educational journey.
                   </p>
                 </div>
               </div>
@@ -259,9 +259,9 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/early-access">
+                <Link href="/notes">
                   <Button size="lg" className="gap-1">
-                    Get Early Access <ArrowRight className="h-4 w-4" />
+                    Start Learning <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               </div>

@@ -101,3 +101,40 @@
   background-color: #374151;
   color: #f9fafb;
 }
+
+/* Definition block styles */
+.definition-block {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.definition-block:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+.definition-content p {
+  line-height: 1.6;
+}
+
+.definition-content h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Dark mode adjustments for definition blocks */
+.dark .definition-block {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.dark .definition-block:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .definition-block {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+}
