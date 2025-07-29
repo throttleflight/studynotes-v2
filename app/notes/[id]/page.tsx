@@ -63,8 +63,8 @@ export default function NotePage() {
         </div>
       </div>
 
-      <div className="container max-w-4xl py-8 px-4">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border p-6 md:p-8">
+      <div className="container max-w-5xl py-8 px-4 md:px-6 lg:px-8 xl:px-12">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border p-6 md:p-8 lg:p-12">
           <div className="flex flex-wrap items-center gap-2 mb-2 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-1">
               <Tag className="h-3.5 w-3.5" />

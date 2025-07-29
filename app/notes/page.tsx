@@ -41,7 +41,7 @@ export default function NotesPage() {
   return (
     <div className="flex min-h-[calc(100vh-4rem)]">
       {/* Sidebar */}
-      <div className="hidden md:flex w-64 flex-col border-r bg-gray-50/50 dark:bg-gray-900/50">
+      <div className="hidden md:flex w-80 flex-col border-r bg-gray-50/50 dark:bg-gray-900/50">
         <div className="p-4 border-b">
           <div className="flex items-center gap-2 font-semibold">
             <BookOpen className="h-5 w-5 text-primary" />
@@ -105,7 +105,7 @@ export default function NotesPage() {
           </div>
         </div>
 
-        <div className="flex-1 p-4 md:p-6">
+        <div className="flex-1 p-4 md:p-6 lg:p-8 xl:p-12">
           <Tabs defaultValue="all" className="w-full">
             <div className="flex items-center justify-between mb-4">
               <TabsList>
@@ -118,7 +118,7 @@ export default function NotesPage() {
 
             <TabsContent value="all" className="space-y-4">
               {filteredNotes.length > 0 ? (
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                   {filteredNotes.map((note) => (
                     <Link href={`/notes/${note.id}`} key={note.id} className="block group">
                       <Card className="h-full transition-all group-hover:shadow-md">
