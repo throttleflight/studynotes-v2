@@ -1,10 +1,10 @@
 import type React from "react"
-import { AuthGuard } from "@/components/auth-guard"
+import { AuthGuardSecure } from "@/components/auth-guard-secure"
 
 export default function NotesLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <AuthGuard>{children}</AuthGuard>
+  return <AuthGuardSecure>{children}</AuthGuardSecure>
 }
