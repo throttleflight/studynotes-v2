@@ -11,7 +11,7 @@ import { useTheme } from "next-themes"
 
 export function Navbar() {
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -43,6 +43,75 @@ export function Navbar() {
     },
   ]
 
+  const toggleTheme = () => {
+    console.log("Current theme:", theme, "Resolved theme:", resolvedTheme)
+    if (resolvedTheme === "dark") {
+      setTheme("light")
+    } else {
+      setTheme("dark")
+    }
+  }
+
+  // Don't render the theme toggle until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <header className="sticky top-0 z-40 w-full border-b bg-background">
+        <div className="container flex h-16 items-center px-4 md:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
+            <BookOpen className="h-6 w-6" />
+            <span>Study Notes</span>
+          </Link>
+          <nav className="hidden md:flex items-center space-x-6 ml-6">
+            {routes.map((route) => (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  route.active ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {route.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center ml-auto">
+            <div className="mr-2 w-10 h-10" /> {/* Placeholder for theme button */}
+            <Link href="/login" className="hidden md:block">
+              <Button variant="outline">Sign In</Button>
+            </Link>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="md:hidden ml-2">
+                <Button variant="outline" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <div className="flex flex-col space-y-6 mt-6">
+                  <Link href="/" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                    Home
+                  </Link>
+                  <Link href="/notes" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                    Notes
+                  </Link>
+                  <Link href="/early-access" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                    Early Access
+                  </Link>
+                  <Link href="/about" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                    About
+                  </Link>
+                  <Link href="/login" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                    Sign In
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </header>
+    )
+  }
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center px-4 md:px-6 lg:px-8">
@@ -64,19 +133,10 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center ml-auto">
-          {mounted && (
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Toggle Theme"
-              className="mr-2"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          )}
+          <Button variant="ghost" size="icon" aria-label="Toggle Theme" className="mr-2" onClick={toggleTheme}>
+            {resolvedTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
           <Link href="/login" className="hidden md:block">
             <Button variant="outline">Sign In</Button>
           </Link>
@@ -104,6 +164,21 @@ export function Navbar() {
                 <Link href="/login" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
                   Sign In
                 </Link>
+                <div className="pt-4 border-t">
+                  <Button variant="ghost" size="sm" onClick={toggleTheme} className="w-full justify-start">
+                    {resolvedTheme === "dark" ? (
+                      <>
+                        <Sun className="h-4 w-4 mr-2" />
+                        Light Mode
+                      </>
+                    ) : (
+                      <>
+                        <Moon className="h-4 w-4 mr-2" />
+                        Dark Mode
+                      </>
+                    )}
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
