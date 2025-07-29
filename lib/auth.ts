@@ -181,20 +181,19 @@ export function getCurrentUser(): { id: string; email: string; name: string } | 
     return currentUser
   }
 
-  // Try to get user from cookies
+  // Try to get user from early access cookies only
   if (typeof document !== "undefined") {
     const userDataCookie = getCookieValue("user-data")
-    const authTokenCookie = getCookieValue("auth-token")
     const earlyAccessCookie = getCookieValue("early-access-token")
 
-    if (userDataCookie && (authTokenCookie || earlyAccessCookie)) {
+    if (userDataCookie && earlyAccessCookie) {
       try {
         const userData = JSON.parse(decodeURIComponent(userDataCookie))
 
         // Validate that userData has required fields
         if (userData && typeof userData === "object" && userData.name && userData.email) {
           currentUser = {
-            id: authTokenCookie || earlyAccessCookie || "unknown",
+            id: earlyAccessCookie,
             email: userData.email,
             name: userData.name,
           }
@@ -204,7 +203,6 @@ export function getCurrentUser(): { id: string; email: string; name: string } | 
         console.warn("Error parsing user data from cookie, clearing invalid cookies:", error)
         // Clear invalid cookies
         document.cookie = "user-data=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
-        document.cookie = "auth-token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
         document.cookie = "early-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
       }
     }
@@ -214,25 +212,19 @@ export function getCurrentUser(): { id: string; email: string; name: string } | 
 }
 
 export function isAuthenticated(): boolean {
-  // Check for authentication cookie
+  // Check for early access authentication only
   if (typeof document !== "undefined") {
-    const authToken = getCookieValue("auth-token")
     const earlyAccessToken = getCookieValue("early-access-token")
-
-    return !!(authToken || earlyAccessToken)
+    return !!earlyAccessToken
   }
 
   return currentUser !== null
 }
 
-export function checkAuthStatus(): { isAuthenticated: boolean; method: "login" | "early-access" | null } {
+export function checkAuthStatus(): { isAuthenticated: boolean; method: "early-access" | null } {
   if (typeof document !== "undefined") {
-    const authToken = getCookieValue("auth-token")
     const earlyAccessToken = getCookieValue("early-access-token")
 
-    if (authToken) {
-      return { isAuthenticated: true, method: "login" }
-    }
     if (earlyAccessToken) {
       return { isAuthenticated: true, method: "early-access" }
     }

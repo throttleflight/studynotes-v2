@@ -155,8 +155,8 @@ export function NavbarSecure() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem disabled>
                   <div className="flex flex-col space-y-1">
-                    <p className="text-xs text-muted-foreground">Secure Authentication</p>
-                    <p className="text-xs font-medium text-green-600">✓ Production Ready</p>
+                    <p className="text-xs text-muted-foreground">Early Access User</p>
+                    <p className="text-xs font-medium text-green-600">✓ Authenticated</p>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -168,11 +168,8 @@ export function NavbarSecure() {
             </DropdownMenu>
           ) : (
             <div className="hidden md:flex items-center gap-2">
-              <Link href="/auth/signin">
-                <Button variant="outline">Sign In</Button>
-              </Link>
-              <Link href="/auth/signup">
-                <Button>Sign Up</Button>
+              <Link href="/early-access">
+                <Button>Get Early Access</Button>
               </Link>
             </div>
           )}
@@ -203,7 +200,7 @@ export function NavbarSecure() {
                     <div className="mb-4">
                       <p className="text-sm font-medium">{session.user?.name}</p>
                       <p className="text-xs text-muted-foreground">{session.user?.email}</p>
-                      <p className="text-xs text-green-600 mt-1">✓ Secure Authentication</p>
+                      <p className="text-xs text-green-600 mt-1">✓ Early Access User</p>
                     </div>
                     <Button
                       variant="outline"
@@ -220,13 +217,8 @@ export function NavbarSecure() {
                   </div>
                 ) : (
                   <div className="pt-4 border-t space-y-3">
-                    <Link href="/auth/signin" className="block" onClick={() => setIsOpen(false)}>
-                      <Button variant="outline" className="w-full bg-transparent">
-                        Sign In
-                      </Button>
-                    </Link>
-                    <Link href="/auth/signup" className="block" onClick={() => setIsOpen(false)}>
-                      <Button className="w-full">Sign Up</Button>
+                    <Link href="/early-access" className="block" onClick={() => setIsOpen(false)}>
+                      <Button className="w-full">Get Early Access</Button>
                     </Link>
                   </div>
                 )}

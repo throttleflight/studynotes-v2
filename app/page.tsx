@@ -26,8 +26,10 @@ export default function Home() {
                       Get Early Access <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/login" passHref>
-                    <Button variant="outline">Sign In</Button>
+                  <Link href="/early-access" passHref>
+                    <Button className="gap-1">
+                      Request Early Access <ArrowRight className="h-4 w-4" />
+                    </Button>
                   </Link>
                 </div>
               </div>
