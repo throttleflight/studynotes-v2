@@ -40,7 +40,16 @@ export async function validateAccessCode(email: string, accessCode: string): Pro
 
   // Check if email and access code match
   const user = approvedUsers.find((user) => user.email === email && user.accessCode === accessCode)
-  return !!user
+
+  if (user) {
+    // Set early access cookie
+    if (typeof document !== "undefined") {
+      document.cookie = `early-access-token=${email}; path=/; max-age=${60 * 60 * 24 * 30}` // 30 days
+    }
+    return true
+  }
+
+  return false
 }
 
 export function getWaitlistCount(): number {

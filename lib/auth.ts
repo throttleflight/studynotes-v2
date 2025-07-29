@@ -28,6 +28,12 @@ export async function login(email: string, password: string): Promise<boolean> {
       email: user.email,
       name: user.name,
     }
+
+    // Set authentication cookie
+    if (typeof document !== "undefined") {
+      document.cookie = `auth-token=${user.id}; path=/; max-age=${60 * 60 * 24 * 7}` // 7 days
+    }
+
     return true
   }
 
@@ -36,6 +42,12 @@ export async function login(email: string, password: string): Promise<boolean> {
 
 export function logout(): void {
   currentUser = null
+
+  // Clear authentication cookies
+  if (typeof document !== "undefined") {
+    document.cookie = "auth-token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
+    document.cookie = "early-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
+  }
 }
 
 export function getCurrentUser() {
@@ -43,5 +55,29 @@ export function getCurrentUser() {
 }
 
 export function isAuthenticated(): boolean {
+  // Check for authentication cookie
+  if (typeof document !== "undefined") {
+    const authToken = document.cookie.split("; ").find((row) => row.startsWith("auth-token="))
+    const earlyAccessToken = document.cookie.split("; ").find((row) => row.startsWith("early-access-token="))
+
+    return !!(authToken || earlyAccessToken)
+  }
+
   return currentUser !== null
+}
+
+export function checkAuthStatus(): { isAuthenticated: boolean; method: "login" | "early-access" | null } {
+  if (typeof document !== "undefined") {
+    const authToken = document.cookie.split("; ").find((row) => row.startsWith("auth-token="))
+    const earlyAccessToken = document.cookie.split("; ").find((row) => row.startsWith("early-access-token="))
+
+    if (authToken) {
+      return { isAuthenticated: true, method: "login" }
+    }
+    if (earlyAccessToken) {
+      return { isAuthenticated: true, method: "early-access" }
+    }
+  }
+
+  return { isAuthenticated: false, method: null }
 }
