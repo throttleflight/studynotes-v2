@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { BookOpen, Loader2, ArrowRight, Mail, Key } from "lucide-react"
+import { BookOpen, Loader2, ArrowRight, Mail, Key, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -31,7 +31,7 @@ export default function EarlyAccessPage() {
     setErrorMessage("")
 
     try {
-      // In a real app, this would send the request to a database or API
+      // This will now send an email to airplanenews4@gmail.com
       const success = await requestAccess(email)
 
       if (success) {
@@ -99,14 +99,20 @@ export default function EarlyAccessPage() {
             <TabsContent value="request">
               {requestStatus === "success" ? (
                 <Alert className="bg-green-50 text-green-800 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-900">
-                  <div className="flex flex-col space-y-2 items-center text-center p-2">
-                    <Mail className="h-6 w-6 mb-2" />
-                    <AlertDescription className="font-medium">
-                      Thank you for your interest! We&apos;ve received your request.
+                  <div className="flex flex-col space-y-3 items-center text-center p-2">
+                    <CheckCircle className="h-8 w-8 mb-2 text-green-600" />
+                    <AlertDescription className="font-medium text-base">
+                      Request submitted successfully!
                     </AlertDescription>
-                    <p className="text-sm">
-                      We&apos;ll send an invitation code to {email} when a spot becomes available.
-                    </p>
+                    <div className="space-y-2 text-sm">
+                      <p>
+                        We&apos;ve received your request for <strong>{email}</strong>
+                      </p>
+                      <p>A notification has been sent to our team, and we&apos;ll review your request shortly.</p>
+                      <p className="text-xs text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30 p-2 rounded">
+                        💌 Admin notification sent to: airplanenews4@gmail.com
+                      </p>
+                    </div>
                   </div>
                 </Alert>
               ) : (
@@ -128,10 +134,16 @@ export default function EarlyAccessPage() {
                       disabled={isLoading}
                     />
                   </div>
+                  <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <p className="text-sm text-blue-800 dark:text-blue-200">
+                      <Mail className="h-4 w-4 inline mr-1" />
+                      Your request will be sent to our admin team for review.
+                    </p>
+                  </div>
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? (
                       <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending Request...
                       </>
                     ) : (
                       <>
@@ -183,6 +195,13 @@ export default function EarlyAccessPage() {
                       disabled={isLoading}
                     />
                   </div>
+                  <div className="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <p className="text-sm text-amber-800 dark:text-amber-200">
+                      <Key className="h-4 w-4 inline mr-1" />
+                      Test codes: <code className="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">STUDY2023</code> or{" "}
+                      <code className="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">NOTES1234</code>
+                    </p>
+                  </div>
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? (
                       <>
@@ -198,12 +217,6 @@ export default function EarlyAccessPage() {
           </Tabs>
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
-          <div className="text-center text-sm">
-            Already have an account?{" "}
-            <Link href="/login" className="text-primary hover:underline">
-              Sign in
-            </Link>
-          </div>
           <div className="text-center text-sm text-gray-500 dark:text-gray-400">
             <Link href="/" className="hover:underline">
               Back to home
