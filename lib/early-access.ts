@@ -14,6 +14,28 @@ const approvedUsers = [
   },
 ]
 
+// Helper function to safely get cookie value
+const getCookieValue = (name: string): string | null => {
+  if (typeof document === "undefined") return null
+
+  const cookies = document.cookie.split("; ")
+  const cookie = cookies.find((row) => row.startsWith(`${name}=`))
+
+  if (!cookie) return null
+
+  const value = cookie.split("=")[1]
+  return value && value !== "undefined" && value !== "" ? value : null
+}
+
+// Helper function to dispatch auth state change event
+const dispatchAuthChange = () => {
+  if (typeof window !== "undefined") {
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("authStateChanged"))
+    }, 100)
+  }
+}
+
 export async function requestAccess(email: string): Promise<boolean> {
   // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 1500))
@@ -42,10 +64,16 @@ export async function validateAccessCode(email: string, accessCode: string): Pro
   const user = approvedUsers.find((user) => user.email === email && user.accessCode === accessCode)
 
   if (user) {
-    // Set early access cookie
+    // Set early access cookies
     if (typeof document !== "undefined") {
+      const userData = JSON.stringify({ name: "Early Access User", email: email })
       document.cookie = `early-access-token=${email}; path=/; max-age=${60 * 60 * 24 * 30}` // 30 days
+      document.cookie = `user-data=${encodeURIComponent(userData)}; path=/; max-age=${60 * 60 * 24 * 30}`
     }
+
+    // Dispatch auth change event
+    dispatchAuthChange()
+
     return true
   }
 
