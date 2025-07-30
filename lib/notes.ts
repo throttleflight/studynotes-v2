@@ -5,12 +5,14 @@ export interface NoteSubsection {
   id: string
   title: string
   content: string
+  images?: string[]
 }
 
 export interface NoteSection {
   id: string
   title: string
   content: string
+  images?: string[]
   subsections?: NoteSubsection[]
 }
 
@@ -39,6 +41,9 @@ const mockNotes: Note[] = [
         The two main branches of calculus are differential calculus and integral calculus. Differential calculus deals with the study of rates at which quantities change, using the concept of the derivative. Integral calculus deals with the study of the area beneath a curve, using the concept of the integral.
 
         This comprehensive guide will take you through the fundamental concepts of calculus, starting with limits and progressing through derivatives and integrals.`,
+        images: [
+          "https://example.com/images/calculus-intro.png"
+        ],
         subsections: [
           {
             id: "history",
@@ -58,6 +63,9 @@ const mockNotes: Note[] = [
             - Created the notation we use today (dx, dy, ∫)
 
             The controversy over priority lasted for decades, but today we recognize both mathematicians as co-inventors of calculus.`,
+            images: [
+              "https://example.com/images/newton-leibniz.png"
+            ],
           },
           {
             id: "applications",
@@ -158,194 +166,6 @@ const mockNotes: Note[] = [
             **Vertical and Horizontal Asymptotes:**
             - Vertical asymptote at $x = c$ if $\\lim_{x \\to c} f(x) = \\pm\\infty$
             - Horizontal asymptote at $y = L$ if $\\lim_{x \\to \\infty} f(x) = L$`,
-          },
-        ],
-      },
-      {
-        id: "derivatives",
-        title: "Derivatives and Differentiation",
-        content: `The **derivative** of a function $f(x)$ with respect to $x$ is defined as the limit of the difference quotient as $h$ approaches 0:
-
-        $$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$
-
-        It represents the **instantaneous rate of change** of the function at a particular point.
-
-        Geometrically, the derivative at a point gives us the slope of the tangent line to the curve at that point. This concept is fundamental in understanding how quantities change.`,
-        subsections: [
-          {
-            id: "derivative-rules",
-            title: "Differentiation Rules",
-            content: `**Basic Rules:**
-            - **Constant Rule:** $\\frac{d}{dx}(c) = 0$
-            - **Power Rule:** $\\frac{d}{dx}(x^n) = nx^{n-1}$
-            - **Constant Multiple Rule:** $\\frac{d}{dx}(cf(x)) = cf'(x)$
-            - **Sum/Difference Rule:** $\\frac{d}{dx}(f(x) \\pm g(x)) = f'(x) \\pm g'(x)$
-
-            **Advanced Rules:**
-            - **Product Rule:** $\\frac{d}{dx}(uv) = u'v + uv'$
-            - **Quotient Rule:** $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}$
-            - **Chain Rule:** $\\frac{d}{dx}(f(g(x))) = f'(g(x)) \\cdot g'(x)$
-
-            **Trigonometric Derivatives:**
-            - $\\frac{d}{dx}(\\sin x) = \\cos x$
-            - $\\frac{d}{dx}(\\cos x) = -\\sin x$
-            - $\\frac{d}{dx}(\\tan x) = \\sec^2 x$
-
-            **Exponential and Logarithmic:**
-            - $\\frac{d}{dx}(e^x) = e^x$
-            - $\\frac{d}{dx}(\\ln x) = \\frac{1}{x}$
-            - $\\frac{d}{dx}(a^x) = a^x \\ln a$`,
-          },
-          {
-            id: "derivative-applications",
-            title: "Applications of Derivatives",
-            content: `**Optimization Problems:**
-            Finding maximum and minimum values of functions:
-            - Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined
-            - Use the first derivative test or second derivative test
-            - Applications: maximizing profit, minimizing cost, optimizing design
-
-            **Related Rates:**
-            Problems involving rates of change of related quantities:
-            - Identify the relationship between variables
-            - Differentiate both sides with respect to time
-            - Substitute known values and solve
-
-            **Motion Analysis:**
-            - **Position:** $s(t)$
-            - **Velocity:** $v(t) = s'(t)$
-            - **Acceleration:** $a(t) = v'(t) = s''(t)$
-
-            **Curve Sketching:**
-            - Find critical points and inflection points
-            - Determine intervals of increase/decrease
-            - Identify concavity and asymptotes
-            - Sketch the complete graph`,
-          },
-          {
-            id: "implicit-differentiation",
-            title: "Implicit Differentiation and Higher Derivatives",
-            content: `**Implicit Differentiation:**
-            When $y$ is defined implicitly as a function of $x$:
-            - Differentiate both sides of the equation with respect to $x$
-            - Use the chain rule: $\\frac{d}{dx}(y^n) = ny^{n-1}\\frac{dy}{dx}$
-            - Solve for $\\frac{dy}{dx}$
-
-            **Example:** For $x^2 + y^2 = 25$:
-            $$2x + 2y\\frac{dy}{dx} = 0$$
-            $$\\frac{dy}{dx} = -\\frac{x}{y}$$
-
-            **Higher Order Derivatives:**
-            - **Second derivative:** $f''(x) = \\frac{d^2f}{dx^2}$
-            - **Third derivative:** $f'''(x) = \\frac{d^3f}{dx^3}$
-            - **nth derivative:** $f^{(n)}(x) = \\frac{d^nf}{dx^n}$
-
-            **Concavity and Inflection Points:**
-            - $f''(x) > 0$: concave up
-            - $f''(x) < 0$: concave down
-            - Inflection points where $f''(x) = 0$ and concavity changes`,
-          },
-        ],
-      },
-      {
-        id: "integrals",
-        title: "Integrals and Integration",
-        content: `The **integral** of a function $f(x)$ represents the accumulated change over an interval. There are two main types of integrals:
-
-        **Definite Integrals:** 
-        $$\\int_a^b f(x)\\,dx$$
-        This gives a numerical value representing the signed area under the curve from $x = a$ to $x = b$.
-
-        **Indefinite Integrals (Antiderivatives):**
-        $$\\int f(x)\\,dx = F(x) + C$$
-        This gives a family of functions where $F'(x) = f(x)$ and $C$ is the constant of integration.
-
-        **The Fundamental Theorem of Calculus** connects derivatives and integrals:
-
-        If $F(x) = \\int_a^x f(t)\\,dt$, then $F'(x) = f(x)$
-
-        This means differentiation and integration are inverse operations.`,
-        subsections: [
-          {
-            id: "integration-techniques",
-            title: "Integration Techniques",
-            content: `**Basic Integration Formulas:**
-            - $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (for $n \\neq -1$)
-            - $\\int \\frac{1}{x}\\,dx = \\ln|x| + C$
-            - $\\int e^x\\,dx = e^x + C$
-            - $\\int \\sin(x)\\,dx = -\\cos(x) + C$
-            - $\\int \\cos(x)\\,dx = \\sin(x) + C$
-
-            **Substitution Method (u-substitution):**
-            Used when the integrand contains a function and its derivative:
-            1. Let $u = g(x)$, then $du = g'(x)dx$
-            2. Rewrite the integral in terms of $u$
-            3. Integrate with respect to $u$
-            4. Substitute back to get the answer in terms of $x$
-
-            **Example:** $\\int 2x\\cos(x^2)\\,dx$
-            Let $u = x^2$, then $du = 2x\\,dx$
-            $\\int \\cos(u)\\,du = \\sin(u) + C = \\sin(x^2) + C$`,
-          },
-          {
-            id: "integration-by-parts",
-            title: "Integration by Parts and Advanced Techniques",
-            content: `**Integration by Parts:**
-            Formula: $\\int u\\,dv = uv - \\int v\\,du$
-
-            **LIATE Rule for choosing $u$:**
-            - **L**ogarithmic functions
-            - **I**nverse trigonometric functions  
-            - **A**lgebraic functions (polynomials)
-            - **T**rigonometric functions
-            - **E**xponential functions
-
-            **Example:** $\\int x e^x\\,dx$
-            Let $u = x$, $dv = e^x\\,dx$
-            Then $du = dx$, $v = e^x$
-            $\\int x e^x\\,dx = xe^x - \\int e^x\\,dx = xe^x - e^x + C = e^x(x-1) + C$
-
-            **Partial Fractions:**
-            For rational functions $\\frac{P(x)}{Q(x)}$ where degree of $P < $ degree of $Q$:
-            1. Factor the denominator $Q(x)$
-            2. Decompose into partial fractions
-            3. Integrate each term separately
-
-            **Trigonometric Substitution:**
-            For expressions involving:
-            - $\\sqrt{a^2 - x^2}$: use $x = a\\sin\\theta$
-            - $\\sqrt{a^2 + x^2}$: use $x = a\\tan\\theta$  
-            - $\\sqrt{x^2 - a^2}$: use $x = a\\sec\\theta$`,
-          },
-          {
-            id: "definite-integrals",
-            title: "Definite Integrals and Applications",
-            content: `**Fundamental Theorem of Calculus (Part 2):**
-            If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$, then:
-            $$\\int_a^b f(x)\\,dx = F(b) - F(a)$$
-
-            **Properties of Definite Integrals:**
-            - $\\int_a^a f(x)\\,dx = 0$
-            - $\\int_a^b f(x)\\,dx = -\\int_b^a f(x)\\,dx$
-            - $\\int_a^b f(x)\\,dx + \\int_b^c f(x)\\,dx = \\int_a^c f(x)\\,dx$
-
-            **Applications:**
-            
-            **Area Between Curves:**
-            Area = $\\int_a^b |f(x) - g(x)|\\,dx$
-
-            **Volume of Solids of Revolution:**
-            - **Disk Method:** $V = \\pi\\int_a^b [f(x)]^2\\,dx$
-            - **Washer Method:** $V = \\pi\\int_a^b ([f(x)]^2 - [g(x)]^2)\\,dx$
-            - **Shell Method:** $V = 2\\pi\\int_a^b x f(x)\\,dx$
-
-            **Arc Length:**
-            $L = \\int_a^b \\sqrt{1 + [f'(x)]^2}\\,dx$
-
-            **Work and Physics Applications:**
-            - Work done by variable force: $W = \\int_a^b F(x)\\,dx$
-            - Center of mass and moments
-            - Fluid pressure and force`,
           },
         ],
       },
@@ -451,120 +271,6 @@ const mockNotes: Note[] = [
             `,
           },
         ]
-      },
-      {
-        id: "wave-particle-duality",
-        title: "Wave-Particle Duality",
-        content: `One of the key principles of quantum mechanics is wave-particle duality, which suggests that all particles exhibit both wave and particle properties. This concept fundamentally changed our understanding of matter and energy.
-
-        **Historical Experiments:**
-
-        **Double-Slit Experiment:**
-        - Electrons fired through two parallel slits create an interference pattern
-        - When observed, electrons behave like particles
-        - When unobserved, they behave like waves
-        - Demonstrates the role of measurement in quantum systems
-
-        **Photoelectric Effect (Einstein, 1905):**
-        - Light can eject electrons from metal surfaces
-        - Energy of ejected electrons depends on light frequency, not intensity
-        - Proved light has particle-like properties (photons)
-        - Earned Einstein the Nobel Prize
-
-        **De Broglie Wavelength:**
-        All matter has an associated wavelength given by:
-        $$\\lambda = \\frac{h}{p}$$
-        where $h$ is Planck's constant and $p$ is momentum.
-
-        This explains why wave properties are only noticeable for very small particles.
-
-        **Implications:**
-        - No clear distinction between waves and particles at quantum scale
-        - The nature of reality depends on how we observe it
-        - Measurement is an active process that affects the system
-        - Classical concepts break down at the quantum level
-
-        This duality is not just a mathematical convenience but a fundamental aspect of nature that has practical applications in modern technology.`,
-      },
-      {
-        id: "uncertainty-principle",
-        title: "Heisenberg Uncertainty Principle",
-        content: `The Heisenberg Uncertainty Principle states that there is a fundamental limit to the precision with which complementary variables, such as position and momentum, can be known simultaneously. This is not due to limitations in measurement technology, but is inherent in the nature of quantum systems.
-
-        **Mathematical Formulation:**
-        $$\\Delta x \\cdot \\Delta p \\geq \\frac{\\hbar}{2}$$
-
-        Where:
-        - $\\Delta x$ = uncertainty in position
-        - $\\Delta p$ = uncertainty in momentum  
-        - $\\hbar$ = reduced Planck's constant $(h/2\\pi)$
-
-        **Other Uncertainty Relations:**
-        - Energy and time: $\\Delta E \\cdot \\Delta t \\geq \\frac{\\hbar}{2}$
-        - Angular momentum components: $\\Delta L_x \\cdot \\Delta L_y \\geq \\frac{\\hbar}{2}|\\langle L_z \\rangle|$
-
-        **Physical Interpretation:**
-        - The more precisely we know position, the less precisely we can know momentum
-        - This is not a measurement problem but a fundamental property of nature
-        - Particles don't have definite position and momentum simultaneously
-        - The uncertainty principle sets limits on what can be known about quantum systems
-
-        **Consequences:**
-        - **Zero-point energy:** Even at absolute zero, particles have kinetic energy
-        - **Quantum tunneling:** Particles can pass through energy barriers
-        - **Virtual particles:** Short-lived particle-antiparticle pairs in vacuum
-        - **Atomic stability:** Prevents electrons from spiraling into the nucleus
-
-        **Practical Applications:**
-        - Limits the precision of quantum measurements
-        - Fundamental to the operation of electron microscopes
-        - Important in quantum computing and cryptography
-        - Explains the stability of atoms and molecules
-
-        The uncertainty principle reveals that nature is fundamentally probabilistic rather than deterministic at the quantum scale.`,
-      },
-      {
-        id: "superposition-entanglement",
-        title: "Superposition and Quantum Entanglement",
-        content: `**Quantum Superposition** is the principle that a quantum system can exist in multiple states simultaneously until it is measured. This is one of the most counterintuitive aspects of quantum mechanics.
-
-        **Schrödinger's Cat Thought Experiment:**
-        - A cat in a box with a quantum-triggered poison mechanism
-        - According to quantum mechanics, the cat is simultaneously alive and dead
-        - Measurement (opening the box) forces the system into a definite state
-        - Illustrates the absurdity of applying quantum rules to macroscopic objects
-
-        **Mathematical Representation:**
-        A quantum state can be written as:
-        $$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$$
-
-        Where $\\alpha$ and $\\beta$ are complex probability amplitudes, and $|\\alpha|^2 + |\\beta|^2 = 1$
-
-        **Applications of Superposition:**
-        - Quantum computing uses superposition for parallel processing
-        - Quantum sensors achieve unprecedented precision
-        - Atomic clocks rely on superposition of energy states
-
-        **Quantum Entanglement** is a phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, regardless of the distance separating them.
-
-        **Properties of Entangled Systems:**
-        - Measurement of one particle instantly affects its entangled partner
-        - Einstein called this "spooky action at a distance"
-        - No information travels faster than light (no communication possible)
-        - Violates local realism but preserves causality
-
-        **Bell's Theorem and Bell Inequalities:**
-        - Proved that no local hidden variable theory can reproduce quantum predictions
-        - Experimental tests consistently violate Bell inequalities
-        - Confirms that quantum mechanics is fundamentally non-local
-
-        **Applications of Entanglement:**
-        - **Quantum cryptography:** Unbreakable communication security
-        - **Quantum computing:** Enables quantum algorithms
-        - **Quantum teleportation:** Transfer of quantum states
-        - **Quantum sensors:** Enhanced measurement precision
-
-        These phenomena form the foundation for emerging quantum technologies that promise to revolutionize computing, communication, and sensing.`,
       },
     ],
     category: "science",
