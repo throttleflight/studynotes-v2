@@ -42,7 +42,7 @@ const mockNotes: Note[] = [
 
         This comprehensive guide will take you through the fundamental concepts of calculus, starting with limits and progressing through derivatives and integrals.`,
         images: [
-          "https://example.com/images/calculus-intro.png"
+          "https://i.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=1280&format=png&auto=webp&s=7177756d1f393b6e093596d06e1ba539f723264b"
         ],
         subsections: [
           {
