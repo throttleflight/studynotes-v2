@@ -366,23 +366,31 @@ const mockNotes: Note[] = [
         content: `Topics Include`,
         subsections: [
           {
-            id: "history",
-            title: "Historical Development",
-            content: `The development of calculus was one of the greatest intellectual achievements of the 17th century. Both Isaac Newton and Gottfried Wilhelm Leibniz developed the fundamental ideas independently, leading to what is known as the "Leibniz-Newton calculus controversy."
-
-            **Newton's Approach (1665-1667):**
-            - Developed the method of fluxions
-            - Focused on rates of change and motion
-            - Used geometric and physical intuition
-            - Initially kept his work private
-
-            **Leibniz's Approach (1674-1676):**
-            - Developed a more systematic notation
-            - Emphasized the algebraic aspects
-            - Published his work first (1684)
-            - Created the notation we use today (dx, dy, ∫)
-
-            The controversy over priority lasted for decades, but today we recognize both mathematicians as co-inventors of calculus.`,
+            id: "motion-in-one-dimension",
+            title: "Motion in One",
+            content: `Kinematics Definition: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
+            
+            Dynamics Definition: Why things move (forces).
+            
+            - Meter is the official unit of length in the International System of Units or SI. (Distance)
+            - Distance (d)
+            - Meter (m)
+            - Second is the standard unit of time. (Time)
+            - Time (t)
+            - Second (s)
+            
+            Speed Equation:
+            $$speed = \frac{distance}{time}$$
+            Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
+            
+            Problem Solving Steps
+            > 1. Identify and list the givens and the unknown.
+            > 2. Draw and label a diagram of the situation.
+            > 3. Select a formula containing the givens and the unknown.
+            > 4. Cross out terms that are equal to zero.
+            > 5. Solve the formula so that the unknown is alone on the left.
+            > 6. Substitute in the givens, with their units.
+            > 7. Calculate the value of the unknown, including its units.`,
           },
         ]
       },
