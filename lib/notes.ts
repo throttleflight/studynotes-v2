@@ -370,7 +370,7 @@ const mockNotes: Note[] = [
             title: "Motion in One",
             content: `<strong>Kinematics Definition:</strong> How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
             <br>
-            <strong>Dynamics Definition:</strong> Why things move (forces).
+            <strong>Dynamics Definition:</strong> Why things move (forces).<br>
             <ul>
             <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
             <li>Distance (d) </li>
