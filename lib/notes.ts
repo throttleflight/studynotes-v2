@@ -380,7 +380,7 @@ const mockNotes: Note[] = [
             - Second (s)
             
             Speed Equation:
-            $$speed = \frac{distance}{time}$$
+            $$speed = \\frac{distance}{time}$$
             Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
             
             Problem Solving Steps
