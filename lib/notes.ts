@@ -1,10 +1,17 @@
 // This is a mock notes service
 // In a real app, you would fetch this data from an API or database
 
+export interface NoteSubsection {
+  id: string
+  title: string
+  content: string
+}
+
 export interface NoteSection {
   id: string
   title: string
   content: string
+  subsections?: NoteSubsection[]
 }
 
 export interface Note {
@@ -32,31 +39,127 @@ const mockNotes: Note[] = [
         The two main branches of calculus are differential calculus and integral calculus. Differential calculus deals with the study of rates at which quantities change, using the concept of the derivative. Integral calculus deals with the study of the area beneath a curve, using the concept of the integral.
 
         This comprehensive guide will take you through the fundamental concepts of calculus, starting with limits and progressing through derivatives and integrals.`,
+        subsections: [
+          {
+            id: "history",
+            title: "Historical Development",
+            content: `The development of calculus was one of the greatest intellectual achievements of the 17th century. Both Isaac Newton and Gottfried Wilhelm Leibniz developed the fundamental ideas independently, leading to what is known as the "Leibniz-Newton calculus controversy."
+
+            **Newton's Approach (1665-1667):**
+            - Developed the method of fluxions
+            - Focused on rates of change and motion
+            - Used geometric and physical intuition
+            - Initially kept his work private
+
+            **Leibniz's Approach (1674-1676):**
+            - Developed a more systematic notation
+            - Emphasized the algebraic aspects
+            - Published his work first (1684)
+            - Created the notation we use today (dx, dy, ∫)
+
+            The controversy over priority lasted for decades, but today we recognize both mathematicians as co-inventors of calculus.`,
+          },
+          {
+            id: "applications",
+            title: "Modern Applications",
+            content: `Calculus has become fundamental to virtually every field of science and engineering:
+
+            **Physics and Engineering:**
+            - Motion analysis and dynamics
+            - Electromagnetic field theory
+            - Fluid mechanics and thermodynamics
+            - Signal processing and control systems
+
+            **Economics and Finance:**
+            - Optimization of profit and cost functions
+            - Risk analysis and portfolio theory
+            - Economic modeling and forecasting
+
+            **Biology and Medicine:**
+            - Population dynamics and growth models
+            - Pharmacokinetics and drug dosing
+            - Epidemiological modeling
+            - Medical imaging and reconstruction
+
+            **Computer Science:**
+            - Machine learning and optimization algorithms
+            - Computer graphics and animation
+            - Numerical analysis and simulation`,
+          },
+        ],
       },
       {
         id: "limits",
         title: "Understanding Limits",
         content: `A fundamental concept in calculus is the **limit**. 
 
-  **Definition:** The **limit** of a function $f(x)$ as $x$ approaches a value $c$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to $c$. This is written as:
+        **Definition:** The **limit** of a function $f(x)$ as $x$ approaches a value $c$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to $c$. This is written as:
 
-  $$\\lim_{x \\to c} f(x) = L$$
+        $$\\lim_{x \\to c} f(x) = L$$
 
-  where $L$ is the limit.
+        where $L$ is the limit.
 
-  A **continuous function** is defined as a function where the limit at every point equals the function value at that point.
+        A **continuous function** is defined as a function where the limit at every point equals the function value at that point.
 
-  Limits are essential because they allow us to define derivatives and integrals rigorously. Without limits, we couldn't handle situations where functions are undefined at certain points or where we need to find instantaneous rates of change.
+        Limits are essential because they allow us to define derivatives and integrals rigorously. Without limits, we couldn't handle situations where functions are undefined at certain points or where we need to find instantaneous rates of change.`,
+        subsections: [
+          {
+            id: "limit-properties",
+            title: "Properties of Limits",
+            content: `**Key properties of limits include:**
 
-  **Key properties of limits include:**
+            **Arithmetic Properties:**
+            - The limit of a sum: $\\lim_{x \\to c} [f(x) + g(x)] = \\lim_{x \\to c} f(x) + \\lim_{x \\to c} g(x)$
+            - The limit of a product: $\\lim_{x \\to c} [f(x) \\cdot g(x)] = \\lim_{x \\to c} f(x) \\cdot \\lim_{x \\to c} g(x)$
+            - The limit of a quotient: $\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to c} f(x)}{\\lim_{x \\to c} g(x)}$ (provided the denominator limit is not zero)
 
-  - The limit of a sum: $\\lim_{x \\to c} [f(x) + g(x)] = \\lim_{x \\to c} f(x) + \\lim_{x \\to c} g(x)$
-  - The limit of a product: $\\lim_{x \\to c} [f(x) \\cdot g(x)] = \\lim_{x \\to c} f(x) \\cdot \\lim_{x \\to c} g(x)$
-  - The limit of a quotient: $\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to c} f(x)}{\\lim_{x \\to c} g(x)}$ (provided the denominator limit is not zero)
+            **Squeeze Theorem:**
+            If $g(x) \\leq f(x) \\leq h(x)$ for all $x$ in some interval containing $c$, and $\\lim_{x \\to c} g(x) = \\lim_{x \\to c} h(x) = L$, then $\\lim_{x \\to c} f(x) = L$.
 
-  **Example:** Consider the limit $\\lim_{x \\to 2} (3x + 1)$. As $x$ approaches 2, the expression $3x + 1$ approaches $3(2) + 1 = 7$.
+            **Continuity and Limits:**
+            A function $f$ is continuous at $c$ if $\\lim_{x \\to c} f(x) = f(c)$.`,
+          },
+          {
+            id: "limit-techniques",
+            title: "Techniques for Evaluating Limits",
+            content: `**Direct Substitution:**
+            For continuous functions, simply substitute the value: $\\lim_{x \\to 2} (3x + 1) = 3(2) + 1 = 7$
 
-  Understanding limits is crucial for mastering calculus concepts.`,
+            **Factoring:**
+            For rational functions with indeterminate forms:
+            $$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = \\lim_{x \\to 2} \\frac{(x-2)(x+2)}{x-2} = \\lim_{x \\to 2} (x+2) = 4$$
+
+            **L'Hôpital's Rule:**
+            For indeterminate forms $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$:
+            $$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)}$$
+
+            **Rationalization:**
+            For limits involving radicals:
+            $$\\lim_{x \\to 0} \\frac{\\sqrt{x+1} - 1}{x} = \\lim_{x \\to 0} \\frac{1}{\\sqrt{x+1} + 1} = \\frac{1}{2}$$`,
+          },
+          {
+            id: "one-sided-limits",
+            title: "One-Sided Limits and Infinite Limits",
+            content: `**One-Sided Limits:**
+            - **Right-hand limit:** $\\lim_{x \\to c^+} f(x)$ (approaching from the right)
+            - **Left-hand limit:** $\\lim_{x \\to c^-} f(x)$ (approaching from the left)
+            - A limit exists if and only if both one-sided limits exist and are equal
+
+            **Infinite Limits:**
+            When function values grow without bound:
+            - $\\lim_{x \\to c} f(x) = +\\infty$ (function increases without bound)
+            - $\\lim_{x \\to c} f(x) = -\\infty$ (function decreases without bound)
+
+            **Limits at Infinity:**
+            Behavior as $x$ approaches $\\pm\\infty$:
+            - $\\lim_{x \\to \\infty} \\frac{1}{x} = 0$
+            - $\\lim_{x \\to \\infty} \\frac{2x^2 + 3x + 1}{x^2 + 5} = 2$ (ratio of leading coefficients)
+
+            **Vertical and Horizontal Asymptotes:**
+            - Vertical asymptote at $x = c$ if $\\lim_{x \\to c} f(x) = \\pm\\infty$
+            - Horizontal asymptote at $y = L$ if $\\lim_{x \\to \\infty} f(x) = L$`,
+          },
+        ],
       },
       {
         id: "derivatives",
@@ -67,25 +170,82 @@ const mockNotes: Note[] = [
 
         It represents the **instantaneous rate of change** of the function at a particular point.
 
-        Geometrically, the derivative at a point gives us the slope of the tangent line to the curve at that point. This concept is fundamental in understanding how quantities change.
+        Geometrically, the derivative at a point gives us the slope of the tangent line to the curve at that point. This concept is fundamental in understanding how quantities change.`,
+        subsections: [
+          {
+            id: "derivative-rules",
+            title: "Differentiation Rules",
+            content: `**Basic Rules:**
+            - **Constant Rule:** $\\frac{d}{dx}(c) = 0$
+            - **Power Rule:** $\\frac{d}{dx}(x^n) = nx^{n-1}$
+            - **Constant Multiple Rule:** $\\frac{d}{dx}(cf(x)) = cf'(x)$
+            - **Sum/Difference Rule:** $\\frac{d}{dx}(f(x) \\pm g(x)) = f'(x) \\pm g'(x)$
 
-        **Common derivative rules include:**
+            **Advanced Rules:**
+            - **Product Rule:** $\\frac{d}{dx}(uv) = u'v + uv'$
+            - **Quotient Rule:** $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}$
+            - **Chain Rule:** $\\frac{d}{dx}(f(g(x))) = f'(g(x)) \\cdot g'(x)$
 
-        - **Power Rule:** $\\frac{d}{dx}(x^n) = nx^{n-1}$
-        - **Product Rule:** $\\frac{d}{dx}(uv) = u'v + uv'$
-        - **Chain Rule:** $\\frac{d}{dx}(f(g(x))) = f'(g(x)) \\cdot g'(x)$
-        - **Quotient Rule:** $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}$
+            **Trigonometric Derivatives:**
+            - $\\frac{d}{dx}(\\sin x) = \\cos x$
+            - $\\frac{d}{dx}(\\cos x) = -\\sin x$
+            - $\\frac{d}{dx}(\\tan x) = \\sec^2 x$
 
-        **Example:** Find the derivative of $f(x) = x^3 + 2x^2 - 5x + 1$
+            **Exponential and Logarithmic:**
+            - $\\frac{d}{dx}(e^x) = e^x$
+            - $\\frac{d}{dx}(\\ln x) = \\frac{1}{x}$
+            - $\\frac{d}{dx}(a^x) = a^x \\ln a$`,
+          },
+          {
+            id: "derivative-applications",
+            title: "Applications of Derivatives",
+            content: `**Optimization Problems:**
+            Finding maximum and minimum values of functions:
+            - Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined
+            - Use the first derivative test or second derivative test
+            - Applications: maximizing profit, minimizing cost, optimizing design
 
-        Using the power rule:
-        $$f'(x) = 3x^2 + 4x - 5$$
+            **Related Rates:**
+            Problems involving rates of change of related quantities:
+            - Identify the relationship between variables
+            - Differentiate both sides with respect to time
+            - Substitute known values and solve
 
-        **Applications of derivatives include:**
-        - Finding maximum and minimum values
-        - Analyzing motion (velocity and acceleration)
-        - Optimization problems
-        - Related rates problems`,
+            **Motion Analysis:**
+            - **Position:** $s(t)$
+            - **Velocity:** $v(t) = s'(t)$
+            - **Acceleration:** $a(t) = v'(t) = s''(t)$
+
+            **Curve Sketching:**
+            - Find critical points and inflection points
+            - Determine intervals of increase/decrease
+            - Identify concavity and asymptotes
+            - Sketch the complete graph`,
+          },
+          {
+            id: "implicit-differentiation",
+            title: "Implicit Differentiation and Higher Derivatives",
+            content: `**Implicit Differentiation:**
+            When $y$ is defined implicitly as a function of $x$:
+            - Differentiate both sides of the equation with respect to $x$
+            - Use the chain rule: $\\frac{d}{dx}(y^n) = ny^{n-1}\\frac{dy}{dx}$
+            - Solve for $\\frac{dy}{dx}$
+
+            **Example:** For $x^2 + y^2 = 25$:
+            $$2x + 2y\\frac{dy}{dx} = 0$$
+            $$\\frac{dy}{dx} = -\\frac{x}{y}$$
+
+            **Higher Order Derivatives:**
+            - **Second derivative:** $f''(x) = \\frac{d^2f}{dx^2}$
+            - **Third derivative:** $f'''(x) = \\frac{d^3f}{dx^3}$
+            - **nth derivative:** $f^{(n)}(x) = \\frac{d^nf}{dx^n}$
+
+            **Concavity and Inflection Points:**
+            - $f''(x) > 0$: concave up
+            - $f''(x) < 0$: concave down
+            - Inflection points where $f''(x) = 0$ and concavity changes`,
+          },
+        ],
       },
       {
         id: "integrals",
@@ -104,32 +264,90 @@ const mockNotes: Note[] = [
 
         If $F(x) = \\int_a^x f(t)\\,dt$, then $F'(x) = f(x)$
 
-        This means differentiation and integration are inverse operations.
+        This means differentiation and integration are inverse operations.`,
+        subsections: [
+          {
+            id: "integration-techniques",
+            title: "Integration Techniques",
+            content: `**Basic Integration Formulas:**
+            - $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (for $n \\neq -1$)
+            - $\\int \\frac{1}{x}\\,dx = \\ln|x| + C$
+            - $\\int e^x\\,dx = e^x + C$
+            - $\\int \\sin(x)\\,dx = -\\cos(x) + C$
+            - $\\int \\cos(x)\\,dx = \\sin(x) + C$
 
-        **Common integration formulas:**
+            **Substitution Method (u-substitution):**
+            Used when the integrand contains a function and its derivative:
+            1. Let $u = g(x)$, then $du = g'(x)dx$
+            2. Rewrite the integral in terms of $u$
+            3. Integrate with respect to $u$
+            4. Substitute back to get the answer in terms of $x$
 
-        - $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (for $n \\neq -1$)
-        - $\\int e^x\\,dx = e^x + C$
-        - $\\int \\sin(x)\\,dx = -\\cos(x) + C$
-        - $\\int \\cos(x)\\,dx = \\sin(x) + C$
+            **Example:** $\\int 2x\\cos(x^2)\\,dx$
+            Let $u = x^2$, then $du = 2x\\,dx$
+            $\\int \\cos(u)\\,du = \\sin(u) + C = \\sin(x^2) + C$`,
+          },
+          {
+            id: "integration-by-parts",
+            title: "Integration by Parts and Advanced Techniques",
+            content: `**Integration by Parts:**
+            Formula: $\\int u\\,dv = uv - \\int v\\,du$
 
-        **Integration techniques include:**
-        - **Substitution method:** Used when the integrand contains a function and its derivative
-        - **Integration by parts:** $\\int u\\,dv = uv - \\int v\\,du$
-        - **Partial fractions:** For rational functions
-        - **Trigonometric substitution:** For expressions involving $\\sqrt{a^2 - x^2}$, $\\sqrt{a^2 + x^2}$, etc.
+            **LIATE Rule for choosing $u$:**
+            - **L**ogarithmic functions
+            - **I**nverse trigonometric functions  
+            - **A**lgebraic functions (polynomials)
+            - **T**rigonometric functions
+            - **E**xponential functions
 
-        **Example:** Evaluate $\\int_0^2 (3x^2 + 2x)\\,dx$
+            **Example:** $\\int x e^x\\,dx$
+            Let $u = x$, $dv = e^x\\,dx$
+            Then $du = dx$, $v = e^x$
+            $\\int x e^x\\,dx = xe^x - \\int e^x\\,dx = xe^x - e^x + C = e^x(x-1) + C$
 
-        First, find the antiderivative: $\\int (3x^2 + 2x)\\,dx = x^3 + x^2 + C$
+            **Partial Fractions:**
+            For rational functions $\\frac{P(x)}{Q(x)}$ where degree of $P < $ degree of $Q$:
+            1. Factor the denominator $Q(x)$
+            2. Decompose into partial fractions
+            3. Integrate each term separately
 
-        Then apply the limits: $[x^3 + x^2]_0^2 = (8 + 4) - (0 + 0) = 12$
+            **Trigonometric Substitution:**
+            For expressions involving:
+            - $\\sqrt{a^2 - x^2}$: use $x = a\\sin\\theta$
+            - $\\sqrt{a^2 + x^2}$: use $x = a\\tan\\theta$  
+            - $\\sqrt{x^2 - a^2}$: use $x = a\\sec\\theta$`,
+          },
+          {
+            id: "definite-integrals",
+            title: "Definite Integrals and Applications",
+            content: `**Fundamental Theorem of Calculus (Part 2):**
+            If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$, then:
+            $$\\int_a^b f(x)\\,dx = F(b) - F(a)$$
 
-        **Applications include:**
-        - Finding areas under curves
-        - Calculating volumes of solids of revolution
-        - Solving differential equations
-        - Computing work and energy in physics`,
+            **Properties of Definite Integrals:**
+            - $\\int_a^a f(x)\\,dx = 0$
+            - $\\int_a^b f(x)\\,dx = -\\int_b^a f(x)\\,dx$
+            - $\\int_a^b f(x)\\,dx + \\int_b^c f(x)\\,dx = \\int_a^c f(x)\\,dx$
+
+            **Applications:**
+            
+            **Area Between Curves:**
+            Area = $\\int_a^b |f(x) - g(x)|\\,dx$
+
+            **Volume of Solids of Revolution:**
+            - **Disk Method:** $V = \\pi\\int_a^b [f(x)]^2\\,dx$
+            - **Washer Method:** $V = \\pi\\int_a^b ([f(x)]^2 - [g(x)]^2)\\,dx$
+            - **Shell Method:** $V = 2\\pi\\int_a^b x f(x)\\,dx$
+
+            **Arc Length:**
+            $L = \\int_a^b \\sqrt{1 + [f'(x)]^2}\\,dx$
+
+            **Work and Physics Applications:**
+            - Work done by variable force: $W = \\int_a^b F(x)\\,dx$
+            - Center of mass and moments
+            - Fluid pressure and force`,
+          },
+        ],
       },
     ],
     category: "math",
@@ -147,78 +365,396 @@ const mockNotes: Note[] = [
         title: "Overview of the 20th Century",
         content: `The 20th century was a period of enormous changes in politics, technology, economics, and culture. It saw two world wars, the rise and fall of communism, the development of nuclear weapons, and the beginning of the digital age.
 
-        This century was marked by unprecedented global conflicts, revolutionary technological advances, and dramatic social transformations that shaped the modern world we live in today.
+        This century was marked by unprecedented global conflicts, revolutionary technological advances, and dramatic social transformations that shaped the modern world we live in today.`,
+        subsections: [
+          {
+            id: "major-themes",
+            title: "Major Themes",
+            content: `**Political Transformation:**
+            - Rise and fall of empires
+            - Emergence of new nation-states
+            - Ideological conflicts (capitalism vs. communism)
+            - Decolonization movements
 
-        Key themes of the 20th century include:
-        - Global warfare and its consequences
-        - Technological revolution
-        - Ideological conflicts
-        - Decolonization and independence movements
-        - Social and cultural changes`,
+            **Technological Revolution:**
+            - Industrial automation and mass production
+            - Transportation advances (automobiles, aviation, space travel)
+            - Communication revolution (radio, television, internet)
+            - Medical breakthroughs and life expectancy increases
+
+            **Social Changes:**
+            - Women's rights and suffrage movements
+            - Civil rights and racial equality struggles
+            - Urbanization and changing family structures
+            - Educational expansion and literacy improvements`,
+          },
+          {
+            id: "timeline",
+            title: "Century Timeline",
+            content: `**1900-1914: The Belle Époque**
+            - Period of optimism and cultural flourishing
+            - Industrial growth and technological innovation
+            - Rising tensions between European powers
+
+            **1914-1918: World War I Era**
+            - The Great War and its aftermath
+            - Russian Revolution (1917)
+            - End of several empires
+
+            **1918-1939: Interwar Period**
+            - Economic instability and the Great Depression
+            - Rise of fascism and totalitarian regimes
+            - Failed attempts at international cooperation
+
+            **1939-1945: World War II Era**
+            - Global conflict and genocide
+            - Nuclear age begins
+            - Formation of the United Nations
+
+            **1945-1991: Cold War Era**
+            - Bipolar world order
+            - Decolonization and independence movements
+            - Space race and technological competition
+
+            **1991-2000: Post-Cold War**
+            - Globalization acceleration
+            - Digital revolution begins
+            - New international challenges emerge`,
+          },
+        ],
       },
       {
         id: "world-war-1",
         title: "World War I (1914-1918)",
-        content: `World War I was triggered by the assassination of Archduke Franz Ferdinand of Austria on June 28, 1914. It involved the major powers of Europe, divided into the Allied Powers (Britain, France, Russia, and later the United States) and the Central Powers (Germany, Austria-Hungary, Ottoman Empire, and Bulgaria).
+        content: `World War I was triggered by the assassination of Archduke Franz Ferdinand of Austria on June 28, 1914. It involved the major powers of Europe, divided into the Allied Powers (Britain, France, Russia, and later the United States) and the Central Powers (Germany, Austria-Hungary, Ottoman Empire, and Bulgaria).`,
+        subsections: [
+          {
+            id: "causes",
+            title: "Causes of World War I",
+            content: `**Long-term Causes:**
+            - **Imperialism:** Competition for colonies and global influence
+            - **Nationalism:** Ethnic tensions, especially in the Balkans
+            - **Alliance System:** Complex web of mutual defense treaties
+            - **Militarism:** Arms race and military buildup
 
-        The war was characterized by:
-        - Trench warfare on the Western Front
-        - New military technologies (machine guns, poison gas, tanks)
-        - Massive casualties (over 16 million deaths)
-        - Economic devastation across Europe
+            **The Alliance System:**
+            - **Triple Alliance:** Germany, Austria-Hungary, Italy
+            - **Triple Entente:** France, Russia, Britain
+            - **Balkan Tensions:** Austria-Hungary vs. Serbia
 
-        The war resulted in the collapse of four empires (German, Austro-Hungarian, Russian, and Ottoman) and set the stage for World War II. The Treaty of Versailles imposed harsh terms on Germany, creating resentment that would later be exploited by extremist movements.
+            **Immediate Cause:**
+            - June 28, 1914: Assassination of Archduke Franz Ferdinand in Sarajevo
+            - July Crisis: Diplomatic breakdown
+            - August 1914: War declarations cascade across Europe`,
+          },
+          {
+            id: "major-battles",
+            title: "Major Battles and Campaigns",
+            content: `**Western Front:**
+            - **Battle of the Marne (1914):** Stopped German advance on Paris
+            - **Battle of Verdun (1916):** Longest single battle, 700,000+ casualties
+            - **Battle of the Somme (1916):** First day: 60,000 British casualties
+            - **Battle of Passchendaele (1917):** Epitome of trench warfare horror
 
-        The war fundamentally changed the global balance of power and marked the end of the old European order.`,
+            **Eastern Front:**
+            - **Battle of Tannenberg (1914):** German victory over Russia
+            - **Brusilov Offensive (1916):** Major Russian success
+            - **Russian Revolution (1917):** Led to separate peace
+
+            **Other Theaters:**
+            - **Gallipoli Campaign (1915-1916):** Failed Allied attempt to open new front
+            - **Italian Front:** Mountain warfare in the Alps
+            - **Middle Eastern Theater:** Arab Revolt and British campaigns
+
+            **Naval Warfare:**
+            - **Battle of Jutland (1916):** Largest naval battle
+            - **Unrestricted Submarine Warfare:** German U-boat campaign
+            - **Lusitania Sinking (1915):** Influenced U.S. opinion`,
+          },
+          {
+            id: "consequences",
+            title: "Consequences and Impact",
+            content: `**Human Cost:**
+            - **Military Deaths:** 8-10 million soldiers killed
+            - **Civilian Deaths:** 7-8 million civilians died
+            - **Wounded:** 21 million military personnel wounded
+            - **Spanish Flu:** 1918-1919 pandemic killed 50-100 million
+
+            **Political Changes:**
+            - **Empires Collapsed:** German, Austro-Hungarian, Russian, Ottoman
+            - **New Nations:** Poland, Czechoslovakia, Yugoslavia, Baltic states
+            - **Russian Revolution:** Led to Soviet Union formation
+            - **German Republic:** Weimar Republic established
+
+            **Treaty of Versailles (1919):**
+            - **War Guilt Clause:** Germany accepts full responsibility
+            - **Territorial Losses:** Alsace-Lorraine to France, Polish Corridor
+            - **Military Restrictions:** German army limited to 100,000 men
+            - **Reparations:** Massive financial payments required
+
+            **Long-term Impact:**
+            - Set stage for World War II
+            - Changed warfare forever (chemical weapons, aviation, tanks)
+            - Accelerated social changes (women's roles, class structures)
+            - Created lasting Middle Eastern conflicts`,
+          },
+        ],
       },
       {
         id: "interwar-period",
         title: "The Interwar Period (1918-1939)",
-        content: `The period between the two world wars was marked by economic instability, political upheaval, and the rise of totalitarian regimes.
+        content: `The period between the two world wars was marked by economic instability, political upheaval, and the rise of totalitarian regimes.`,
+        subsections: [
+          {
+            id: "economic-crisis",
+            title: "Economic Instability and the Great Depression",
+            content: `**Post-War Economic Problems:**
+            - **War Debt:** Massive government borrowing during WWI
+            - **Inflation:** Currency devaluation in Germany and other countries
+            - **Unemployment:** Returning soldiers struggled to find work
+            - **Trade Disruption:** International commerce slow to recover
 
-        The Great Depression (1929-1939) was a severe worldwide economic depression that began in the United States after a major fall in stock prices. It was the longest, deepest, and most widespread depression of the 20th century, affecting countries around the world.
+            **The Great Depression (1929-1939):**
+            - **Black Tuesday (October 29, 1929):** Stock market crash
+            - **Bank Failures:** Thousands of banks closed worldwide
+            - **Unemployment:** Reached 25% in the United States, higher elsewhere
+            - **Global Impact:** International trade fell by 30%
 
-        Key developments during this period:
-        - Rise of fascism in Italy and Germany
-        - Stalin's consolidation of power in the Soviet Union
-        - Economic hardship and unemployment
-        - Failure of the League of Nations to maintain peace
-        - Growing tensions that would lead to World War II
+            **Government Responses:**
+            - **New Deal (USA):** Roosevelt's programs for recovery
+            - **Keynesian Economics:** Government intervention in economy
+            - **Autarky:** Some countries turned to economic nationalism
+            - **Public Works:** Infrastructure projects to create jobs`,
+          },
+          {
+            id: "rise-of-totalitarianism",
+            title: "Rise of Totalitarian Regimes",
+            content: `**Soviet Union under Stalin:**
+            - **Five-Year Plans:** Rapid industrialization programs
+            - **Collectivization:** Forced agricultural reorganization
+            - **Great Purge (1936-1938):** Elimination of perceived enemies
+            - **Cult of Personality:** Stalin's absolute control
 
-        The interwar period demonstrated the fragility of democratic institutions and the appeal of extremist ideologies during times of crisis.`,
+            **Fascist Italy under Mussolini:**
+            - **March on Rome (1922):** Mussolini comes to power
+            - **Corporate State:** Fascist economic organization
+            - **Ethiopian War (1935-1936):** Imperial expansion
+            - **Alliance with Germany:** Axis partnership
+
+            **Nazi Germany under Hitler:**
+            - **Rise to Power (1933):** Appointed Chancellor, then Führer
+            - **Gleichschaltung:** Coordination of all aspects of society
+            - **Nuremberg Laws (1935):** Legal persecution of Jews
+            - **Rearmament:** Violation of Versailles Treaty
+
+            **Common Features:**
+            - Single-party rule and suppression of opposition
+            - State control of economy and society
+            - Propaganda and mass rallies
+            - Secret police and surveillance
+            - Aggressive nationalism and militarism`,
+          },
+          {
+            id: "international-tensions",
+            title: "International Tensions and Failed Diplomacy",
+            content: `**League of Nations Failures:**
+            - **Manchurian Crisis (1931):** Japan invades China, League ineffective
+            - **Ethiopian Crisis (1935):** Italy conquers Ethiopia despite sanctions
+            - **Rhineland Remilitarization (1936):** Germany violates Versailles
+            - **Lack of Enforcement:** No military power to back decisions
+
+            **Appeasement Policy:**
+            - **Munich Agreement (1938):** Britain and France allow German expansion
+            - **Sudetenland Crisis:** Czechoslovakia sacrificed for "peace"
+            - **Neville Chamberlain:** "Peace for our time" declaration
+            - **Failure of Appeasement:** Encouraged further aggression
+
+            **Steps to War:**
+            - **Spanish Civil War (1936-1939):** Proxy conflict between ideologies
+            - **Anti-Comintern Pact (1936):** Germany-Japan alliance
+            - **Anschluss (1938):** Germany annexes Austria
+            - **Nazi-Soviet Pact (1939):** Temporary alliance, divides Poland
+
+            **Final Crisis:**
+            - **Invasion of Poland (September 1, 1939):** Germany attacks
+            - **British and French Declarations:** War declared September 3
+            - **End of Appeasement:** Diplomatic solutions exhausted`,
+          },
+        ],
       },
       {
         id: "world-war-2",
         title: "World War II (1939-1945)",
-        content: `World War II was a global war that involved the vast majority of the world's nations. It was the deadliest conflict in human history, marked by mass deaths of civilians, including the Holocaust and the only use of nuclear weapons in warfare.
+        content: `World War II was a global war that involved the vast majority of the world's nations. It was the deadliest conflict in human history, marked by mass deaths of civilians, including the Holocaust and the only use of nuclear weapons in warfare.`,
+        subsections: [
+          {
+            id: "european-theater",
+            title: "European Theater",
+            content: `**Blitzkrieg and Early German Success (1939-1941):**
+            - **Poland Campaign (1939):** First demonstration of blitzkrieg tactics
+            - **Phoney War (1939-1940):** Period of limited military activity
+            - **Fall of France (1940):** German conquest in six weeks
+            - **Battle of Britain (1940):** RAF defeats Luftwaffe air campaign
 
-        The war was fought between the Axis powers (Germany, Italy, Japan) and the Allied powers (Britain, Soviet Union, United States, and others).
+            **Operation Barbarossa (1941-1944):**
+            - **Largest Military Operation:** 3.8 million Axis troops invade USSR
+            - **Initial Success:** Germans advance to Moscow suburbs
+            - **Stalingrad (1942-1943):** Turning point, German 6th Army destroyed
+            - **Kursk (1943):** Largest tank battle, German offensive power broken
 
-        Major events and turning points:
-        - German invasion of Poland (1939)
-        - Battle of Britain (1940)
-        - German invasion of Soviet Union (1941)
-        - Pearl Harbor attack (1941)
-        - D-Day landings (1944)
-        - Atomic bombings of Hiroshima and Nagasaki (1945)
+            **Allied Victory (1944-1945):**
+            - **D-Day (June 6, 1944):** Allied invasion of Normandy
+            - **Liberation of Western Europe:** Paris, Brussels, Amsterdam freed
+            - **Soviet Offensive:** Red Army advances through Eastern Europe
+            - **Fall of Berlin (April-May 1945):** Hitler's suicide, German surrender`,
+          },
+          {
+            id: "pacific-theater",
+            title: "Pacific Theater",
+            content: `**Japanese Expansion (1941-1942):**
+            - **Pearl Harbor (December 7, 1941):** Surprise attack brings U.S. into war
+            - **Southeast Asia Conquest:** Philippines, Dutch East Indies, Singapore
+            - **Doolittle Raid (April 1942):** First U.S. attack on Japanese mainland
+            - **Battle of the Coral Sea (May 1942):** First naval battle fought entirely by aircraft
 
-        The war resulted in an estimated 70-85 million deaths and led to significant geopolitical changes, including the emergence of the United States and Soviet Union as superpowers and the beginning of the Cold War.`,
+            **Turning Point:**
+            - **Battle of Midway (June 4-7, 1942):** Decisive U.S. naval victory
+            - **Four Japanese aircraft carriers sunk:** Irreplaceable loss of pilots
+            - **Strategic Initiative:** Shifts from Japan to United States
+
+            **Island-Hopping Campaign (1943-1945):**
+            - **Guadalcanal (1942-1943):** First major Allied ground victory
+            - **Central Pacific Drive:** Marshall, Caroline, Mariana Islands
+            - **Philippines Campaign:** MacArthur returns as promised
+            - **Iwo Jima and Okinawa:** Costly victories demonstrate Japanese determination
+
+            **End of War:**
+            - **Atomic Bombs:** Hiroshima (August 6) and Nagasaki (August 9)
+            - **Soviet Invasion of Manchuria:** August 9, 1945
+            - **Japanese Surrender:** August 15, 1945 (V-J Day)`,
+          },
+          {
+            id: "holocaust",
+            title: "The Holocaust and War Crimes",
+            content: `**Nazi Persecution Escalation:**
+            - **Nuremberg Laws (1935):** Legal discrimination against Jews
+            - **Kristallnacht (1938):** "Night of Broken Glass" pogrom
+            - **Ghettoization:** Concentration of Jewish populations
+            - **Wannsee Conference (1942):** "Final Solution" planning
+
+            **The Final Solution:**
+            - **Systematic Extermination:** Industrial-scale murder
+            - **Death Camps:** Auschwitz-Birkenau, Treblinka, Sobibor
+            - **Gas Chambers:** Zyklon B used for mass killing
+            - **6 Million Jews:** Murdered in the Holocaust
+
+            **Other Victims:**
+            - **Roma and Sinti:** 220,000-500,000 murdered
+            - **Disabled Individuals:** "Euthanasia" program
+            - **Political Prisoners:** Communists, socialists, resistance fighters
+            - **Jehovah's Witnesses:** Refused to renounce faith
+
+            **War Crimes in Pacific:**
+            - **Nanking Massacre (1937):** Mass killing of Chinese civilians
+            - **Unit 731:** Japanese biological warfare experiments
+            - **Bataan Death March:** Forced march of Allied POWs
+            - **Comfort Women:** Sexual slavery system
+
+            **Liberation and Justice:**
+            - **Camp Liberation:** Allied forces discover the horror
+            - **Nuremberg Trials (1945-1946):** War crimes prosecution
+            - **Tokyo War Crimes Tribunal:** Justice in Pacific theater
+            - **Never Again:** International commitment to prevent genocide`,
+          },
+        ],
       },
       {
         id: "cold-war",
         title: "The Cold War Era",
-        content: `The Cold War was a period of geopolitical tension between the Soviet Union and the United States and their respective allies, the Eastern Bloc and the Western Bloc, after World War II. It was characterized by proxy wars, an arms race, and ideological competition.
+        content: `The Cold War was a period of geopolitical tension between the Soviet Union and the United States and their respective allies, the Eastern Bloc and the Western Bloc, after World War II. It was characterized by proxy wars, an arms race, and ideological competition.`,
+        subsections: [
+          {
+            id: "origins",
+            title: "Origins and Early Tensions",
+            content: `**Wartime Alliance Breakdown:**
+            - **Yalta Conference (1945):** Roosevelt, Churchill, Stalin divide post-war Europe
+            - **Potsdam Conference (1945):** Truman, Attlee, Stalin - tensions emerge
+            - **Disagreements:** Poland, Germany, Eastern Europe's future
+            - **Atomic Diplomacy:** U.S. nuclear monopoly (1945-1949)
 
-        Key features of the Cold War:
-        - Nuclear arms race and doctrine of mutually assured destruction
-        - Division of Germany and the Berlin Wall
-        - Proxy wars in Korea, Vietnam, and other regions
-        - Space race between the US and USSR
-        - Iron Curtain dividing Europe
+            **Iron Curtain Descends:**
+            - **Churchill's Speech (1946):** "Iron Curtain" across Europe
+            - **Soviet Satellite States:** Communist governments in Eastern Europe
+            - **Truman Doctrine (1947):** Containment of communism
+            - **Marshall Plan (1947):** Economic aid to rebuild Western Europe
 
-        The Cold War influenced global politics for nearly half a century, shaping international relations, military strategies, and domestic policies in countries around the world.
+            **Germany Divided:**
+            - **Berlin Blockade (1948-1949):** Soviet attempt to control West Berlin
+            - **Berlin Airlift:** Western powers supply city by air
+            - **NATO Formation (1949):** Western military alliance
+            - **Warsaw Pact (1955):** Soviet response to NATO`,
+          },
+          {
+            id: "major-crises",
+            title: "Major Cold War Crises",
+            content: `**Korean War (1950-1953):**
+            - **North Korean Invasion:** Communist attack on South Korea
+            - **UN Response:** Led by United States forces
+            - **Chinese Intervention:** Escalates conflict
+            - **Armistice:** Division at 38th parallel continues
 
-        The latter part of the century saw the fall of the Berlin Wall (1989), the collapse of the Soviet Union (1991), and the rise of the internet and digital technology, which transformed how people live, work, and communicate.`,
+            **Cuban Missile Crisis (1962):**
+            - **Soviet Missiles in Cuba:** Nuclear weapons 90 miles from U.S.
+            - **Naval Quarantine:** Kennedy blockades Cuba
+            - **Thirteen Days:** World on brink of nuclear war
+            - **Resolution:** Missiles removed, secret U.S. concessions
+
+            **Berlin Crisis (1961):**
+            - **East German Refugee Crisis:** Mass exodus to West
+            - **Berlin Wall Construction:** August 13, 1961
+            - **Checkpoint Charlie:** Tense U.S.-Soviet standoff
+            - **Symbol of Division:** Wall becomes Cold War icon
+
+            **Vietnam War (1955-1975):**
+            - **French Defeat:** Dien Bien Phu (1954)
+            - **U.S. Escalation:** Gradual involvement increases
+            - **Tet Offensive (1968):** Turning point in American opinion
+            - **Fall of Saigon (1975):** Communist victory`,
+          },
+          {
+            id: "end-of-cold-war",
+            title: "Détente and the End of the Cold War",
+            content: `**Détente Period (1970s):**
+            - **SALT I (1972):** Strategic Arms Limitation Treaty
+            - **Helsinki Accords (1975):** Human rights agreements
+            - **Nixon-Brezhnev Summits:** Personal diplomacy
+            - **Trade Expansion:** Economic cooperation increases
+
+            **Reagan Era Escalation (1980s):**
+            - **Military Buildup:** Largest peacetime defense spending
+            - **Strategic Defense Initiative:** "Star Wars" missile defense
+            - **Reagan Doctrine:** Support for anti-communist movements
+            - **"Evil Empire" Speech:** Ideological confrontation
+
+            **Gorbachev Reforms:**
+            - **Glasnost:** Openness and transparency
+            - **Perestroika:** Economic and political restructuring
+            - **New Thinking:** Foreign policy changes
+            - **Arms Control:** INF Treaty (1987)
+
+            **Collapse of Communism:**
+            - **Eastern European Revolutions (1989):** Peaceful transitions
+            - **Fall of Berlin Wall (November 9, 1989):** Symbol of freedom
+            - **German Reunification (1990):** End of division
+            - **Soviet Union Dissolution (1991):** End of Cold War
+
+            **Legacy:**
+            - **Nuclear Weapons:** Proliferation concerns continue
+            - **International Relations:** Unipolar moment for U.S.
+            - **Economic Integration:** Globalization accelerates
+            - **New Challenges:** Terrorism, climate change, cyber warfare`,
+          },
+        ],
       },
     ],
     category: "history",
@@ -249,85 +785,286 @@ const mockNotes: Note[] = [
       {
         id: "hydrocarbons",
         title: "Hydrocarbons",
-        content: `Hydrocarbons are organic compounds consisting entirely of hydrogen and carbon. They form the simplest class of organic compounds and serve as the foundation for understanding more complex molecules.
+        content: `Hydrocarbons are organic compounds consisting entirely of hydrogen and carbon. They form the simplest class of organic compounds and serve as the foundation for understanding more complex molecules.`,
+        subsections: [
+          {
+            id: "alkanes",
+            title: "Alkanes (Saturated Hydrocarbons)",
+            content: `**Definition:** Alkanes are hydrocarbons that contain only single bonds between carbon atoms.
 
-        Hydrocarbons can be classified into several categories:
+            **General Formula:** $C_nH_{2n+2}$
 
-        **Alkanes (Saturated hydrocarbons):**
-        - Contain only single bonds
-        - General formula: $C_nH_{2n+2}$
-        - Examples: methane ($CH_4$), ethane ($C_2H_6$), propane ($C_3H_8$)
+            **Examples:**
+            - **Methane:** $CH_4$ (natural gas)
+            - **Ethane:** $C_2H_6$ (component of natural gas)
+            - **Propane:** $C_3H_8$ (LP gas)
+            - **Butane:** $C_4H_{10}$ (lighter fluid)
 
-        **Alkenes (Unsaturated hydrocarbons):**
-        - Contain at least one double bond
-        - General formula: $C_nH_{2n}$
-        - Examples: ethene ($C_2H_4$), propene ($C_3H_6$)
+            **Properties:**
+            - **Saturated:** All carbon-carbon bonds are single bonds
+            - **Nonpolar:** Low solubility in water
+            - **Combustible:** Burn in oxygen to produce CO₂ and H₂O
+            - **Increasing boiling points:** As molecular size increases
 
-        **Alkynes:**
-        - Contain at least one triple bond
-        - General formula: $C_nH_{2n-2}$
-        - Examples: ethyne ($C_2H_2$), propyne ($C_3H_4$)
+            **Nomenclature:**
+            - **Straight-chain alkanes:** Named with -ane suffix
+            - **Branched alkanes:** Use IUPAC naming rules
+            - **Cycloalkanes:** Ring structures with prefix cyclo-`,
+          },
+          {
+            id: "alkenes",
+            title: "Alkenes (Unsaturated Hydrocarbons)",
+            content: `**Definition:** Alkenes are hydrocarbons that contain at least one carbon-carbon double bond.
 
-        **Aromatic hydrocarbons:**
-        - Contain a benzene ring or similar aromatic system
-        - Examples: benzene ($C_6H_6$), toluene ($C_7H_8$)`,
+            **General Formula:** $C_nH_{2n}$
+
+            **Examples:**
+            - **Ethene (Ethylene):** $C_2H_4$ (plant hormone, plastic production)
+            - **Propene:** $C_3H_6$ (polypropylene production)
+            - **Butene:** $C_4H_8$ (multiple isomers possible)
+
+            **Properties:**
+            - **Unsaturated:** Contains C=C double bonds
+            - **More reactive:** Than alkanes due to double bond
+            - **Geometric isomerism:** Cis/trans or E/Z isomers possible
+            - **Addition reactions:** Can add atoms across double bond
+
+            **Reactions:**
+            - **Hydrogenation:** Addition of H₂ to form alkanes
+            - **Halogenation:** Addition of halogens (Br₂, Cl₂)
+            - **Hydration:** Addition of water to form alcohols
+            - **Polymerization:** Formation of plastics and polymers`,
+          },
+          {
+            id: "alkynes-aromatics",
+            title: "Alkynes and Aromatic Hydrocarbons",
+            content: `**Alkynes:**
+            - **Definition:** Hydrocarbons with at least one carbon-carbon triple bond
+            - **General Formula:** $C_nH_{2n-2}$
+            - **Example:** Ethyne (acetylene) $C_2H_2$ - welding fuel
+            - **Properties:** Highly unsaturated, very reactive
+            - **Reactions:** Two successive addition reactions possible
+
+            **Aromatic Hydrocarbons:**
+            - **Benzene:** $C_6H_6$ - parent aromatic compound
+            - **Structure:** Planar ring with delocalized electrons
+            - **Stability:** Resonance stabilization makes it less reactive
+            - **Substitution:** Undergoes substitution rather than addition
+
+            **Aromatic Examples:**
+            - **Toluene:** $C_7H_8$ (methylbenzene)
+            - **Xylene:** $C_8H_{10}$ (dimethylbenzene isomers)
+            - **Naphthalene:** $C_{10}H_8$ (mothballs)
+            - **Anthracene:** $C_{14}H_{10}$ (dyes and pigments)
+
+            **Aromaticity Rules (Hückel's Rule):**
+            - Planar, cyclic structure
+            - Completely conjugated (alternating single/double bonds)
+            - Contains 4n+2 π electrons (where n = 0, 1, 2, ...)`,
+          },
+        ],
       },
       {
         id: "functional-groups",
         title: "Functional Groups",
-        content: `Functional groups are specific groups of atoms within molecules that are responsible for the characteristic chemical reactions of those molecules. They determine the chemical properties and behavior of organic compounds.
+        content: `Functional groups are specific groups of atoms within molecules that are responsible for the characteristic chemical reactions of those molecules. They determine the chemical properties and behavior of organic compounds.`,
+        subsections: [
+          {
+            id: "oxygen-containing",
+            title: "Oxygen-Containing Functional Groups",
+            content: `**Alcohols (-OH):**
+            - **Structure:** Hydroxyl group attached to carbon
+            - **Examples:** Methanol ($CH_3OH$), Ethanol ($C_2H_5OH$)
+            - **Properties:** Polar, can form hydrogen bonds, higher boiling points
+            - **Classification:** Primary (1°), Secondary (2°), Tertiary (3°)
 
-        Common functional groups include:
+            **Aldehydes (-CHO):**
+            - **Structure:** Carbonyl group at the end of a carbon chain
+            - **Examples:** Formaldehyde ($HCHO$), Acetaldehyde ($CH_3CHO$)
+            - **Properties:** Reactive, can be oxidized to carboxylic acids
+            - **Uses:** Preservatives, solvents, polymer production
 
-        **Alcohols (-OH):**
-        - Hydroxyl group attached to carbon
-        - Examples: methanol ($CH_3OH$), ethanol ($C_2H_5OH$)
-        - Properties: polar, can form hydrogen bonds
+            **Ketones (C=O):**
+            - **Structure:** Carbonyl group within a carbon chain
+            - **Examples:** Acetone ($CH_3COCH_3$), Butanone ($CH_3COC_2H_5$)
+            - **Properties:** Less reactive than aldehydes, good solvents
+            - **Uses:** Nail polish remover, industrial solvents
 
-        **Aldehydes (-CHO):**
-        - Carbonyl group at the end of a carbon chain
-        - Examples: formaldehyde ($HCHO$), acetaldehyde ($CH_3CHO$)
-        - Properties: reactive, can be oxidized to carboxylic acids
+            **Carboxylic Acids (-COOH):**
+            - **Structure:** Carboxyl group combining carbonyl and hydroxyl
+            - **Examples:** Acetic acid ($CH_3COOH$), Formic acid ($HCOOH$)
+            - **Properties:** Acidic, can donate protons, form salts
+            - **Uses:** Food preservatives, industrial chemicals
 
-        **Ketones (C=O):**
-        - Carbonyl group within a carbon chain
-        - Examples: acetone ($CH_3COCH_3$), butanone ($CH_3COC_2H_5$)
-        - Properties: less reactive than aldehydes
+            **Esters (-COO-):**
+            - **Structure:** Formed from carboxylic acid and alcohol
+            - **Examples:** Methyl acetate, ethyl butyrate (fruity odors)
+            - **Properties:** Pleasant odors, used in fragrances and flavors
+            - **Formation:** Condensation reaction (esterification)`,
+          },
+          {
+            id: "nitrogen-containing",
+            title: "Nitrogen-Containing Functional Groups",
+            content: `**Amines (-NH₂, -NHR, -NR₂):**
+            - **Structure:** Nitrogen with lone pair of electrons
+            - **Classification:** Primary (1°), Secondary (2°), Tertiary (3°)
+            - **Examples:** Methylamine ($CH_3NH_2$), Aniline ($C_6H_5NH_2$)
+            - **Properties:** Basic, can accept protons, fishy odors
+            - **Uses:** Pharmaceuticals, dyes, polymers
 
-        **Carboxylic acids (-COOH):**
-        - Carboxyl group combining carbonyl and hydroxyl
-        - Examples: acetic acid ($CH_3COOH$), formic acid ($HCOOH$)
-        - Properties: acidic, can donate protons
+            **Amides (-CONH₂):**
+            - **Structure:** Carbonyl group bonded to nitrogen
+            - **Examples:** Acetamide ($CH_3CONH_2$), Formamide ($HCONH_2$)
+            - **Properties:** Less basic than amines, hydrogen bonding
+            - **Importance:** Protein structure (peptide bonds)
 
-        **Amines (-NH₂, -NHR, -NR₂):**
-        - Nitrogen-containing groups
-        - Examples: methylamine ($CH_3NH_2$), aniline ($C_6H_5NH_2$)
-        - Properties: basic, can accept protons`,
+            **Nitriles (-CN):**
+            - **Structure:** Carbon triple-bonded to nitrogen
+            - **Examples:** Acetonitrile ($CH_3CN$), Benzonitrile ($C_6H_5CN$)
+            - **Properties:** Polar, good solvents
+            - **Uses:** Synthetic intermediates, solvents
+
+            **Nitro Compounds (-NO₂):**
+            - **Structure:** Nitrogen bonded to two oxygens
+            - **Examples:** Nitromethane ($CH_3NO_2$), TNT
+            - **Properties:** Electron-withdrawing, can be explosive
+            - **Uses:** Explosives, pharmaceuticals, dyes`,
+          },
+          {
+            id: "other-functional-groups",
+            title: "Other Important Functional Groups",
+            content: `**Halides (R-X):**
+            - **Structure:** Carbon bonded to halogen (F, Cl, Br, I)
+            - **Examples:** Chloromethane ($CH_3Cl$), Bromoethane ($C_2H_5Br$)
+            - **Properties:** Polar C-X bonds, good leaving groups
+            - **Reactions:** Nucleophilic substitution, elimination
+
+            **Thiols (-SH):**
+            - **Structure:** Sulfur analog of alcohols
+            - **Examples:** Methanethiol ($CH_3SH$), Ethanethiol ($C_2H_5SH$)
+            - **Properties:** Strong, unpleasant odors, easily oxidized
+            - **Uses:** Natural gas odorant, biological systems
+
+            **Ethers (R-O-R'):**
+            - **Structure:** Oxygen bonded to two carbon atoms
+            - **Examples:** Diethyl ether ($C_2H_5OC_2H_5$), THF
+            - **Properties:** Relatively unreactive, good solvents
+            - **Uses:** Anesthetics, solvents, fuel additives
+
+            **Phosphates (-PO₄³⁻):**
+            - **Structure:** Phosphorus bonded to four oxygens
+            - **Examples:** ATP, DNA backbone, phospholipids
+            - **Properties:** Highly charged, energy storage
+            - **Importance:** Biological energy transfer, genetic material
+
+            **Sulfonic Acids (-SO₃H):**
+            - **Structure:** Sulfur bonded to three oxygens and OH
+            - **Examples:** Methanesulfonic acid, p-toluenesulfonic acid
+            - **Properties:** Very strong acids, good leaving groups
+            - **Uses:** Catalysts, detergents, pharmaceuticals`,
+          },
+        ],
       },
       {
         id: "isomers-reactions",
         title: "Isomers and Organic Reactions",
-        content: `**Isomers** are compounds with the same molecular formula but different structural formulas. Understanding isomerism is crucial in organic chemistry as it explains why compounds with identical molecular formulas can have vastly different properties.
+        content: `**Isomers** are compounds with the same molecular formula but different structural formulas. Understanding isomerism is crucial in organic chemistry as it explains why compounds with identical molecular formulas can have vastly different properties.`,
+        subsections: [
+          {
+            id: "types-of-isomers",
+            title: "Types of Isomers",
+            content: `**Structural Isomers (Constitutional Isomers):**
+            - **Chain Isomers:** Different carbon skeleton arrangements
+              - Example: Butane vs. 2-methylpropane (both $C_4H_{10}$)
+            - **Position Isomers:** Different positions of functional groups
+              - Example: 1-propanol vs. 2-propanol
+            - **Functional Group Isomers:** Different functional groups
+              - Example: Ethanol ($C_2H_5OH$) vs. dimethyl ether ($CH_3OCH_3$)
 
-        Types of isomers:
-        - **Structural isomers:** Different connectivity of atoms
-        - **Stereoisomers:** Same connectivity but different spatial arrangement
-        - **Conformational isomers:** Can be interconverted by rotation around single bonds
+            **Stereoisomers:**
+            - **Geometric Isomers (Cis-Trans):**
+              - Different arrangements around double bonds
+              - Cis: same side, Trans: opposite sides
+              - Example: cis-2-butene vs. trans-2-butene
+            
+            - **Optical Isomers (Enantiomers):**
+              - Non-superimposable mirror images
+              - Contain chiral centers (carbon with 4 different groups)
+              - Rotate plane-polarized light in opposite directions
+              - Example: L-alanine vs. D-alanine
 
-        **Organic Reactions** are chemical reactions involving organic compounds. They can be classified based on the type of reaction or the type of reagent involved.
+            **Conformational Isomers:**
+            - Different spatial arrangements from rotation around single bonds
+            - Rapidly interconverting at room temperature
+            - Example: Chair and boat forms of cyclohexane
+            - Staggered vs. eclipsed conformations in ethane`,
+          },
+          {
+            id: "reaction-types",
+            title: "Types of Organic Reactions",
+            content: `**Addition Reactions:**
+            - **Definition:** Two molecules combine to form one product
+            - **Mechanism:** Occurs at multiple bonds (C=C, C≡C)
+            - **Examples:**
+              - Hydrogenation: $C_2H_4 + H_2 \\rightarrow C_2H_6$
+              - Halogenation: $C_2H_4 + Br_2 \\rightarrow C_2H_4Br_2$
+              - Hydration: $C_2H_4 + H_2O \\rightarrow C_2H_5OH$
 
-        Major reaction types:
-        - **Addition reactions:** Two molecules combine to form one
-        - **Elimination reactions:** One molecule splits into two
-        - **Substitution reactions:** One atom or group replaces another
-        - **Rearrangement reactions:** Atoms within a molecule are reorganized
+            **Elimination Reactions:**
+            - **Definition:** One molecule splits into two
+            - **Mechanism:** Removal of atoms/groups from adjacent carbons
+            - **Examples:**
+              - Dehydration: $C_2H_5OH \\rightarrow C_2H_4 + H_2O$
+              - Dehydrohalogenation: $C_2H_5Br \\rightarrow C_2H_4 + HBr$
 
-        Reagent types:
-        - **Nucleophiles:** Electron-rich species that attack electron-poor centers
-        - **Electrophiles:** Electron-poor species that attack electron-rich centers
-        - **Radicals:** Species with unpaired electrons
+            **Substitution Reactions:**
+            - **Definition:** One atom or group replaces another
+            - **Types:** Nucleophilic (SN1, SN2) and Electrophilic
+            - **Examples:**
+              - $CH_3Br + OH^- \\rightarrow CH_3OH + Br^-$
+              - Benzene + $Br_2 \\rightarrow$ Bromobenzene + $HBr$
 
-        Understanding these concepts is essential for predicting and explaining the behavior of organic molecules in chemical reactions.`,
+            **Rearrangement Reactions:**
+            - **Definition:** Atoms within a molecule are reorganized
+            - **Mechanism:** Intramolecular bond breaking and forming
+            - **Examples:** Carbocation rearrangements, Claisen rearrangement`,
+          },
+          {
+            id: "reaction-mechanisms",
+            title: "Reaction Mechanisms and Reagents",
+            content: `**Nucleophiles:**
+            - **Definition:** Electron-rich species that attack electron-poor centers
+            - **Characteristics:** Have lone pairs or negative charges
+            - **Examples:** $OH^-$, $NH_3$, $H_2O$, $CN^-$
+            - **Reactions:** Attack electrophilic carbons
+
+            **Electrophiles:**
+            - **Definition:** Electron-poor species that attack electron-rich centers
+            - **Characteristics:** Have positive charges or electron deficiency
+            - **Examples:** $H^+$, $Br^+$, $NO_2^+$, carbocations
+            - **Reactions:** Attack nucleophilic sites
+
+            **Radicals:**
+            - **Definition:** Species with unpaired electrons
+            - **Formation:** Homolytic bond cleavage
+            - **Characteristics:** Highly reactive, short-lived
+            - **Reactions:** Chain reactions (initiation, propagation, termination)
+            - **Examples:** Halogenation of alkanes, polymerization
+
+            **Reaction Mechanisms:**
+            - **Curved Arrow Notation:** Shows electron movement
+            - **Intermediates:** Temporary species formed during reaction
+            - **Transition States:** Highest energy points along reaction path
+            - **Rate-Determining Step:** Slowest step in multi-step mechanism
+
+            **Factors Affecting Reactions:**
+            - **Temperature:** Higher temperature increases reaction rate
+            - **Concentration:** Higher concentration increases rate
+            - **Catalysts:** Lower activation energy, increase rate
+            - **Solvent Effects:** Polar vs. nonpolar solvents
+            - **Steric Hindrance:** Bulky groups slow reactions`,
+          },
+        ],
       },
     ],
     category: "science",
@@ -357,98 +1094,459 @@ const mockNotes: Note[] = [
         - Preparing for technical interviews
 
         This guide covers the most important data structures every programmer should know.`,
+        subsections: [
+          {
+            id: "complexity-analysis",
+            title: "Time and Space Complexity",
+            content: `**Big O Notation:**
+            - **Definition:** Mathematical notation describing algorithm efficiency
+            - **Purpose:** Compare algorithms independent of hardware/implementation
+            - **Focus:** Worst-case scenario performance
+
+            **Common Time Complexities:**
+            - **O(1) - Constant:** Same time regardless of input size
+            - **O(log n) - Logarithmic:** Time increases slowly with input
+            - **O(n) - Linear:** Time increases proportionally with input
+            - **O(n log n) - Linearithmic:** Efficient sorting algorithms
+            - **O(n²) - Quadratic:** Nested loops over input
+            - **O(2ⁿ) - Exponential:** Recursive algorithms without memoization
+
+            **Space Complexity:**
+            - **Auxiliary Space:** Extra space used by algorithm
+            - **In-place Algorithms:** O(1) extra space
+            - **Trade-offs:** Often time vs. space complexity
+
+            **Analysis Examples:**
+            - **Linear Search:** O(n) time, O(1) space
+            - **Binary Search:** O(log n) time, O(1) space
+            - **Merge Sort:** O(n log n) time, O(n) space
+            - **Quick Sort:** O(n log n) average, O(n²) worst case`,
+          },
+          {
+            id: "abstract-data-types",
+            title: "Abstract Data Types (ADTs)",
+            content: `**Definition:** Abstract Data Types define data and operations without specifying implementation details.
+
+            **Key ADTs:**
+            
+            **List ADT:**
+            - **Operations:** Insert, delete, search, access by index
+            - **Implementations:** Arrays, linked lists, dynamic arrays
+            - **Use cases:** Maintaining ordered collections
+
+            **Stack ADT:**
+            - **Operations:** Push, pop, peek, isEmpty
+            - **LIFO:** Last In, First Out principle
+            - **Implementations:** Arrays, linked lists
+            - **Use cases:** Function calls, expression evaluation
+
+            **Queue ADT:**
+            - **Operations:** Enqueue, dequeue, front, isEmpty
+            - **FIFO:** First In, First Out principle
+            - **Implementations:** Arrays, linked lists, circular buffers
+            - **Use cases:** Process scheduling, breadth-first search
+
+            **Set ADT:**
+            - **Operations:** Add, remove, contains, union, intersection
+            - **Properties:** No duplicate elements
+            - **Implementations:** Hash tables, binary search trees
+            - **Use cases:** Membership testing, mathematical operations
+
+            **Map/Dictionary ADT:**
+            - **Operations:** Put, get, remove, containsKey
+            - **Structure:** Key-value pairs
+            - **Implementations:** Hash tables, binary search trees
+            - **Use cases:** Databases, caches, symbol tables`,
+          },
+        ],
       },
       {
         id: "arrays-lists",
         title: "Arrays and Linked Lists",
-        content: `**Arrays** are a collection of elements identified by index or key. They are stored in contiguous memory locations, which makes accessing elements by their index very efficient.
+        content: `**Arrays** are a collection of elements identified by index or key. They are stored in contiguous memory locations, which makes accessing elements by their index very efficient.`,
+        subsections: [
+          {
+            id: "arrays",
+            title: "Arrays",
+            content: `**Static Arrays:**
+            - **Definition:** Fixed-size collection of elements
+            - **Memory:** Contiguous allocation
+            - **Access Time:** O(1) - direct indexing
+            - **Insertion/Deletion:** O(n) - may require shifting
 
-        Array characteristics:
-        - **Access time:** $O(1)$ - constant time access by index
-        - **Insertion/Deletion:** $O(n)$ - may require shifting elements
-        - **Memory:** Contiguous allocation
-        - **Cache performance:** Excellent due to locality
+            **Advantages:**
+            - **Fast Access:** O(1) random access by index
+            - **Cache Friendly:** Spatial locality improves performance
+            - **Memory Efficient:** No extra pointers needed
+            - **Simple Implementation:** Straightforward to use
 
-        **Linked Lists** consist of nodes where each node contains a data field and a reference (link) to the next node in the sequence.
+            **Disadvantages:**
+            - **Fixed Size:** Cannot grow or shrink dynamically
+            - **Insertion/Deletion:** Expensive operations
+            - **Memory Waste:** May allocate more than needed
 
-        Linked List characteristics:
-        - **Access time:** $O(n)$ - must traverse from head
-        - **Insertion/Deletion:** $O(1)$ - at known position
-        - **Memory:** Non-contiguous allocation
-        - **Cache performance:** Poor due to scattered memory
+            **Dynamic Arrays (Vectors):**
+            - **Resizable:** Can grow and shrink as needed
+            - **Amortized O(1):** Insertion at end (average case)
+            - **Doubling Strategy:** Resize by factor of 2 when full
+            - **Examples:** C++ vector, Java ArrayList, Python list
 
-        **When to use:**
-        - Arrays: When you need fast random access and the size is relatively fixed
-        - Linked Lists: When you frequently insert/delete elements and don't need random access
+            **Multi-dimensional Arrays:**
+            - **2D Arrays:** Matrix representation
+            - **Row-major Order:** Elements stored row by row
+            - **Column-major Order:** Elements stored column by column
+            - **Applications:** Images, matrices, game boards`,
+          },
+          {
+            id: "linked-lists",
+            title: "Linked Lists",
+            content: `**Singly Linked Lists:**
+            - **Structure:** Nodes with data and pointer to next node
+            - **Access Time:** O(n) - must traverse from head
+            - **Insertion/Deletion:** O(1) - at known position
+            - **Memory:** Non-contiguous allocation
 
-        Both are fundamental building blocks for more complex data structures.`,
+            **Node Structure:**
+            \`\`\`
+            class Node {
+                int data;
+                Node* next;
+            }
+            \`\`\`
+
+            **Operations:**
+            - **Insert at Head:** O(1)
+            - **Insert at Tail:** O(n) without tail pointer, O(1) with tail pointer
+            - **Delete:** O(1) if node reference available, O(n) to find node
+            - **Search:** O(n) linear traversal
+
+            **Doubly Linked Lists:**
+            - **Structure:** Nodes with pointers to both next and previous
+            - **Advantages:** Bidirectional traversal, easier deletion
+            - **Disadvantages:** Extra memory for previous pointer
+
+            **Circular Linked Lists:**
+            - **Structure:** Last node points back to first node
+            - **Advantages:** Useful for round-robin scheduling
+            - **Applications:** Operating system process scheduling
+
+            **Comparison with Arrays:**
+            - **Memory:** Linked lists use more memory (pointers)
+            - **Cache Performance:** Arrays better due to locality
+            - **Dynamic Size:** Linked lists can grow/shrink easily
+            - **Random Access:** Arrays support O(1) access, linked lists O(n)`,
+          },
+          {
+            id: "applications",
+            title: "Applications and Use Cases",
+            content: `**When to Use Arrays:**
+            - **Frequent Random Access:** Need to access elements by index
+            - **Mathematical Operations:** Matrix calculations, image processing
+            - **Cache-Sensitive Applications:** Performance critical code
+            - **Memory Constraints:** When memory usage must be minimized
+            - **Simple Data:** When structure doesn't change frequently
+
+            **When to Use Linked Lists:**
+            - **Frequent Insertions/Deletions:** Especially at beginning/middle
+            - **Unknown Size:** When data size varies significantly
+            - **Memory Fragmentation:** When large contiguous blocks unavailable
+            - **Implementation of Other Structures:** Stacks, queues, graphs
+
+            **Real-World Examples:**
+            
+            **Arrays:**
+            - **Image Processing:** Pixel data in 2D arrays
+            - **Scientific Computing:** Mathematical matrices and vectors
+            - **Database Systems:** Fixed-size records
+            - **Game Development:** Game boards, tile maps
+
+            **Linked Lists:**
+            - **Music Playlists:** Easy to add/remove songs
+            - **Browser History:** Forward/backward navigation
+            - **Undo Functionality:** Chain of operations
+            - **Memory Management:** Free block lists in allocators
+
+            **Hybrid Approaches:**
+            - **Deque (Double-ended Queue):** Array of blocks
+            - **Hash Table Chaining:** Array of linked lists
+            - **B-Trees:** Arrays within tree nodes
+            - **Rope Data Structure:** Tree of strings for text editors`,
+          },
+        ],
       },
       {
         id: "stacks-queues",
         title: "Stacks and Queues",
-        content: `**Stacks** are a collection of elements with two principal operations: push (add element) and pop (remove element). They follow the Last In, First Out (LIFO) principle.
+        content: `**Stacks** are a collection of elements with two principal operations: push (add element) and pop (remove element). They follow the Last In, First Out (LIFO) principle.`,
+        subsections: [
+          {
+            id: "stacks",
+            title: "Stacks",
+            content: `**Stack Operations:**
+            - **Push:** Add element to top - O(1)
+            - **Pop:** Remove element from top - O(1)
+            - **Peek/Top:** View top element without removing - O(1)
+            - **isEmpty:** Check if stack is empty - O(1)
+            - **Size:** Get number of elements - O(1)
 
-        Stack operations:
-        - **Push:** Add element to top - $O(1)$
-        - **Pop:** Remove element from top - $O(1)$
-        - **Peek/Top:** View top element without removing - $O(1)$
-        - **isEmpty:** Check if stack is empty - $O(1)$
+            **Implementation Options:**
+            - **Array-based:** Fixed or dynamic size array
+            - **Linked List-based:** Singly linked list with head as top
+            - **Advantages/Disadvantages:** Arrays faster, linked lists more flexible
 
-        Stack applications:
-        - Function call management (call stack)
-        - Expression evaluation and syntax parsing
-        - Undo operations in applications
-        - Browser history navigation
+            **Stack Applications:**
+            - **Function Call Management:** Call stack in programming languages
+            - **Expression Evaluation:** Converting infix to postfix notation
+            - **Undo Operations:** Text editors, image editors
+            - **Browser History:** Back button functionality
+            - **Syntax Parsing:** Matching parentheses, brackets
+            - **Depth-First Search:** Graph traversal algorithm
 
-        **Queues** follow the First In, First Out (FIFO) principle. Elements are added at the rear and removed from the front.
+            **Example - Balanced Parentheses:**
+            \`\`\`
+            bool isBalanced(string expr) {
+                stack<char> s;
+                for (char c : expr) {
+                    if (c == '(' || c == '[' || c == '{') {
+                        s.push(c);
+                    } else if (c == ')' || c == ']' || c == '}') {
+                        if (s.empty()) return false;
+                        char top = s.top();
+                        s.pop();
+                        if (!matches(top, c)) return false;
+                    }
+                }
+                return s.empty();
+            }
+            \`\`\`
 
-        Queue operations:
-        - **Enqueue:** Add element to rear - $O(1)$
-        - **Dequeue:** Remove element from front - $O(1)$
-        - **Front:** View front element - $O(1)$
-        - **isEmpty:** Check if queue is empty - $O(1)$
+            **Stack Overflow:**
+            - **Cause:** Too many function calls or infinite recursion
+            - **Prevention:** Iterative solutions, tail recursion optimization
+            - **Detection:** Stack size monitoring, recursion depth limits`,
+          },
+          {
+            id: "queues",
+            title: "Queues",
+            content: `**Queue Operations:**
+            - **Enqueue:** Add element to rear - O(1)
+            - **Dequeue:** Remove element from front - O(1)
+            - **Front:** View front element - O(1)
+            - **Rear:** View rear element - O(1)
+            - **isEmpty:** Check if queue is empty - O(1)
 
-        Queue applications:
-        - Process scheduling in operating systems
-        - Breadth-first search algorithms
-        - Handling requests in web servers
-        - Print job management
+            **Implementation Options:**
+            
+            **Array-based Queue:**
+            - **Circular Array:** Wrap around when reaching end
+            - **Front and Rear Pointers:** Track queue boundaries
+            - **Full Condition:** (rear + 1) % size == front
+            - **Empty Condition:** front == rear
 
-        Both stacks and queues are essential for many algorithms and system designs.`,
+            **Linked List-based Queue:**
+            - **Two Pointers:** Front and rear node references
+            - **Enqueue at Rear:** Add new node, update rear pointer
+            - **Dequeue from Front:** Remove front node, update front pointer
+
+            **Queue Applications:**
+            - **Process Scheduling:** Operating system task management
+            - **Breadth-First Search:** Graph traversal algorithm
+            - **Print Job Management:** Printer queue systems
+            - **Web Server Requests:** Handle incoming HTTP requests
+            - **Buffer for Data Streams:** Producer-consumer problems
+            - **Level-order Tree Traversal:** Visit nodes level by level
+
+            **Priority Queues:**
+            - **Definition:** Elements have associated priorities
+            - **Operations:** Insert with priority, extract minimum/maximum
+            - **Implementation:** Binary heaps, balanced trees
+            - **Applications:** Dijkstra's algorithm, task scheduling
+
+            **Double-ended Queue (Deque):**
+            - **Operations:** Insert/delete at both ends
+            - **Implementation:** Circular buffer or doubly linked list
+            - **Applications:** Sliding window problems, palindrome checking`,
+          },
+          {
+            id: "advanced-applications",
+            title: "Advanced Applications and Variations",
+            content: `**Stack-based Algorithms:**
+            
+            **Expression Evaluation:**
+            - **Infix to Postfix:** Use operator precedence and associativity
+            - **Postfix Evaluation:** Use stack to store operands
+            - **Function Call Stack:** Parameter passing and local variables
+            - **Recursive Algorithm Simulation:** Convert recursion to iteration
+
+            **Monotonic Stack:**
+            - **Definition:** Stack maintaining monotonic order
+            - **Applications:** Next greater element, largest rectangle in histogram
+            - **Time Complexity:** O(n) for many problems that seem O(n²)
+
+            **Queue-based Algorithms:**
+            
+            **Breadth-First Search (BFS):**
+            - **Graph Traversal:** Visit all nodes level by level
+            - **Shortest Path:** In unweighted graphs
+            - **Connected Components:** Find all connected parts
+            - **Bipartite Graph Check:** Two-coloring problem
+
+            **Sliding Window Problems:**
+            - **Maximum in Window:** Use deque to maintain candidates
+            - **Moving Average:** Queue of recent values
+            - **Rate Limiting:** Token bucket algorithm
+
+            **Producer-Consumer Problem:**
+            - **Bounded Buffer:** Fixed-size queue between producer and consumer
+            - **Synchronization:** Mutex and condition variables
+            - **Applications:** Web servers, database systems
+
+            **Cache Implementations:**
+            - **LRU Cache:** Least Recently Used eviction policy
+            - **Queue + Hash Map:** O(1) access and update
+            - **Applications:** CPU caches, web caches, database buffers
+
+            **Real-time Systems:**
+            - **Task Scheduling:** Priority queues for real-time tasks
+            - **Interrupt Handling:** Stack for nested interrupts
+            - **Event Processing:** Queue for event-driven systems`,
+          },
+        ],
       },
       {
         id: "trees-hashing",
         title: "Trees and Hash Tables",
-        content: `**Trees** are hierarchical data structures with a root value and subtrees of children, represented as a set of linked nodes.
+        content: `**Trees** are hierarchical data structures with a root value and subtrees of children, represented as a set of linked nodes.`,
+        subsections: [
+          {
+            id: "binary-trees",
+            title: "Binary Trees and Binary Search Trees",
+            content: `**Binary Tree Properties:**
+            - **Definition:** Each node has at most two children (left and right)
+            - **Height:** Maximum distance from root to leaf
+            - **Complete Tree:** All levels filled except possibly the last
+            - **Perfect Tree:** All internal nodes have two children, all leaves at same level
 
-        **Binary Trees:** Each node has at most two children (left and right).
-        - **Binary Search Trees (BST):** Left child < parent < right child
-        - **Search/Insert/Delete:** $O(\\log n)$ average, $O(n)$ worst case
-        - **Applications:** Database indexing, expression parsing
+            **Binary Search Tree (BST):**
+            - **Ordering Property:** Left child < parent < right child
+            - **Search Operation:** O(log n) average, O(n) worst case
+            - **Insertion:** Maintain BST property while adding new node
+            - **Deletion:** Three cases - leaf, one child, two children
 
-        **Balanced Trees:** Maintain balance to ensure $O(\\log n)$ operations
-        - **AVL Trees:** Height-balanced binary search trees
-        - **Red-Black Trees:** Used in many standard libraries
-        - **B-Trees:** Used in databases and file systems
+            **BST Operations:**
+            \`\`\`
+            // Search
+            Node* search(Node* root, int key) {
+                if (root == nullptr || root->data == key)
+                    return root;
+                if (key < root->data)
+                    return search(root->left, key);
+                return search(root->right, key);
+            }
+            
+            // Insertion
+            Node* insert(Node* root, int key) {
+                if (root == nullptr)
+                    return new Node(key);
+                if (key < root->data)
+                    root->left = insert(root->left, key);
+                else if (key > root->data)
+                    root->right = insert(root->right, key);
+                return root;
+            }
+            \`\`\`
 
-        Tree traversal methods:
-        - **Inorder:** Left → Root → Right
-        - **Preorder:** Root → Left → Right
-        - **Postorder:** Left → Right → Root
-        - **Level-order:** Breadth-first traversal
+            **Tree Traversals:**
+            - **Inorder:** Left → Root → Right (gives sorted order in BST)
+            - **Preorder:** Root → Left → Right (useful for copying tree)
+            - **Postorder:** Left → Right → Root (useful for deleting tree)
+            - **Level-order:** Breadth-first traversal using queue
 
-        **Hash Tables** use a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+            **BST Problems:**
+            - **Skewed Trees:** Degenerate into linked list (O(n) operations)
+            - **Solution:** Self-balancing trees (AVL, Red-Black)
+            - **Applications:** Database indexing, expression parsing, file systems`,
+          },
+          {
+            id: "balanced-trees",
+            title: "Balanced Trees",
+            content: `**AVL Trees:**
+            - **Definition:** Self-balancing BST with height difference ≤ 1
+            - **Balance Factor:** Height(left) - Height(right) ∈ {-1, 0, 1}
+            - **Rotations:** Single (LL, RR) and double (LR, RL) rotations
+            - **Guarantee:** O(log n) operations in worst case
 
-        Hash Table characteristics:
-        - **Average case:** $O(1)$ for search, insert, delete
-        - **Worst case:** $O(n)$ when many collisions occur
-        - **Space complexity:** $O(n)$
+            **Red-Black Trees:**
+            - **Properties:** 
+              1. Every node is red or black
+              2. Root is black
+              3. Red nodes have black children
+              4. All paths from root to leaves have same number of black nodes
+            - **Advantage:** Fewer rotations than AVL during insertion/deletion
+            - **Usage:** C++ STL map/set, Java TreeMap/TreeSet
 
-        Collision resolution techniques:
-        - **Chaining:** Store multiple elements in linked lists
-        - **Open addressing:** Find alternative slots (linear/quadratic probing)
+            **B-Trees:**
+            - **Definition:** Self-balancing tree with multiple keys per node
+            - **Properties:** All leaves at same level, minimum degree t
+            - **Node Capacity:** t-1 to 2t-1 keys per node
+            - **Applications:** Database systems, file systems
+            - **Advantage:** Reduces disk I/O operations
 
-        Hash tables provide the fastest average-case performance for dictionary operations and are fundamental to many applications including databases, caches, and programming language implementations.`,
+            **Splay Trees:**
+            - **Property:** Recently accessed nodes move to root
+            - **Splay Operation:** Series of rotations to bring node to root
+            - **Amortized O(log n):** Average case performance
+            - **Applications:** Caches, memory management
+
+            **Trie (Prefix Tree):**
+            - **Structure:** Tree where each path represents a string
+            - **Applications:** Autocomplete, spell checkers, IP routing
+            - **Space-Time Tradeoff:** Fast search but high memory usage
+            - **Compressed Trie:** Radix tree to reduce space`,
+          },
+          {
+            id: "hash-tables",
+            title: "Hash Tables",
+            content: `**Hash Table Fundamentals:**
+            - **Definition:** Array-based structure using hash function to map keys to indices
+            - **Hash Function:** Converts key to array index
+            - **Load Factor:** α = n/m (elements/buckets)
+            - **Goal:** Uniform distribution of keys across buckets
+
+            **Hash Functions:**
+            - **Division Method:** h(k) = k mod m
+            - **Multiplication Method:** h(k) = ⌊m(kA mod 1)⌋
+            - **Universal Hashing:** Randomly chosen from family of functions
+            - **Cryptographic Hash:** SHA, MD5 for security applications
+
+            **Collision Resolution:**
+            
+            **Chaining:**
+            - **Method:** Store colliding elements in linked lists
+            - **Load Factor:** Can exceed 1
+            - **Performance:** O(1 + α) expected time
+            - **Advantage:** Simple implementation, handles high load factors
+
+            **Open Addressing:**
+            - **Linear Probing:** h(k, i) = (h'(k) + i) mod m
+            - **Quadratic Probing:** h(k, i) = (h'(k) + c₁i + c₂i²) mod m
+            - **Double Hashing:** h(k, i) = (h₁(k) + i·h₂(k)) mod m
+            - **Clustering:** Primary clustering in linear probing
+
+            **Hash Table Performance:**
+            - **Average Case:** O(1) for search, insert, delete
+            - **Worst Case:** O(n) when all keys hash to same bucket
+            - **Space Complexity:** O(n) for n elements
+            - **Dynamic Resizing:** Rehashing when load factor exceeds threshold
+
+            **Applications:**
+            - **Database Indexing:** Fast record lookup
+            - **Caches:** Web caches, CPU caches
+            - **Symbol Tables:** Compilers and interpreters
+            - **Sets and Maps:** Programming language implementations
+            - **Distributed Systems:** Consistent hashing for load balancing`,
+          },
+        ],
       },
     ],
     category: "cs",
@@ -610,7 +1708,7 @@ const mockNotes: Note[] = [
         content: `Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles. It was developed in the early 20th century when classical physics could not explain certain phenomena.
 
         **Historical Context:**
-        - Developed between 1000-1930 by physicists like Planck, Einstein, Bohr, Heisenberg, and Schrödinger
+        - Developed between 1900-1930 by physicists like Planck, Einstein, Bohr, Heisenberg, and Schrödinger
         - Arose from the need to explain blackbody radiation, photoelectric effect, and atomic spectra
         - Revolutionized our understanding of matter and energy
 
@@ -771,7 +1869,13 @@ export function searchNotes(query: string): Note[] {
       note.sections.some(
         (section) =>
           section.title.toLowerCase().includes(lowercaseQuery) ||
-          section.content.toLowerCase().includes(lowercaseQuery),
+          section.content.toLowerCase().includes(lowercaseQuery) ||
+          (section.subsections &&
+            section.subsections.some(
+              (subsection) =>
+                subsection.title.toLowerCase().includes(lowercaseQuery) ||
+                subsection.content.toLowerCase().includes(lowercaseQuery),
+            )),
       ) ||
       note.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery)),
   )

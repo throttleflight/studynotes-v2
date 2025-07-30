@@ -18,6 +18,7 @@ export default function NotePage() {
   const searchParams = useSearchParams()
   const noteId = params.id as string
   const sectionParam = searchParams.get("section")
+  const subsectionParam = searchParams.get("subsection")
 
   const note = getNoteById(noteId)
   const [isTocOpen, setIsTocOpen] = useState(false)
@@ -36,44 +37,178 @@ export default function NotePage() {
     )
   }
 
-  // Find current section
+  // Find current section and subsection
   const currentSectionIndex = sectionParam ? note.sections.findIndex((section) => section.id === sectionParam) : 0
   const currentSection = note.sections[currentSectionIndex] || note.sections[0]
 
+  let currentContent = currentSection.content
+  let currentTitle = currentSection.title
+  let currentSubsectionIndex = -1
+
+  // If we have a subsection parameter, use that content instead
+  if (subsectionParam && currentSection.subsections) {
+    currentSubsectionIndex = currentSection.subsections.findIndex((sub) => sub.id === subsectionParam)
+    if (currentSubsectionIndex !== -1) {
+      const currentSubsection = currentSection.subsections[currentSubsectionIndex]
+      currentContent = currentSubsection.content
+      currentTitle = currentSubsection.title
+    }
+  }
+
   // Navigation helpers
-  const hasPrevious = currentSectionIndex > 0
-  const hasNext = currentSectionIndex < note.sections.length - 1
-  const previousSection = hasPrevious ? note.sections[currentSectionIndex - 1] : null
-  const nextSection = hasNext ? note.sections[currentSectionIndex + 1] : null
+  const getNextItem = () => {
+    if (subsectionParam && currentSection.subsections && currentSubsectionIndex !== -1) {
+      // We're in a subsection
+      if (currentSubsectionIndex < currentSection.subsections.length - 1) {
+        // Next subsection in same section
+        return {
+          type: "subsection",
+          section: currentSection,
+          subsection: currentSection.subsections[currentSubsectionIndex + 1],
+          sectionIndex: currentSectionIndex,
+          subsectionIndex: currentSubsectionIndex + 1,
+        }
+      } else {
+        // Next section (if exists)
+        if (currentSectionIndex < note.sections.length - 1) {
+          return {
+            type: "section",
+            section: note.sections[currentSectionIndex + 1],
+            sectionIndex: currentSectionIndex + 1,
+          }
+        }
+      }
+    } else {
+      // We're in a main section
+      if (currentSection.subsections && currentSection.subsections.length > 0) {
+        // First subsection of current section
+        return {
+          type: "subsection",
+          section: currentSection,
+          subsection: currentSection.subsections[0],
+          sectionIndex: currentSectionIndex,
+          subsectionIndex: 0,
+        }
+      } else {
+        // Next section (if exists)
+        if (currentSectionIndex < note.sections.length - 1) {
+          return {
+            type: "section",
+            section: note.sections[currentSectionIndex + 1],
+            sectionIndex: currentSectionIndex + 1,
+          }
+        }
+      }
+    }
+    return null
+  }
+
+  const getPreviousItem = () => {
+    if (subsectionParam && currentSection.subsections && currentSubsectionIndex !== -1) {
+      // We're in a subsection
+      if (currentSubsectionIndex > 0) {
+        // Previous subsection in same section
+        return {
+          type: "subsection",
+          section: currentSection,
+          subsection: currentSection.subsections[currentSubsectionIndex - 1],
+          sectionIndex: currentSectionIndex,
+          subsectionIndex: currentSubsectionIndex - 1,
+        }
+      } else {
+        // Main section content
+        return {
+          type: "section",
+          section: currentSection,
+          sectionIndex: currentSectionIndex,
+        }
+      }
+    } else {
+      // We're in a main section
+      if (currentSectionIndex > 0) {
+        const prevSection = note.sections[currentSectionIndex - 1]
+        if (prevSection.subsections && prevSection.subsections.length > 0) {
+          // Last subsection of previous section
+          return {
+            type: "subsection",
+            section: prevSection,
+            subsection: prevSection.subsections[prevSection.subsections.length - 1],
+            sectionIndex: currentSectionIndex - 1,
+            subsectionIndex: prevSection.subsections.length - 1,
+          }
+        } else {
+          // Previous section
+          return {
+            type: "section",
+            section: prevSection,
+            sectionIndex: currentSectionIndex - 1,
+          }
+        }
+      }
+    }
+    return null
+  }
+
+  const nextItem = getNextItem()
+  const previousItem = getPreviousItem()
 
   const TableOfContents = () => (
     <div className="space-y-2">
       <h3 className="font-semibold text-lg mb-4">Table of Contents</h3>
       <div className="space-y-1">
-        {note.sections.map((section, index) => (
-          <Link
-            key={section.id}
-            href={`/notes/${noteId}?section=${section.id}`}
-            className={`block p-3 rounded-lg transition-colors ${
-              section.id === currentSection.id
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-gray-100 dark:hover:bg-gray-800"
-            }`}
-            onClick={() => setIsTocOpen(false)}
-          >
-            <div className="flex items-center gap-3">
-              <div
-                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
-                  section.id === currentSection.id
-                    ? "bg-primary-foreground text-primary"
-                    : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
-                }`}
-              >
-                {index + 1}
+        {note.sections.map((section, sectionIndex) => (
+          <div key={section.id} className="space-y-1">
+            <Link
+              href={`/notes/${noteId}?section=${section.id}`}
+              className={`block p-3 rounded-lg transition-colors ${
+                section.id === currentSection.id && !subsectionParam
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+              onClick={() => setIsTocOpen(false)}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
+                    section.id === currentSection.id && !subsectionParam
+                      ? "bg-primary-foreground text-primary"
+                      : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
+                  }`}
+                >
+                  {sectionIndex + 1}
+                </div>
+                <span className="text-sm font-medium">{section.title}</span>
               </div>
-              <span className="text-sm font-medium">{section.title}</span>
-            </div>
-          </Link>
+            </Link>
+
+            {/* Subsections */}
+            {section.subsections &&
+              section.subsections.map((subsection, subsectionIndex) => (
+                <Link
+                  key={subsection.id}
+                  href={`/notes/${noteId}?section=${section.id}&subsection=${subsection.id}`}
+                  className={`block p-2 ml-6 rounded-lg transition-colors ${
+                    section.id === currentSection.id && subsection.id === subsectionParam
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
+                  onClick={() => setIsTocOpen(false)}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-medium ${
+                        section.id === currentSection.id && subsection.id === subsectionParam
+                          ? "bg-primary-foreground text-primary"
+                          : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
+                      }`}
+                    >
+                      {sectionIndex + 1}.{subsectionIndex + 1}
+                    </div>
+                    <span className="text-xs">{subsection.title}</span>
+                  </div>
+                </Link>
+              ))}
+          </div>
         ))}
       </div>
     </div>
@@ -153,10 +288,12 @@ export default function NotePage() {
               <div className="mb-8">
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <span>
-                    Section {currentSectionIndex + 1} of {note.sections.length}
+                    {subsectionParam
+                      ? `Section ${currentSectionIndex + 1}.${currentSubsectionIndex + 1}`
+                      : `Section ${currentSectionIndex + 1} of ${note.sections.length}`}
                   </span>
                 </div>
-                <h1 className="text-3xl font-bold mb-4">{currentSection.title}</h1>
+                <h1 className="text-3xl font-bold mb-4">{currentTitle}</h1>
 
                 {/* Mobile metadata */}
                 <div className="md:hidden flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
@@ -172,16 +309,22 @@ export default function NotePage() {
                 </div>
               </div>
 
-              {/* Section Content with LaTeX Support */}
+              {/* Content with LaTeX Support */}
               <div className="mb-12">
-                <LatexRenderer content={currentSection.content} />
+                <LatexRenderer content={currentContent} />
               </div>
 
               {/* Navigation */}
               <div className="flex items-center justify-between pt-8 border-t">
                 <div className="flex-1">
-                  {hasPrevious && previousSection && (
-                    <Link href={`/notes/${noteId}?section=${previousSection.id}`}>
+                  {previousItem && (
+                    <Link
+                      href={
+                        previousItem.type === "subsection"
+                          ? `/notes/${noteId}?section=${previousItem.section.id}&subsection=${previousItem.subsection.id}`
+                          : `/notes/${noteId}?section=${previousItem.section.id}`
+                      }
+                    >
                       <Card className="hover:shadow-md transition-shadow cursor-pointer">
                         <CardHeader className="pb-2">
                           <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -190,7 +333,11 @@ export default function NotePage() {
                           </div>
                         </CardHeader>
                         <CardContent>
-                          <CardTitle className="text-lg">{previousSection.title}</CardTitle>
+                          <CardTitle className="text-lg">
+                            {previousItem.type === "subsection"
+                              ? previousItem.subsection.title
+                              : previousItem.section.title}
+                          </CardTitle>
                         </CardContent>
                       </Card>
                     </Link>
@@ -198,8 +345,14 @@ export default function NotePage() {
                 </div>
 
                 <div className="flex-1 flex justify-end">
-                  {hasNext && nextSection && (
-                    <Link href={`/notes/${noteId}?section=${nextSection.id}`}>
+                  {nextItem && (
+                    <Link
+                      href={
+                        nextItem.type === "subsection"
+                          ? `/notes/${noteId}?section=${nextItem.section.id}&subsection=${nextItem.subsection.id}`
+                          : `/notes/${noteId}?section=${nextItem.section.id}`
+                      }
+                    >
                       <Card className="hover:shadow-md transition-shadow cursor-pointer">
                         <CardHeader className="pb-2">
                           <div className="flex items-center justify-end gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -208,7 +361,9 @@ export default function NotePage() {
                           </div>
                         </CardHeader>
                         <CardContent>
-                          <CardTitle className="text-lg text-right">{nextSection.title}</CardTitle>
+                          <CardTitle className="text-lg text-right">
+                            {nextItem.type === "subsection" ? nextItem.subsection.title : nextItem.section.title}
+                          </CardTitle>
                         </CardContent>
                       </Card>
                     </Link>
