@@ -392,6 +392,52 @@ const mockNotes: Note[] = [
             > 6. Substitute in the givens, with their units.
             > 7. Calculate the value of the unknown, including its units.`,
           },
+          {
+            id: "distance-time-graphs",
+            title: "Distance-Time Graphs",
+            content: `Graphing Motion
+
+            With a table of time ($x$) and distance ($y$), points are plotted on a scatter plot and a line of best fit (trend line) is made. When finding the speed, use points on the line of best fit. 
+
+            > [!example] Slope Equation (Speed in a distance-time graph)
+            > $$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
+            > Also known as rise over run or delta y over delta x.
+
+            The slope equation in a distance-time graph determines the speed of the object.
+            - Higher speed = Greater Slope
+            - Lower speed = Smaller Slope`,
+          },
+          {
+            id: "reference-frames-displacement-velocity",
+            title: "Reference Frames, Displacement, and Velocity",
+            content: `Reference Frame Definition: A reference frame lets us define where an object is located, relative to other objects.
+            
+            X-Axis for Direction
+            - +x is usually to the right.
+            - -x is usually to the left.
+            
+            Displacement Definition: Displacement is the change in position. (Can be a negative value - meaning a vector)
+            $$\\triangle x = x-x_{0}$$
+            $x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero)
+            $x$ is the final position.
+
+            Instantaneous Speed (Scalar):
+            $$s=\\frac{d}{t}$$
+
+            Average Speed (Scalar):
+            A bar is placed over the "$s$" to indicate average speed.
+            $$\\bar{s}=\\frac{d}{t}$$
+
+            Instantaneous Velocity (Vector):
+            $$v=\\frac{\\triangle x}{\\triangle t}$$
+            $\\triangle x$ is the displacement of the object.
+
+            Average Velocity (Vector):
+            A bar is placed over the "$v$" to indicate average velocity.
+            $$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$
+            Both values of $\\triangle x$ and $\\triangle t$ is the total.
+            `,
+          },
         ]
       },
       {
