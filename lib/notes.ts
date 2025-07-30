@@ -368,17 +368,16 @@ const mockNotes: Note[] = [
           {
             id: "motion-in-one-dimension",
             title: "Motion in One",
-            content: `Kinematics Definition: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
-            
-            Dynamics Definition: Why things move (forces).
-            
+            content: `<strong>Kinematics Definition:</strong> How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.<br>
+            <strong>Dynamics Definition:</strong> Why things move (forces).
+            <br>
             - Meter is the official unit of length in the International System of Units or SI. (Distance)
             - Distance (d)
             - Meter (m)
             - Second is the standard unit of time. (Time)
             - Time (t)
             - Second (s)
-            
+            <br>
             Speed Equation:
             $$speed = \\frac{distance}{time}$$
             Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
