@@ -373,7 +373,21 @@ const mockNotes: Note[] = [
             <strong>Dynamics Definition:</strong> Why things move (forces).<br>
             <ul>
               <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
+              <li>Distance (d) </li>
+              <li>Meter (m) </li>
+              <li>Second is the standard unit of time. (Time) </li>
+              <li>Time (t) </li>
+              <li>Second (s) </li>
             </ul>
+            <br>
+            <strong>Newton's Approach (1665-1667):</strong>
+            <ul>
+            <li>Developed the method of fluxions</li>
+            </ul>
+            - Focused on rates of change and motion
+            - Used geometric and physical intuition
+            - Initially kept his work private
+            <br>
             Speed Equation:
             $$speed = \\frac{distance}{time}$$
             Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
