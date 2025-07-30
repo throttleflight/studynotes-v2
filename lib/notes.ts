@@ -414,12 +414,12 @@ const mockNotes: Note[] = [
             title: "Reference Frames, Displacement, and Velocity",
             content: `Reference Frame Definition: A reference frame lets us define where an object is located, relative to other objects.
             
-            
+
             X-Axis for Direction
 
-            - +x is usually to the right.
+            +x is usually to the right.
 
-            - -x is usually to the left.
+            -x is usually to the left.
 
 
             
@@ -441,6 +441,8 @@ const mockNotes: Note[] = [
             Instantaneous Velocity (Vector):
             $$v=\\frac{\\triangle x}{\\triangle t}$$
             $\\triangle x$ is the displacement of the object.
+
+
 
             Average Velocity (Vector):
             A bar is placed over the "$v$" to indicate average velocity.
