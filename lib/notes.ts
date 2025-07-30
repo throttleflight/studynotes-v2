@@ -372,12 +372,7 @@ const mockNotes: Note[] = [
             <br>
             <strong>Dynamics Definition:</strong> Why things move (forces).<br>
             <ul>
-            <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
-            <li>Distance (d) </li>
-            <li>Meter (m) </li>
-            <li>Second is the standard unit of time. (Time) </li>
-            <li>Time (t) </li>
-            <li>Second (s) </li>
+              <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
             </ul>
             Speed Equation:
             $$speed = \\frac{distance}{time}$$
