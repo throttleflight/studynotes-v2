@@ -274,7 +274,7 @@ const mockNotes: Note[] = [
           $$(cf(x))' = cf'(x)$$
 
           <strong>Reciprocal Rule:</strong>
-          $$(\\frac{1}{f(x)})' = \\frac{-f'(x)}{(f(x))^2}$$
+          $$\\left(\\frac{1}{f(x)}\\right)' = \\frac{-f'(x)}{(f(x))^2}$$
 
           <strong>Sum Rule:</strong>
           $$(f(x) + g(x))' = f'(x) + g'(x)$$
