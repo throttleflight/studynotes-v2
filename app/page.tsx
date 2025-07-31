@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { BookOpen, ArrowRight, BookText, Users, Lock } from "lucide-react"
+import { BookOpen, ArrowRight, FileText, Users, Lock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -50,7 +50,7 @@ export default function Home() {
                           "English Literature: Modern Classics",
                         ].map((note, i) => (
                           <div key={i} className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 rounded-md">
-                            <BookText className="h-4 w-4 text-gray-500 dark:text-gray-400" />
+                            <FileText className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                             <span>{note}</span>
                           </div>
                         ))}
