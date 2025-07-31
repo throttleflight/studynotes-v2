@@ -269,8 +269,12 @@ const mockNotes: Note[] = [
           {
             id: "computation-rules",
             title: "Computation Rules for Derivatives",
-            content: `<strong>Constant Multiple Rule:</strong>
+            content: `Derivatives are represented with the notation $'$ or $\\frac{d}{dx}$. They can also appear as $\\frac{df}{dx}$ and other possible ways. Here are some key rules:
+            <strong>Constant Multiple Rule:</strong>
           $$(cf(x))' = cf'(x)$$
+
+          <strong>Reciprocal Rule:</strong>
+          $$(\\frac{1}{f(x)})' = \\frac{-f'(x)}{(f(x))^2}$$
 
           <strong>Sum Rule:</strong>
           $$(f(x) + g(x))' = f'(x) + g'(x)$$
