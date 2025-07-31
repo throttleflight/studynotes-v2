@@ -42,12 +42,10 @@ export default function Home() {
                         <span>Featured Notes</span>
                       </div>
                       <div className="space-y-3">
-                        {[
-                          "Introduction to Calculus",
-                          "World History: 20th Century",
-                          "Organic Chemistry Fundamentals",
-                          "Computer Science: Data Structures",
-                          "English Literature: Modern Classics",
+                        {[ // 5 is the limit for featured notes
+                          "Calculus I",
+                          "Calculus II",
+                          "Physics I",
                         ].map((note, i) => (
                           <div key={i} className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 rounded-md">
                             <FileText className="h-4 w-4 text-gray-500 dark:text-gray-400" />

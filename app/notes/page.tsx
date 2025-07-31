@@ -74,15 +74,6 @@ export default function NotesPage() {
                 <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
                   Physics
                 </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
-                  Biology
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
-                  Chemistry
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
-                  World War II
-                </Badge>
               </div>
             </div>
           </div>
