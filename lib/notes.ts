@@ -1734,21 +1734,25 @@ abla f(x,y)||$$
             id: "motion-in-one-dimension",
             title: "Motion in One",
             content: `<strong>Definition:<strong> Kinematics: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
-            <br>
+            
+            Examples of kinematics include anything that is a how. How fast is the car going? How long did it take to get there? How far did it?
+            
             <strong>Definition:<strong> <strong>Dynamics:</strong> Why things move (forces).
-            <br>
-            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed equation, distance is in meters and time is in seconds, resulting in meters per second.
+
+            Dynamics on the other hand is the why. Why did the car speed up? Why did it slow down? Why did it stop?
+
+            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed equation, distance is in meters and time is in seconds, resulting in meters per second ($\\frac{m}{s}$).
             
-            Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
-            
-            Problem Solving Steps
-            > 1. Identify and list the givens and the unknown.
-            > 2. Draw and label a diagram of the situation.
-            > 3. Select a formula containing the givens and the unknown.
-            > 4. Cross out terms that are equal to zero.
-            > 5. Solve the formula so that the unknown is alone on the left.
-            > 6. Substitute in the givens, with their units.
-            > 7. Calculate the value of the unknown, including its units.`,
+            When solving problems relating speed, there are certain steps to follow to ensure the problem is solved correctly.
+
+            <strong>Procedures:<strong>
+            1. Identify and list the givens and the unknown.
+            2. Draw and label a diagram of the situation.
+            3. Select a formula containing the givens and the unknown.
+            4. Cross out terms that are equal to zero.
+            5. Solve the formula so that the unknown is alone on the left.
+            6. Substitute in the givens, with their units.
+            7. Calculate the value of the unknown, including its units.&nbsp;`,
           },
           {
             id: "distance-time-graphs",
