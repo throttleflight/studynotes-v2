@@ -1733,26 +1733,9 @@ abla f(x,y)||$$
           {
             id: "motion-in-one-dimension",
             title: "Motion in One",
-            content: `<strong>Definition:</strong> Kinematics: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
-            
-            <strong>Definition:<strong> <strong>Dynamics:</strong> Why things move (forces).
-
-            <ul>
-              <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
-              <li>Distance (d) </li>
-              <li>Meter (m) </li>
-              <li>Second is the standard unit of time. (Time) </li>
-              <li>Time (t) </li>
-              <li>Second (s) </li>
-            </ul>
+            content: `<strong>Definition:<strong> Kinematics: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
             <br>
-            <strong>Newton's Approach (1665-1667):</strong>
-            <ul>
-            <li>Developed the method of fluxions</li>
-            </ul>
-            - Focused on rates of change and motion
-            - Used geometric and physical intuition
-            - Initially kept his work private
+            <strong>Definition:<strong> <strong>Dynamics:</strong> Why things move (forces).
             <br>
             <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed equation, distance is in meters and time is in seconds, resulting in meters per second.
             
