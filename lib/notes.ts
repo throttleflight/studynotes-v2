@@ -1735,7 +1735,7 @@ abla f(x,y)||$$
             title: "Motion in One",
             content: `<strong>Kinematics Definition:</strong> How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
             
-            <strong>Definition:<strong> Dynamics is why things move (forces).
+            <strong>Definition:<strong> <strong>Dynamics:</strong> Why things move (forces).
 
             <ul>
               <li>Meter is the official unit of length in the International System of Units or SI. (Distance) </li>
