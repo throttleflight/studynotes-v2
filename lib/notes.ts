@@ -1733,7 +1733,7 @@ abla f(x,y)||$$
           {
             id: "motion-in-one-dimension",
             title: "Motion in One",
-            content: `<strong>Kinematics Definition:</strong> How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
+            content: `<strong>Definition:</strong> Kinematics: How things move, speeding up, speeding down, length in time from one point to another, or how fast they are traveling.
             
             <strong>Definition:<strong> <strong>Dynamics:</strong> Why things move (forces).
 
@@ -1754,8 +1754,7 @@ abla f(x,y)||$$
             - Used geometric and physical intuition
             - Initially kept his work private
             <br>
-            Speed Equation:
-            $$speed = \\frac{distance}{time}$$
+            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$
             Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
             
             Problem Solving Steps

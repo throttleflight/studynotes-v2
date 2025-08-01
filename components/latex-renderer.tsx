@@ -89,7 +89,7 @@ export function LatexRenderer({ content, className = "" }: LatexRendererProps) {
         },
       )
 
-      // Handle explicit definition blocks - "**Definition:**" at start of line
+      // Handle explicit definition blocks - "<strong>Definition:<strong>" at start of line
       processedContent = processedContent.replace(
         /<strong>Definition:<strong>\s*(.+?)(?=\n\n|\n\*\*|$)/gim,
         (match, definition) => {
@@ -100,6 +100,24 @@ export function LatexRenderer({ content, className = "" }: LatexRendererProps) {
               </div>
               <div class="definition-content">
                 <h4 class="text-blue-900 dark:text-blue-100 font-semibold text-sm uppercase tracking-wide mb-2 m-0">Definition</h4>
+                <p class="text-blue-900 dark:text-blue-100 font-medium leading-relaxed m-0">${definition.trim()}</p>
+              </div>
+            </div>
+          </div>`
+        },
+      )
+
+      // Handle explicit equation blocks - "<strong>Equation:<strong>" at start of line
+      processedContent = processedContent.replace(
+        /<strong>Equation:<strong>\s*(\$\$+?)(?=\n\n|\n\*\*|$)/gim,
+        (match, definition) => {
+          return `<div class="definition-block my-6 mx-auto max-w-3xl bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mt-0.5">
+                <span class="text-white text-xs font-bold">E</span>
+              </div>
+              <div class="definition-content">
+                <h4 class="text-blue-900 dark:text-blue-100 font-semibold text-sm uppercase tracking-wide mb-2 m-0">Equation</h4>
                 <p class="text-blue-900 dark:text-blue-100 font-medium leading-relaxed m-0">${definition.trim()}</p>
               </div>
             </div>
