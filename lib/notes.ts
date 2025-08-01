@@ -1919,9 +1919,11 @@ abla f(x,y)||$$
         - Quantum sensors achieve unprecedented precision
         - Atomic clocks rely on superposition of energy states
 
-        <strong>Quantum Entanglement</strong> is a phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, regardless of the distance separating them.
+        **<strong>Quantum Entanglement</strong>** is a phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, regardless of the distance separating them.
         
         **Einstein-Podolsky-Rosen (EPR) Paradox** is testing.
+
+        <strong>Definition:<strong> testing.
 
         **Properties of Entangled Systems:**
         - Measurement of one particle instantly affects its entangled partner
