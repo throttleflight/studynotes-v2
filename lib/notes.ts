@@ -1745,14 +1745,7 @@ abla f(x,y)||$$
             
             When solving problems relating speed, there are certain steps to follow to ensure the problem is solved correctly.
 
-            <strong>Procedures:<strong>
-            1. Identify and list the givens and the unknown.
-            2. Draw and label a diagram of the situation.
-            3. Select a formula containing the givens and the unknown.
-            4. Cross out terms that are equal to zero.
-            5. Solve the formula so that the unknown is alone on the left.
-            6. Substitute in the givens, with their units.
-            7. Calculate the value of the unknown, including its units.&nbsp;`,
+            <strong>Procedures:<strong>1. Identify and list the givens and the unknown.<br>2. Draw and label a diagram of the situation.<br>3. Select a formula containing the givens and the unknown.<br>4. Cross out terms that are equal to zero.<br>5. Solve the formula so that the unknown is alone on the left.<br>6. Substitute in the givens, with their units.<br>7. Calculate the value of the unknown, including its units.&nbsp;`,
           },
           {
             id: "distance-time-graphs",
