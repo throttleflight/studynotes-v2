@@ -109,7 +109,7 @@ export function LatexRenderer({ content, className = "" }: LatexRendererProps) {
 
       // Handle explicit equation blocks - "<strong>Equation:<strong>" at start of line
       processedContent = processedContent.replace(
-        /<strong>Equation:<strong>\s*(\$\$+?)(?=\n\n|\n\*\*|$)/gim,
+        /<strong>Equation:<strong>\s*(.+?)(?=\n\n|\n\*\*|$)/gim,
         (match, definition) => {
           return `<div class="definition-block my-6 mx-auto max-w-3xl bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
             <div class="flex items-start gap-3">

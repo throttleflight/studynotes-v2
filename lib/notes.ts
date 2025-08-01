@@ -1754,7 +1754,8 @@ abla f(x,y)||$$
             - Used geometric and physical intuition
             - Initially kept his work private
             <br>
-            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$
+            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed equation, distance is in meters and time is in seconds, resulting in meters per second.
+            
             Distance in meters and time in seconds. Speed is measured in $\frac{m}{s}$ (meters per second).
             
             Problem Solving Steps
