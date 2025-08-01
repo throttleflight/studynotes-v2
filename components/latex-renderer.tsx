@@ -135,7 +135,7 @@ export function LatexRenderer({ content, className = "" }: LatexRendererProps) {
                 <span class="text-white text-xs font-bold">P</span>
               </div>
               <div class="definition-content">
-                <h4 class="text-blue-900 dark:text-blue-100 font-semibold text-sm uppercase tracking-wide mb-2 m-0">Procedure</h4>
+                <h4 class="text-blue-900 dark:text-blue-100 font-semibold text-sm uppercase tracking-wide mb-2 m-0">Procedures</h4>
                 <p class="text-blue-900 dark:text-blue-100 font-medium leading-relaxed m-0">${definition.trim()}</p>
               </div>
             </div>
