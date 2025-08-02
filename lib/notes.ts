@@ -55,7 +55,7 @@ const mockNotes: Note[] = [
         subsections: [
           {
             id: "definition-of-function",
-            title: "1. Definition of a Function",
+            title: "Definition of a Function",
             content: `<strong>Definition:</strong> A function f: ℝ → ℝ associates to each number x in its domain exactly one number f(x).
 
           <strong>Key Characteristics:</strong>
@@ -101,7 +101,7 @@ const mockNotes: Note[] = [
           },
           {
             id: "domain-and-range",
-            title: "2. Domain and Range of a Function",
+            title: "Domain and Range of a Function",
             content: `A function can be visualized as a machine that transforms inputs to outputs.
 
           <strong>Formal Definition:</strong> A function f: A → B is a rule that assigns to each element x in the set A, a unique element f(x) in the set B.
@@ -138,7 +138,7 @@ const mockNotes: Note[] = [
           },
           {
             id: "composition-of-functions",
-            title: "3. Composition of Functions",
+            title: "Composition of Functions",
             content: `Function composition is a fundamental operation that combines two functions to create a new function.
 
           <strong>Definition:</strong> If f(x) and g(x) are two functions, the composite function f ∘ g is defined by:
@@ -157,7 +157,7 @@ const mockNotes: Note[] = [
           },
           {
             id: "inverse-functions",
-            title: "4. The Inverse Function and Invertibility",
+            title: "The Inverse Function and Invertibility",
             content: `Inverse functions "undo" the action of the original function, essentially reversing the input-output relationship.
 
           <strong>Definition:</strong> Suppose f is a function with domain D and range R. A function g is the inverse of f if for all x in D and y in R:
@@ -170,7 +170,7 @@ const mockNotes: Note[] = [
           },
           {
             id: "inverse-trigonometric",
-            title: "5. Inverse of Trigonometric Functions",
+            title: "Inverse of Trigonometric Functions",
             content: `<strong>Arcsine Function:</strong>
           - Domain: [-1, 1], Range: [-π/2, π/2]
           - y = arcsin(x) ⟺ sin(y) = x
@@ -185,7 +185,7 @@ const mockNotes: Note[] = [
           },
           {
             id: "composition-inverse-trig",
-            title: "6. Composition of (Inverse) Trigonometric Values",
+            title: "Composition of (Inverse) Trigonometric Values",
             content: `<strong>Perfect Inverse Relationships:</strong>
           - arcsin(sin(x)) = x (when x ∈ [-π/2, π/2])
           - sin(arcsin(x)) = x (when x ∈ [-1, 1])
@@ -1791,14 +1791,14 @@ abla f(x,y)||$$
             title: "Kinematics Equation 1",
             content: `<strong>Formula:<strong>Acceleration Formula:$$a=\\frac{\\triangle v}{\\triangle t}=\\frac{v-v_{0}}{t}$$It measures the change of velocity over the elapsed time.
 
-            Acceleration is a vector, measured in meters per second squared ($\frac{m}{s^{2}}$).
+            Acceleration is a vector, measured in meters per second squared ($\\frac{m}{s^{2}}$).
 
 
             By deriving the Kinematics Equation 1, it is the change in velocity over time.
 
 
             $$a=\\frac{\\triangle v}{\\triangle t}$$
-            Since "$\\triangle$" means change, $\\triangle v=v-v_{0}$ and $\\triangle t=t-t_{0}$ can be substituted with the original equation. However, usually we start with $t_{0}=0$ representing the starting point in time is 0 seconds, then $\\triangle t = t$. Our equation comes out to be...
+            Since "$\\triangle$" means change, $\\triangle v=v-v_{0}$ and $\\triangle t=t-t_{0}$ can be substituted with the original equation. However, usually we start with $t_{0}=0$ representing the starting point in time is $0$ seconds, then $\\triangle t = t$. Our equation comes out to be...
             $$a=\\frac{v-v_{0}}{t}$$
             When we solve for v, we undergo a series of solving for one variable to get the following.
             $$at=v-v_{0}$$
