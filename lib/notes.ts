@@ -1817,7 +1817,7 @@ abla f(x,y)||$$
             $$g=9.8 \\space \\frac{m}{s^2}$$
             The mass doesn't affect how fast the object accelerates towards the Earth. When the object is accelerating towards the earth, gravity becomes negative.
             $$a=-g=-9.8 \\space \\frac{m}{s^2}$$
-            When an object is thrown into the sky, due to gravity, the object will have to come down at one point. The object will outline a curve also known as a parabola. (image example).
+            When an object is thrown into the sky, due to gravity, the object will have to come down at one point. The object will outline a curve also known as a parabola.
 
             <strong>Example:<strong><img src="https://i.imgur.com/hmymbVR.png"alt="Free-Fall-Curve"><br>In the example above, the object is thrown upwards at $18 \\space \\frac{m}{s}$ and the throwing angle is at $76.9 \\degree$.
 
@@ -1825,7 +1825,7 @@ abla f(x,y)||$$
 
 
 
-            On the velocity-time graph, it shows the curve. The slope of the line is the acceleration. When the line starts, it is when the object is thrown. When it hits the $x$-axis, it has the momentarily stop where velocity is $0$. Then, the object returns to the ground with a negative velocity. (image)
+            On the velocity-time graph, it shows the curve. The slope of the line is the acceleration. When the line starts, it is when the object is thrown. When it hits the $x$-axis, it has the momentarily stop where velocity is $0$. Then, the object returns to the ground with a negative velocity.
             <strong>Example:<strong><img src="https://i.imgur.com/h1ZXDSW.png"alt="Velocity-Time Graph"><br>In the example above, when the object hits its maximum height, the velocity is $0 \\frac{m}{s}$ (at its $x$-axis).`,
           },
         ]
