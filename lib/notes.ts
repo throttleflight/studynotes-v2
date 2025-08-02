@@ -1803,10 +1803,9 @@ abla f(x,y)||$$
             When we solve for v, we undergo a series of solving for one variable to get the following.
             $$at=v-v_{0}$$
             $$v-v_{0}=at$$
-            $$v=v_{0}+at$$
-            This last equation tells us how an object's velocity changes as a function of time.
+            <strong>Formula:<strong>$$v=v_{0}+at$$<br>This last equation tells us how an object's velocity changes as a function of time.
 
-            
+
             On the AP Physics 1 Equation Sheet, it is written as $v_{x}=v_{x_{0}}+a_{x}t$. Since velocity and acceleration are vectors, they must have direction. The "$x$" subscripts signifies that the velocity and acceleration must be in the same dimension (learned in 2-dimensional kinematics). $t$ is a scalar, it doesn't have direction. However, time is also accounted in both the $x$ and $y$ dimensions. Later on, there will be another version of this equation below:
             $$v_{y}=v_{y_{0}}+a_{y}t$$
             In the Kinematics Equation 1, it also looks very similar to one of the equations we commonly use in mathematics. By rearranging the terms, we get $v=at+v_{0}$ and it looks very similar to $y=mx+b$. In this case, the slope will be the acceleration and the y-intercept will be the initial velocity.`,
