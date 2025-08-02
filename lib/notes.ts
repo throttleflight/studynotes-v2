@@ -1782,6 +1782,7 @@ abla f(x,y)||$$
 
             By using all the information learned above, some are scalars and some are vectors. Vectors would be something that would have direction and magnitude (such as displacement and velocity). Scalars would be something that only has magnitude (such as time, distance, and speed).
             <br>
+
             
             Now as a prerequisite, acceleration also takes a place in velocity and speed. On a graph's aspect, if the velocity and acceleration are pointing in the same direction, then the object is speeding up. If the velocity and acceleration are pointing in opposite directions, the object is speeding down.`,
           },
