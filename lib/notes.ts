@@ -1756,7 +1756,7 @@ abla f(x,y)||$$
 
             The slope of the line on a distance-time graph represents the speed of the object. The steeper the slope, the faster the object is moving. A horizontal line indicates that the object is stationary (not moving), while a downward slope indicates that the object is returning to its starting point.
 
-            <strong>Example:<strong><br><img src="https://i.imgur.com/ZwvBOhT.png"alt="Distance-Time Graph"><br>In the example above, it represents a distance-time graph, x-axis is the time and y-axis is the distance.
+            <strong>Example:<strong><br><img src="https://i.imgur.com/QMFYjGd.png"alt="Distance-Time Graph"><br>In the example above, it represents a distance-time graph, x-axis is the time and y-axis is the distance.
 
             Slope Equation (Speed in a distance-time graph)
             $$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
