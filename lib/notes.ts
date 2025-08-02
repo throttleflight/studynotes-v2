@@ -1766,36 +1766,15 @@ abla f(x,y)||$$
           {
             id: "reference-frames-displacement-velocity",
             title: "Reference Frames, Displacement, and Velocity",
-            content: `Reference Frame Definition: A reference frame lets us define where an object is located, relative to other objects.
+            content: `<strong>Definition:<strong> A reference frame lets us define where an object is located, relative to other objects.
+
+            Usually, the $x$-axis is used to represent the position of the object (only in displacement situations). The positive numbers are to the right and negative numbers are to the left. 
             
+            <strong>Definition:<strong> Displacement is the change in position. (Can be a negative value - meaning a vector)<br><strong>Formula:<strong>$$\\triangle x = x-x_{0}$$<br>$x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero) and $x$ is the final position.
 
-            X-Axis for Direction
+            <strong>Formula:<strong>Instantaneous Speed Formula (Scalar):<br>$$s=\\frac{d}{t}$$<br>Average Speed Formula (Scalar):<br>$$\\bar{s}=\\frac{d}{t}$$<br>A bar is placed over the "$s$" to indicate average speed.
 
-            +x is usually to the right.
-
-            -x is usually to the left.
-
-
-            
-            <strong>Definition:<strong> Displacement is the change in position. (Can be a negative value - meaning a vector)<br><strong>Formula:<strong>$$\\triangle x = x-x_{0}$$<br>$x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero)<br>$x$ is the final position.
-
-            Instantaneous Speed (Scalar):
-            $$s=\\frac{d}{t}$$
-
-            Average Speed (Scalar):
-            A bar is placed over the "$s$" to indicate average speed.
-            $$\\bar{s}=\\frac{d}{t}$$
-
-            Instantaneous Velocity (Vector):
-            $$v=\\frac{\\triangle x}{\\triangle t}$$
-            $\\triangle x$ is the displacement of the object.
-
-
-
-            Average Velocity (Vector):
-            A bar is placed over the "$v$" to indicate average velocity.
-            $$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$
-            Both values of $\\triangle x$ and $\\triangle t$ is the total.
+            <strong>Formula:<strong>Instantaneous Velocity Formula (Vector):<br>$$v=\\frac{\\triangle x}{\\triangle t}$$<br>Average Velocity (Vector):<br>$$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$<br>A bar is placed over the "$v$" to indicate average velocity, $\\triangle x$ is the displacement of the object, and both values of $\\triangle x$ and $\\triangle t$ is the total.
             `,
           },
         ]
