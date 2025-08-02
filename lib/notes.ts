@@ -1752,8 +1752,11 @@ abla f(x,y)||$$
             id: "distance-time-graphs",
             title: "Distance-Time Graphs",
             content: `Graphing Motion
+            A distance-time graph is a graph that shows the distance traveled by an object over time. The x-axis represents time, while the y-axis represents distance.
 
-            With a table of time ($x$) and distance ($y$), points are plotted on a scatter plot and a line of best fit (trend line) is made. When finding the speed, use points on the line of best fit. 
+            The slope of the line on a distance-time graph represents the speed of the object. The steeper the slope, the faster the object is moving. A horizontal line indicates that the object is stationary (not moving), while a downward slope indicates that the object is returning to its starting point.
+
+            <strong>Example:<strong><br><img src="../../public/distance-time-graph.png" alt="Distance-Time Graph" width="400"><br>In the example above, it represents a distance-time graph, x-axis is the time and y-axis is the distance.
 
             Slope Equation (Speed in a distance-time graph)
             $$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
