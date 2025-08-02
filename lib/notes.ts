@@ -1741,7 +1741,7 @@ abla f(x,y)||$$
 
             Dynamics on the other hand is the why. Why did the car speed up? Why did it slow down? Why did it stop?
 
-            <strong>Equation:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed equation, distance is in meters and time is in seconds, resulting in meters per second ($\\frac{m}{s}$).
+            <strong>Formula:<strong> $$speed = \\frac{distance}{time}$$ <br> In the speed formula, distance is in meters and time is in seconds, resulting in meters per second ($\\frac{m}{s}$).
             
             When solving problems relating speed, there are certain steps to follow to ensure the problem is solved correctly.
 
@@ -1759,8 +1759,9 @@ abla f(x,y)||$$
 
             The following equation is the slope equation. It can be used to determine the speed of an object on a distance-time graph.
 
-            <strong>Equation:<strong>Slope Equation (also commonly used for the speed of an object in a distance-time graph):<br>$$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$<br>Also known as rise over run or delta y over delta x.
-            `,
+            <strong>Formula:<strong>Slope Formula (also commonly used for the speed of an object in a distance-time graph):<br>$$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$<br>Also known as rise over run or delta y over delta x.
+            
+            When using a table of values, to find the slope, you must create a line of best fit. The line of best fit is a straight line that shouldn't really touch any of the points, but should be as close to all of them as possible. The slope of the line of best fit can then be used to find the speed of the object.`,
           },
           {
             id: "reference-frames-displacement-velocity",
@@ -1776,13 +1777,7 @@ abla f(x,y)||$$
 
 
             
-            Displacement Definition: Displacement is the change in position. (Can be a negative value - meaning a vector)
-            $$\\triangle x = x-x_{0}$$
-            $x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero)
-
-            $x$ is the final position.
-
-
+            <strong>Definition:<strong> Displacement is the change in position. (Can be a negative value - meaning a vector)<br><strong>Formula:<strong>$$\\triangle x = x-x_{0}$$<br>$x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero)<br>$x$ is the final position.
 
             Instantaneous Speed (Scalar):
             $$s=\\frac{d}{t}$$
