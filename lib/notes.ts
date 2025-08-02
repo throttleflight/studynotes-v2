@@ -1759,9 +1759,7 @@ abla f(x,y)||$$
 
             The following equation is the slope equation. It can be used to determine the speed of an object on a distance-time graph.
 
-            <strong>Equation:<strong>Slope Equation (also commonly used for the speed of an object in a distance-time graph):
-            <br>$$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
-            <br>Also known as rise over run or delta y over delta x.
+            <strong>Equation:<strong>Slope Equation (also commonly used for the speed of an object in a distance-time graph):<br>$$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$<br>Also known as rise over run or delta y over delta x.
             `,
           },
           {
