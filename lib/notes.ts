@@ -1775,11 +1775,11 @@ abla f(x,y)||$$
             <strong>Formula:<strong>Instantaneous Speed Formula (Scalar):<br>$$s=\\frac{d}{t}$$<br>Average Speed Formula (Scalar):<br>$$\\bar{s}=\\frac{d}{t}$$<br>A bar is placed over the "$s$" to indicate average speed.
 
             <strong>Formula:<strong>Instantaneous Velocity Formula (Vector):<br>$$v=\\frac{\\triangle x}{\\triangle t}$$<br>Average Velocity (Vector):<br>$$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$<br>A bar is placed over the "$v$" to indicate average velocity, $\\triangle x$ is the displacement of the object, and both values of $\\triangle x$ and $\\triangle t$ is the total.
-            
+            <br>
             Whenever the object stops, the instantenous velocity is zero because the instantaneous velocity is the speed at a specific moment in time. Mathematically, $v_{inst}=\\frac{\\triangle x}{\\triangle t}$ where $\\triangle t \\to \\space 0$
-            
+            <br>
             By using all the information learned above, some are scalars and some are vectors. Vectors would be something that would have direction and magnitude (such as displacement and velocity). Scalars would be something that only has magnitude (such as time, distance, and speed).
-            
+            <br>
             Now as a prerequisite, acceleration also takes a place in velocity and speed. On a graph's aspect, if the velocity and acceleration are pointing in the same direction, then the object is speeding up. If the velocity and acceleration are pointing in opposite directions, the object is speeding down.`,
           },
         ]
