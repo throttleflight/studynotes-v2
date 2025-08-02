@@ -1766,15 +1766,15 @@ abla f(x,y)||$$
           {
             id: "reference-frames-displacement-velocity",
             title: "Reference Frames, Displacement, and Velocity",
-            content: `<strong>Definition:<strong> A reference frame lets us define where an object is located, relative to other objects.
+            content: `<strong>Definition:<strong>A reference frame lets us define where an object is located, relative to other objects.
 
             Usually, the $x$-axis is used to represent the position of the object (only in displacement situations). The positive numbers are to the right and negative numbers are to the left. 
             
-            <strong>Definition:<strong> Displacement is the change in position. (Can be a negative value - meaning a vector)<br><strong>Formula:<strong>$$\\triangle x = x-x_{0}$$<br>$x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero) and $x$ is the final position.
+            <strong>Definition:<strong> Displacement is the change in position. (Can be a negative value - meaning a vector)<br><strong>Formula:<strong>$$\\triangle x = x-x_{0}$$$x_{0}$ is "$x$-naught" - initial position (naught means nothing or zero) and $x$ is the final position.
 
-            <strong>Formula:<strong>Instantaneous Speed Formula (Scalar):<br>$$s=\\frac{d}{t}$$<br>Average Speed Formula (Scalar):<br>$$\\bar{s}=\\frac{d}{t}$$<br>A bar is placed over the "$s$" to indicate average speed.
+            <strong>Formula:<strong>Instantaneous Speed Formula (Scalar):$$s=\\frac{d}{t}$$<br>Average Speed Formula (Scalar):$$\\bar{s}=\\frac{d}{t}$$A bar is placed over the "$s$" to indicate average speed.
 
-            <strong>Formula:<strong>Instantaneous Velocity Formula (Vector):<br>$$v=\\frac{\\triangle x}{\\triangle t}$$<br>Average Velocity (Vector):<br>$$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$<br>A bar is placed over the "$v$" to indicate average velocity, $\\triangle x$ is the displacement of the object, and both values of $\\triangle x$ and $\\triangle t$ is the total.
+            <strong>Formula:<strong>Instantaneous Velocity Formula (Vector):$$v=\\frac{\\triangle x}{\\triangle t}$$Average Velocity (Vector):$$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$A bar is placed over the "$v$" to indicate average velocity, $\\triangle x$ is the displacement of the object, and both values of $\\triangle x$ and $\\triangle t$ is the total.
             <br>
 
             Whenever the object stops, the instantenous velocity is zero because the instantaneous velocity is the speed at a specific moment in time. Mathematically, $v_{inst}=\\frac{\\triangle x}{\\triangle t}$ where $\\triangle t \\to \\space 0$
@@ -1789,7 +1789,7 @@ abla f(x,y)||$$
           {
             id: "kinematics-equation-1",
             title: "Kinematics Equation 1",
-            content: `<strong>Formula:<strong>Acceleration Formula:<br>$$a=\\frac{\\triangle v}{\\triangle t}=\\frac{v-v_{0}}{t}$$<br>It measures the change of velocity over the elapsed time.
+            content: `<strong>Formula:<strong>Acceleration Formula:$$a=\\frac{\\triangle v}{\\triangle t}=\\frac{v-v_{0}}{t}$$It measures the change of velocity over the elapsed time.
 
             Acceleration is a vector, measured in meters per second squared ($\frac{m}{s^{2}}$).
 
@@ -1803,7 +1803,7 @@ abla f(x,y)||$$
             When we solve for v, we undergo a series of solving for one variable to get the following.
             $$at=v-v_{0}$$
             $$v-v_{0}=at$$
-            <strong>Formula:<strong>$$v=v_{0}+at$$<br>This last equation tells us how an object's velocity changes as a function of time.
+            <strong>Formula:<strong>$$v=v_{0}+at$$This last equation tells us how an object's velocity changes as a function of time.
 
 
             On the AP Physics 1 Equation Sheet, it is written as $v_{x}=v_{x_{0}}+a_{x}t$. Since velocity and acceleration are vectors, they must have direction. The "$x$" subscripts signifies that the velocity and acceleration must be in the same dimension (learned in 2-dimensional kinematics). $t$ is a scalar, it doesn't have direction. However, time is also accounted in both the $x$ and $y$ dimensions. Later on, there will be another version of this equation below:
