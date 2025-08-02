@@ -1783,8 +1783,33 @@ abla f(x,y)||$$
             By using all the information learned above, some are scalars and some are vectors. Vectors would be something that would have direction and magnitude (such as displacement and velocity). Scalars would be something that only has magnitude (such as time, distance, and speed).
             <br>
 
-            
+
             Now as a prerequisite, acceleration also takes a place in velocity and speed. On a graph's aspect, if the velocity and acceleration are pointing in the same direction, then the object is speeding up. If the velocity and acceleration are pointing in opposite directions, the object is speeding down.`,
+          },
+          {
+            id: "kinematics-equation-1",
+            title: "Kinematics Equation 1",
+            content: `<strong>Formula:<strong>Acceleration Formula:<br>$$a=\\frac{\\triangle v}{\\triangle t}=\\frac{v-v_{0}}{t}$$<br>It measures the change of velocity over the elapsed time.
+
+            Acceleration is a vector, measured in meters per second squared ($\frac{m}{s^{2}}$).
+
+
+            By deriving the Kinematics Equation 1, it is the change in velocity over time.
+
+
+            $$a=\\frac{\\triangle v}{\\triangle t}$$
+            Since "$\\triangle$" means change, $\\triangle v=v-v_{0}$ and $\\triangle t=t-t_{0}$ can be substituted with the original equation. However, usually we start with $t_{0}=0$ representing the starting point in time is 0 seconds, then $\\triangle t = t$. Our equation comes out to be...
+            $$a=\\frac{v-v_{0}}{t}$$
+            When we solve for v, we undergo a series of solving for one variable to get the following.
+            $$at=v-v_{0}$$
+            $$v-v_{0}=at$$
+            $$v=v_{0}+at$$
+            This last equation tells us how an object's velocity changes as a function of time.
+
+            
+            On the AP Physics 1 Equation Sheet, it is written as $v_{x}=v_{x_{0}}+a_{x}t$. Since velocity and acceleration are vectors, they must have direction. The "$x$" subscripts signifies that the velocity and acceleration must be in the same dimension (learned in 2-dimensional kinematics). $t$ is a scalar, it doesn't have direction. However, time is also accounted in both the $x$ and $y$ dimensions. Later on, there will be another version of this equation below:
+            $$v_{y}=v_{y_{0}}+a_{y}t$$
+            In the Kinematics Equation 1, it also looks very similar to one of the equations we commonly use in mathematics. By rearranging the terms, we get $v=at+v_{0}$ and it looks very similar to $y=mx+b$. In this case, the slope will be the acceleration and the y-intercept will be the initial velocity.`,
           },
         ]
       },
