@@ -1751,22 +1751,18 @@ abla f(x,y)||$$
           {
             id: "distance-time-graphs",
             title: "Distance-Time Graphs",
-            content: `Graphing Motion
-            A distance-time graph is a graph that shows the distance traveled by an object over time. The x-axis represents time, while the y-axis represents distance.
+            content: `A distance-time graph is a graph that shows the distance traveled by an object over time. The x-axis represents time, while the y-axis represents distance.
 
             The slope of the line on a distance-time graph represents the speed of the object. The steeper the slope, the faster the object is moving. A horizontal line indicates that the object is stationary (not moving), while a downward slope indicates that the object is returning to its starting point.
 
             <strong>Example:<strong><br><img src="https://i.imgur.com/QMFYjGd.png"alt="Distance-Time Graph"><br>In the example above, it represents a distance-time graph, x-axis is the time and y-axis is the distance.
 
-            Slope Equation (Speed in a distance-time graph)
-            $$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
-            Also known as rise over run or delta y over delta x.
+            The following equation is the slope equation. It can be used to determine the speed of an object on a distance-time graph.
 
-            The slope equation in a distance-time graph determines the speed of the object.
-
-            - Higher speed = Greater Slope
-
-            - Lower speed = Smaller Slope`,
+            <strong>Equation:<strong>Slope Equation (also commonly used for the speed of an object in a distance-time graph):
+            <br>$$m=\\frac{y_{2}-y_{1}}{x_{2}-x_{1}}=\\frac{\\triangle y}{\\triangle x}$$
+            <br>Also known as rise over run or delta y over delta x.
+            `,
           },
           {
             id: "reference-frames-displacement-velocity",
