@@ -859,7 +859,7 @@ const mockNotes: Note[] = [
     ],
     category: "math",
     categoryName: "Mathematics",
-    date: "February 12, 2024",
+    date: "July 17, 2024",
     tags: ["Calculus", "Differential Equations", "Solution Methods", "Modeling"],
   },
   {
@@ -1717,7 +1717,7 @@ abla f(x,y)||$$
     ],
     category: "math",
     categoryName: "Mathematics",
-    date: "March 1, 2024",
+    date: "July 27, 2024",
     tags: ["Calculus", "Multivariable", "Partial Derivatives", "Multiple Integrals", "Optimization", "Gradients"],
   },
   {
@@ -1951,7 +1951,7 @@ abla f(x,y)||$$
     ],
     category: "science",
     categoryName: "Science",
-    date: "November 8, 2023",
+    date: "August 1, 2025",
     tags: ["Physics", "Quantum Mechanics", "Wave-Particle Duality", "Uncertainty Principle"],
   },
 ]

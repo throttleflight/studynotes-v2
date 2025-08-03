@@ -243,17 +243,6 @@ export default function NotePage() {
             </div>
           </SheetContent>
         </Sheet>
-
-        <div className="ml-auto flex items-center gap-2">
-          <Button variant="ghost" size="icon">
-            <Share2 className="h-4 w-4" />
-            <span className="sr-only">Share</span>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <MoreHorizontal className="h-4 w-4" />
-            <span className="sr-only">More</span>
-          </Button>
-        </div>
       </div>
 
       <div className="flex">
