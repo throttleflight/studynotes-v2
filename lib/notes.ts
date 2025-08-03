@@ -1887,7 +1887,9 @@ abla f(x,y)||$$
 
 
 
-            Sometimes when adding vectors, the vectors don't make a right triangle. By adding vectors by components, $v_{1}$ and $v_{2}$ can both represent the height and length of the vectors together. With that, a larger triangle can be formed to make the resultant vector. `,
+            Sometimes when adding vectors, the vectors don't make a right triangle. By adding vectors by components, $v_{1}$ and $v_{2}$ can both represent the height and length of the vectors together. With that, a larger triangle can be formed to make the resultant vector. 
+            <strong>Example:<strong><img src="https://i.imgur.com/kWLowFo.png"alt="Vectors-2"><br>In the example above, the two vectors although doesn't create a triangle, a larger triangle for the resultant vector can be made.
+            `,
           },
         ]
       },
