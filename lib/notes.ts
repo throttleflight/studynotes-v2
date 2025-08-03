@@ -1832,13 +1832,13 @@ abla f(x,y)||$$
             id: "displacement-vs-time",
             title: "Displacement vs. Time",
             content: `By knowing the average velocity formula, it can be used to find the displacement of an object traveling at an average velocity over a given time.
-            $$\bar{v}=\frac{\triangle x}{\triangle t}$$
-            $$\triangle x = \bar{v} \triangle t$$
-            To find our average velocity ($\bar{v}$), it would be the average of any two numbers.
-            $$\bar{v}=\frac{(v+v_{0})}{2}$$
+            $$\\bar{v}=\\frac{\\triangle x}{\\triangle t}$$
+            $$\\triangle x = \\bar{v} \\triangle t$$
+            To find our average velocity ($\\bar{v}$), it would be the average of any two numbers.
+            $$\\bar{v}=\\frac{(v+v_{0})}{2}$$
             This works in Physics 1, but it will not work in some calculus-based physics problems. If we only wanted to use one equation, we can combine the two equations above to create the one below.
-            <strong>Equation:<strong>$$\triangle x = \frac{(v+v_{0})}{2}t$$
-`,
+            <strong>Equation:<strong>$$\\triangle x = \\frac{(v+v_{0})}{2}t$$The equation above is not listed on the AP Physics 1 Equation Sheet.
+            `,
           },
         ]
       },
