@@ -1837,7 +1837,7 @@ abla f(x,y)||$$
             To find our average velocity ($\\bar{v}$), it would be the average of any two numbers.
             $$\\bar{v}=\\frac{(v+v_{0})}{2}$$
             This works in Physics 1, but it will not work in some calculus-based physics problems. If we only wanted to use one equation, we can combine the two equations above to create the one below.
-            <strong>Equation:<strong>$$\\triangle x = \\frac{(v+v_{0})}{2}t$$The equation above is not listed on the AP Physics 1 Equation Sheet.
+            <strong>Formula:<strong>$$\\triangle x = \\frac{(v+v_{0})}{2}t$$The equation above is not listed on the AP Physics 1 Equation Sheet.
             `,
           },
         ]
