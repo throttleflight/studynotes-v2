@@ -1857,38 +1857,39 @@ abla f(x,y)||$$
         ]
       },
       {
-        id: "wave-particle-duality",
-        title: "Wave-Particle Duality",
-        content: `One of the key principles of quantum mechanics is wave-particle duality, which suggests that all particles exhibit both wave and particle properties. This concept fundamentally changed our understanding of matter and energy.
+        id: "2d-kinematics",
+        title: "2D Kinematics",
+        content: `Contents Include`,
+        subsections: [
+          {
+            id: "vectors",
+            title: "Vectors",
+            content: `When adding two displacement vectors, the resultant vector will be from the tail of the first vector to the head of the last vector. If the vector is facing towards the left, the value is negative. If the vector is facing towards the right, the value is positive. (add example image)
 
-        **Historical Experiments:**
 
-        **Double-Slit Experiment:**
-        - Electrons fired through two parallel slits create an interference pattern
-        - When observed, electrons behave like particles
-        - When unobserved, they behave like waves
-        - Demonstrates the role of measurement in quantum systems
 
-        **Photoelectric Effect (Einstein, 1905):**
-        - Light can eject electrons from metal surfaces
-        - Energy of ejected electrons depends on light frequency, not intensity
-        - Proved light has particle-like properties (photons)
-        - Earned Einstein the Nobel Prize
+            The magnitude of a vector refers to its length. When adding two vectors pointing in the same direction, they create a longer vector. When adding two vectors pointing in opposite directions, they subtract from each other to create a smaller vector.
 
-        **De Broglie Wavelength:**
-        All matter has an associated wavelength given by:
-        $$\\lambda = \\frac{h}{p}$$
-        where $h$ is Planck's constant and $p$ is momentum.
 
-        This explains why wave properties are only noticeable for very small particles.
 
-        **Implications:**
-        - No clear distinction between waves and particles at quantum scale
-        - The nature of reality depends on how we observe it
-        - Measurement is an active process that affects the system
-        - Classical concepts break down at the quantum level
+            It is still possible to add vectors in a two-dimensional space. Just like adding displacement vectors, the resultant vector is connected from the tail of the first vector and the head of the last vector. This is called the tail to tip method. In some cases, it can form a right triangle. The resultant vector can be solved because it results as the hypotenuse. 
+            
+            <strong>Formula:<strong><strong>Pythagorean Theorem:</strong>$$a^2+b^2=c^2$$Using the Pythagorean Theorem, we can find the magnitude of the resultant vector.
 
-        This duality is not just a mathematical convenience but a fundamental aspect of nature that has practical applications in modern technology.`,
+            After finding what the magnitude of the resultant of the vector, we can't tell which direction it is pointing in. Therefore, by using the trigonometric functions, we can find what the direction of the resultant vector is. 
+            <strong>Formula:<strong><strong>Trigonometric Functions:</strong>$$\\sin{\\theta}=\\frac{opposite}{hypotenuse}$$$$\\cos{\\theta}=\\frac{adjacent}{hypotenuse}$$$$\\tan{\\theta}=\\frac{opposite}{adjacent}$$These equations can be used to find the angle of the resultant vector.
+
+            When subtracting vectors, it is the same operation to add the negative of that vector. As a result, $v_{1}-v_{2}=v_{1}+(-v_{2})$.
+
+
+
+            When multiplying vectors by a scalar, the resultant vector would be $cV$ where $c$ is the scalar and $V$ is the vector. However, if $c$ is negative, it changes the direction of the vector.
+
+
+            
+            Sometimes when adding vectors, the vectors don't make a right triangle. By adding vectors by components, $v_{1}$ and $v_{2}$ can both represent the height and length of the vectors together. With that, a larger triangle can be formed to make the resultant vector. `,
+          },
+        ]
       },
       {
         id: "uncertainty-principle",
