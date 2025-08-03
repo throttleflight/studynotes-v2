@@ -7,9 +7,9 @@ import { Navbar } from "@/components/navbar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Study Notes Repository",
+  title: "Study Notes",
   description: "Access organized study materials to enhance your learning experience.",
-    generator: 'v0.dev'
+    generator: ''
 }
 
 export default function RootLayout({
