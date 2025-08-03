@@ -1840,6 +1840,15 @@ abla f(x,y)||$$
             <strong>Formula:<strong>$$\\triangle x = \\frac{(v+v_{0})}{2}t$$The equation above is not listed on the AP Physics 1 Equation Sheet.
             `,
           },
+          {
+            id: "kinematics-equation-2",
+            title: "Kinematics Equation 2",
+            content: `From Kinematics Equation 1, it determines the velocity of an object based on its acceleration over time. In Kinematics Equation 2, it can help us determine the position of the object over time based on its initial position, initial velocity, and acceleration. By using the displacement equation from the previous section, we can solve for $x$ making Kinematics Equation 2.
+            $$\\triangle x=\\frac{(v+v_{0})}{2}t$$
+            <strong>Formula:<strong>$$x=x_{0}+v_{0}t+\\frac{1}{2}at^2$$This is Kinematics Equation 2.
+            Just like with Kinematics Equation 1, there are vector quantities that have "$x$" subscripts. When there is no acceleration (acceleration of $0 \\space \\frac{m}{s^2}$), the last term will result in zero. By rearranging the terms, it will look more like $y=mx+b$. The slope of the line will be the velocity and the y-intercept will be the initial position.
+            `,
+          },
         ]
       },
       {
