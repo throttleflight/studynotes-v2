@@ -1828,6 +1828,18 @@ abla f(x,y)||$$
             On the velocity-time graph, it shows the curve. The slope of the line is the acceleration. When the line starts, it is when the object is thrown. When it hits the $x$-axis, it has the momentarily stop where velocity is $0$. Then, the object returns to the ground with a negative velocity.
             <strong>Example:<strong><img src="https://i.imgur.com/h1ZXDSW.png"alt="Velocity-Time Graph"><br>In the example above, when the object hits its maximum height, the velocity is $0 \\frac{m}{s}$ (at its $x$-axis).`,
           },
+          {
+            id: "displacement-vs-time",
+            title: "Displacement vs. Time",
+            content: `By knowing the average velocity formula, it can be used to find the displacement of an object traveling at an average velocity over a given time.
+            $$\bar{v}=\frac{\triangle x}{\triangle t}$$
+            $$\triangle x = \bar{v} \triangle t$$
+            To find our average velocity ($\bar{v}$), it would be the average of any two numbers.
+            $$\bar{v}=\frac{(v+v_{0})}{2}$$
+            This works in Physics 1, but it will not work in some calculus-based physics problems. If we only wanted to use one equation, we can combine the two equations above to create the one below.
+            <strong>Equation:<strong>$$\triangle x = \frac{(v+v_{0})}{2}t$$
+`,
+          },
         ]
       },
       {
