@@ -1864,9 +1864,9 @@ abla f(x,y)||$$
           {
             id: "vectors",
             title: "Vectors",
-            content: `When adding two displacement vectors, the resultant vector will be from the tail of the first vector to the head of the last vector. If the vector is facing towards the left, the value is negative. If the vector is facing towards the right, the value is positive. (add example image)
+            content: `When adding two displacement vectors, the resultant vector will be from the tail of the first vector to the head of the last vector. If the vector is facing towards the left, the value is negative. If the vector is facing towards the right, the value is positive.
 
-
+            <strong>Example:<strong><img src="https://i.imgur.com/zLmxsAB.png"alt="Vectors-1"><br>In the example above, the two vectors create a resultant vector in the shape of a right triangle.
 
             The magnitude of a vector refers to its length. When adding two vectors pointing in the same direction, they create a longer vector. When adding two vectors pointing in opposite directions, they subtract from each other to create a smaller vector.
 
@@ -1886,7 +1886,7 @@ abla f(x,y)||$$
             When multiplying vectors by a scalar, the resultant vector would be $cV$ where $c$ is the scalar and $V$ is the vector. However, if $c$ is negative, it changes the direction of the vector.
 
 
-            
+
             Sometimes when adding vectors, the vectors don't make a right triangle. By adding vectors by components, $v_{1}$ and $v_{2}$ can both represent the height and length of the vectors together. With that, a larger triangle can be formed to make the resultant vector. `,
           },
         ]
