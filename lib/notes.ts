@@ -1896,7 +1896,9 @@ abla f(x,y)||$$
             title: "Galilean Transformation",
             content: `<strong>Definition:<strong>Galilean Transformation: A set of equations used in classical physics to relate the space and time coordinates of two reference frames that are moving at a constant velocity relative to each other
 
-            We can use Galilean transformation to find relativity between two objects that are moving. First, choose two dimensional reference frame based on Cartesian coordinates. The $s$ (stationary) frame is not moving. Then, choose the $m$ (moving) system and put it in motion with a constant velocity, $u$, (velocity of the $m$ system with respect to the $s$ system), in the $x$ direction. Keep in mind that the coordinates of an object in the $s$ frame are $(x,y)$ and the coordinates in the $m$ system are $(x',y')$. (add image)
+            We can use Galilean transformation to find relativity between two objects that are moving. First, choose two dimensional reference frame based on Cartesian coordinates. The $s$ (stationary) frame is not moving. Then, choose the $m$ (moving) system and put it in motion with a constant velocity, $u$, (velocity of the $m$ system with respect to the $s$ system), in the $x$ direction. Keep in mind that the coordinates of an object in the $s$ frame are $(x,y)$ and the coordinates in the $m$ system are $(x',y')$.
+
+            <img src="https://imgur.com/1vpOHeu"alt="Galilean-Transformation">
 
             <strong>Example:<strong>Scenario 1: If you are on a train moving at $25 \\frac{m}{s}$ and you are stationary, your speed relative to the train would be $0 \\frac{m}{s}$, but your speed relative to the ground would be $25 \\frac{m}{s}$.
 
