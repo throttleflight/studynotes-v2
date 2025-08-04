@@ -138,3 +138,10 @@
     max-width: calc(100% - 2rem);
   }
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
