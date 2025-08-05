@@ -56,7 +56,7 @@ const mockNotes: Note[] = [
           {
             id: "definition-of-function",
             title: "Definition of a Function",
-            content: `<strong>Definition:</strong> A function f: ℝ → ℝ associates to each number x in its domain exactly one number f(x).
+            content: `<strong>Definition:<strong> A function f: ℝ → ℝ associates to each number x in its domain exactly one number f(x).
 
           <strong>Key Characteristics:</strong>
           - Each input has exactly one output
