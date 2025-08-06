@@ -863,7 +863,7 @@ const mockNotes: Note[] = [
     tags: ["Calculus", "Differential Equations", "Solution Methods", "Modeling"],
   },
   {
-    id: "9",
+    id: "2",
     title: "Calculus II - Complete Course",
     description:
       "Complete Calculus II course covering multivariable functions, partial derivatives, multiple integrals, extreme values, and directional derivatives",
@@ -1912,6 +1912,19 @@ abla f(x,y)||$$
             <strong>Formula:<strong>Galilean Acceleration Transformation Equation:$$a_{s}=a_{m}$$$a_{s}$ is the acceleration of the person in the stationary frame and $v_{m}$ is the velocity of the person in the moving frame.
             `,
           },
+          {
+            id: "projectile-motion",
+            title: "Projectile Motion",
+            content: `<strong>Definition:<strong>Projectile: An object moving in two dimensions while experiencing an acceleration downwards due to gravity (in the path of a parabola). 
+
+            Projectile motion is analyzed by solving the vertical and horizontal components separately. The speed in the $x$ direction is constant while the speed in the $y$ speed is changing due to gravity. Without the component of gravity, the projectile would continue in a straight line and never hit the ground. In this case, gravity will determine how far the projectile travels. There are three kinematics equations that we use.
+            <strong>Formula:<strong>Projectile Motion Equations:$$v_{x}=v_{x_{0}}+a_{x}t$$$$x=x_{0}+v_{x_{0}}t+\frac{1}{2}a_{x}t^2$$$$v_{x}^2=v_{x_{0}}^2+2a_{x}(x-x_{0})$$Keep in mind that these equations are only suitable for the $x$ component, and to make them suitable for the $y$ component, only use $y$ component measurements.
+
+            There are three different types of projectile motion. The first type is when the projectile is launched horizontally off a cliff. The second type is when the projectile is launched at an angle above the horizontal, but it still lands on the ground (at the same level with the horizontal mentioned). Lastly, the third type is when the projectile is launched at an angle at an elevated surface and lands at the non-elevated surface.
+
+            <strong>Example:<strong><img src="https://i.imgur.com/wnw7EV3.png"alt="Projectile-Motion-1"><br>The image above shows the three different types of projectile motion.
+            `,
+          }
         ]
       },
       {
