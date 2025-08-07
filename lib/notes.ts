@@ -1918,7 +1918,7 @@ abla f(x,y)||$$
             content: `<strong>Definition:<strong>Projectile: An object moving in two dimensions while experiencing an acceleration downwards due to gravity (in the path of a parabola). 
 
             Projectile motion is analyzed by solving the vertical and horizontal components separately. The speed in the $x$ direction is constant while the speed in the $y$ speed is changing due to gravity. Without the component of gravity, the projectile would continue in a straight line and never hit the ground. In this case, gravity will determine how far the projectile travels. There are three kinematics equations that we use.
-            <strong>Formula:<strong>Projectile Motion Equations:$$v_{x}=v_{x_{0}}+a_{x}t$$$$x=x_{0}+v_{x_{0}}t+\frac{1}{2}a_{x}t^2$$$$v_{x}^2=v_{x_{0}}^2+2a_{x}(x-x_{0})$$Keep in mind that these equations are only suitable for the $x$ component, and to make them suitable for the $y$ component, only use $y$ component measurements.
+            <strong>Formula:<strong>Projectile Motion Equations:$$v_{x}=v_{x_{0}}+a_{x}t$$$$x=x_{0}+v_{x_{0}}t+\\frac{1}{2}a_{x}t^2$$$$v_{x}^2=v_{x_{0}}^2+2a_{x}(x-x_{0})$$Keep in mind that these equations are only suitable for the $x$ component, and to make them suitable for the $y$ component, only use $y$ component measurements.
 
             There are three different types of projectile motion. The first type is when the projectile is launched horizontally off a cliff. The second type is when the projectile is launched at an angle above the horizontal, but it still lands on the ground (at the same level with the horizontal mentioned). Lastly, the third type is when the projectile is launched at an angle at an elevated surface and lands at the non-elevated surface.
 
