@@ -107,9 +107,9 @@ export function LatexRenderer({ content, className = "" }: LatexRendererProps) {
         },
       )
 
-      // Handle explicit definition blocks - "<strong>Definition:<strong>" at start of line
+      // Handle explicit definition blocks - "<strong>Concept:<strong>" at start of line
       processedContent = processedContent.replace(
-        /<strong>Concept:<strong>\s*(.+?)(?=\n\n|\n\*\*|$)/gim,
+        /<strong>Concept:<\/strong>\s*(.+?)(?=\n\n|\n\*\*|$)/gim,
         (match, definition) => {
           return `<div class="definition-block my-6 mx-auto max-w-3xl bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
             <div class="flex items-start gap-3">

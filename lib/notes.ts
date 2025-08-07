@@ -1935,7 +1935,7 @@ abla f(x,y)||$$
           {
             id: "newtons-laws-of-motion",
             title: "Newton's Laws of Motion",
-            content: `<strong>Concept:<strong><strong>Newton's First Law of Motion (also known as The Law of Inertia):</strong><br>An object at rest remains at rest, and an object in motion remains in motion, unless acted on by a net external force.
+            content: `<strong>Concept:</strong><strong>Newton's First Law of Motion (also known as The Law of Inertia):</strong><br>An object at rest remains at rest, and an object in motion remains in motion, unless acted on by a net external force.
 
             Objects with more inertia are harder to stop and harder to get moving if they are at rest. Mass is how an object's inertia is measured. Sometimes, it is called inertial mass, but it is still a measure of how much stuff is in the object.
 
@@ -1951,10 +1951,10 @@ abla f(x,y)||$$
 
             Newton's laws are only valid in inertial reference frames. The reference frame isn't accelerating or rotating for Newton's first law to be true.
 
-            <strong>Concept:<strong><strong>Newton's Second Law of Motion:</strong>$$\\sum{\\vec{F}} = m\\vec{a}$$$$Newton = \\frac{kg \\cdot m}{s^2}$$The unit of force is the Newton, mass is measured in kilograms ($kg$), and acceleration is measured in meters per second squared ($\\frac{m}{s^2}$).
+            <strong>Concept:</strong><strong>Newton's Second Law of Motion:</strong>$$\\sum{\\vec{F}} = m\\vec{a}$$$$Newton = \\frac{kg \\cdot m}{s^2}$$The unit of force is the Newton, mass is measured in kilograms ($kg$), and acceleration is measured in meters per second squared ($\\frac{m}{s^2}$).
 
 
-            
+
             In Newton's Second Law of Motion, $\\sum \\vec{F}$ represents the net force. The Greek letter sigma ($\\sum$) represents the sum of. Sometimes, $\\sum \\vec{F}$ is written as $\\sum \\vec{F_{net}}$ to represent net force. The arrow above the $F$ represents that it is a vector, sometimes it isn't there, but remember that it's there. 
 
             <strong>Concept:<strong><strong>Newton's Third Law of Motion:</strong><br>Whenever one object exerts a force on a second object, the second object exerts an equal force in the opposite direction on the first object.
