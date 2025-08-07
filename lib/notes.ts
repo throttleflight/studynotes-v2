@@ -1924,45 +1924,43 @@ abla f(x,y)||$$
 
             <strong>Example:<strong><img src="https://i.imgur.com/wnw7EV3.png"alt="Projectile-Motion-1"><br>The image above shows the three different types of projectile motion.
             `,
-          }
+          },
         ]
       },
       {
-        id: "uncertainty-principle",
-        title: "Heisenberg Uncertainty Principle",
-        content: `The Heisenberg Uncertainty Principle states that there is a fundamental limit to the precision with which complementary variables, such as position and momentum, can be known simultaneously. This is not due to limitations in measurement technology, but is inherent in the nature of quantum systems.
+        id: "1d-dynamics",
+        title: "1D Dynamics",
+        content: `This section covers...`,
+        subsections: [
+          {
+            id: "newtons-laws-of-motion",
+            title: "Newton's Laws of Motion",
+            content: `<strong>Concept:<strong><strong>Newton's First Law of Motion (also known as The Law of Inertia):</strong><br>An object at rest remains at rest, and an object in motion remains in motion, unless acted on by a net external force.
 
-        **Mathematical Formulation:**
-        $$\\Delta x \\cdot \\Delta p \\geq \\frac{\\hbar}{2}$$
+            Objects with more inertia are harder to stop and harder to get moving if they are at rest. Mass is how an object's inertia is measured. Sometimes, it is called inertial mass, but it is still a measure of how much stuff is in the object.
 
-        Where:
-        - $\\Delta x$ = uncertainty in position
-        - $\\Delta p$ = uncertainty in momentum  
-        - $\\hbar$ = reduced Planck's constant $(h/2\\pi)$
 
-        **Other Uncertainty Relations:**
-        - Energy and time: $\\Delta E \\cdot \\Delta t \\geq \\frac{\\hbar}{2}$
-        - Angular momentum components: $\\Delta L_x \\cdot \\Delta L_y \\geq \\frac{\\hbar}{2}|\\langle L_z \\rangle|$
 
-        **Physical Interpretation:**
-        - The more precisely we know position, the less precisely we can know momentum
-        - This is not a measurement problem but a fundamental property of nature
-        - Particles don't have definite position and momentum simultaneously
-        - The uncertainty principle sets limits on what can be known about quantum systems
+            Mass in this case has been defined in two different ways.
 
-        **Consequences:**
-        - **Zero-point energy:** Even at absolute zero, particles have kinetic energy
-        - **Quantum tunneling:** Particles can pass through energy barriers
-        - **Virtual particles:** Short-lived particle-antiparticle pairs in vacuum
-        - **Atomic stability:** Prevents electrons from spiraling into the nucleus
+            1. Inertial Mass: The measurement of an object's resistance to changes in motion due to an external force.
 
-        **Practical Applications:**
-        - Limits the precision of quantum measurements
-        - Fundamental to the operation of electron microscopes
-        - Important in quantum computing and cryptography
-        - Explains the stability of atoms and molecules
+            2. Gravitational Mass: The strength of the gravitational attraction between the earth (or other large body) to an object.
 
-        The uncertainty principle reveals that nature is fundamentally probabilistic rather than deterministic at the quantum scale.`,
+
+
+            Newton's laws are only valid in inertial reference frames. The reference frame isn't accelerating or rotating for Newton's first law to be true.
+
+            <strong>Concept:<strong><strong>Newton's Second Law of Motion:</strong>$$\\sum{\\vec{F}} = m\\vec{a}$$$$Newton = \\frac{kg \\cdot m}{s^2}$$The unit of force is the Newton, mass is measured in kilograms ($kg$), and acceleration is measured in meters per second squared ($\\frac{m}{s^2}$).
+
+            In Newton's Second Law of Motion, $\\sum \\vec{F}$ represents the net force. The Greek letter sigma ($\\sum$) represents the sum of. Sometimes, $\\sum \\vec{F}$ is written as $\\sum \\vec{F_{net}}$ to represent net force. The arrow above the $F$ represents that it is a vector, sometimes it isn't there, but remember that it's there. 
+
+            <strong>Concept:<strong><strong>Newton's Third Law of Motion:</strong><br>Whenever one object exerts a force on a second object, the second object exerts an equal force in the opposite direction on the first object.
+
+            These are called action-reaction pair. When you push a wall, the wall doesn't move because the wall is exerting the same force on you. Therefore, opposite forces. In an equation comparison, $F_{hand} = -F_{wall}$.
+            `,
+          },
+        ]
       },
       {
         id: "superposition-entanglement",
