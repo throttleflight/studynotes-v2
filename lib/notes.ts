@@ -1951,7 +1951,7 @@ abla f(x,y)||$$
 
             Newton's laws are only valid in inertial reference frames. The reference frame isn't accelerating or rotating for Newton's first law to be true.
 
-            <strong>Concept:</strong>Newton's Second Law of Motion:$$\\sum{\\vec{F}} = m\\vec{a}$$The unit of force is the Newton, mass is measured in kilograms ($kg$), and acceleration is measured in meters per second squared ($\\frac{m}{s^2}$).
+            <strong>Formula:<strong>Projectile Motion Equations:$$v_{x}=v_{x_{0}}+a_{x}t$$$$x=x_{0}+v_{x_{0}}t+\\frac{1}{2}a_{x}t^2$$$$v_{x}^2=v_{x_{0}}^2+2a_{x}(x-x_{0})$$Keep in mind that these equations are only suitable for the $x$ component, and to make them suitable for the $y$ component, only use $y$ component measurements.
 
 
 
