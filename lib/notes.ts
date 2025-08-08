@@ -1982,6 +1982,13 @@ abla f(x,y)||$$
             According to Newton's Third Law, there is an equal and opposite reaction. If an object exerts the force of gravity, then there is some kind of force going upwards. That is called the normal force ($F_{N}$). It will always be perpendicular to the surface that it is pushing on. 
             `,
           },
+          {
+            id: "free-body-diagrams",
+            title: "Free Body Diagrams",
+            content: `There are a few forces that we have learned already. Those are normal force ($F_{N}$) and force of gravity ($F_{g}$). There are a few more. One major force is applied force ($F_{app}$). The applied force is in the direction where the force is applied towards. Other forces such as friction ($F_{f}$), tension ($F_{T}$), and force from springs ($F_{s}$).
+            <strong>Example:<strong><img src="https://i.imgur.com/xrp7Iqc.png"alt="Free-Body-Diagram"><br>In the example above, it shows a free body diagram with three forces.
+            `,
+          },
         ]
       },
       {
