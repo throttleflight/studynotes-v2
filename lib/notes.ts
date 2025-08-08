@@ -1973,7 +1973,7 @@ abla f(x,y)||$$
 
             <strong>Definition:<strong><strong>Mass:</strong> Measure of the inertia of an object (measured in kilograms).
 
-            <strong>Definition:<strong><strong>Weight:>/strong> The force exerted on that object by gravity.
+            <strong>Definition:<strong><strong>Weight:</strong> The force exerted on that object by gravity.
 
             By thinking about weight and that it is a force, we can conclude that it must be a vector because $\\sum F = ma$. Our acceleration in this scenario is gravity, $g$. By using gravity as our acceleration, the equation becomes $F_{g}=mg$. The force of gravity is always pointing downwards.
 
