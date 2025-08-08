@@ -1993,10 +1993,10 @@ abla f(x,y)||$$
             id: "friction",
             title: "Friction",
             content: `The friction force is the reaction force that opposes the motion of an object. Although, there are different types of friction depending on the materials. In this case, we will only handle with kinetic and static friction. Kinetic friction is the friction of an object when it is already in motion.
-            <strong>Formula:<strong>$$F_{f}=\\micro_{k}F_{N}$$$\\micro_{k}$ is the coefficient of kinetic friction.
+            <strong>Formula:<strong>$$F_{f}=\\mu_{k}F_{N}$$$\\mu_{k}$ is the coefficient of kinetic friction.
 
             On the other hand, the static friction force is represented by an inequality to fit the phenomenon of the friction that is exerted while the object begins to move or no motion. 
-            <strong>Formula:<strong>$$F_{f}\\leq \\micro_{s}F_{N}$$$\\micro_{s}$ is the coefficient of static friction.
+            <strong>Formula:<strong>$$F_{f}\\leq \\mu_{s}F_{N}$$$\\mu_{s}$ is the coefficient of static friction.
 
             The static friction force will always increase as the applied force increases, but until it reaches its maximum, the object will start to move. 
             `,
