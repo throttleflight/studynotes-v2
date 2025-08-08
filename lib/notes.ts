@@ -1951,7 +1951,9 @@ abla f(x,y)||$$
 
             Newton's laws are only valid in inertial reference frames. The reference frame isn't accelerating or rotating for Newton's first law to be true.
 
-            <strong>Formula:<strong>Projectile Motion Equations:The unit of force is the Newton.
+            <strong>Law:</strong>Newton's Second Law of Motion:<br>The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.
+
+            <strong>Formula:</strong>$$\\sum{F} = m\\vec{a}$$<br>In this equation, $\\sum \\vec{F}$ is the net force, $m$ is the mass of the object, and $\\vec{a}$ is the acceleration of the object. 
 
 
             In Newton's Second Law of Motion, $\\sum \\vec{F}$ represents the net force. The Greek letter sigma ($\\sum$) represents the sum of. Sometimes, $\\sum \\vec{F}$ is written as $\\sum \\vec{F_{net}}$ to represent net force. The arrow above the $F$ represents that it is a vector, sometimes it isn't there, but remember that it's there. 
