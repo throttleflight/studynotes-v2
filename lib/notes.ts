@@ -1951,7 +1951,7 @@ abla f(x,y)||$$
 
             Newton's laws are only valid in inertial reference frames. The reference frame isn't accelerating or rotating for Newton's first law to be true.
 
-            <strong>Law:</strong>Projectile Motion Equations:$$\\sum{\\vec{F}} = m\\vec{a}$$$$Newton = \\frac{kg \\cdot m}{s^2}$$The unit of force is the Newton, mass is measured in kilograms ($kg$), and acceleration is measured in meters per second squared ($\frac{m}{s^2}$).
+            <strong>Law:</strong>Projectile Motion Equations:$$\\sum{\\vec{F}} = m\\vec{a}$$$$Newton = \\frac{kg \\cdot m}{s^2}$$The unit of force is the Newton.
 
 
 
