@@ -1966,6 +1966,22 @@ abla f(x,y)||$$
             These are called action-reaction pair. When you push a wall, the wall doesn't move because the wall is exerting the same force on you. Therefore, opposite forces. In an equation comparison, $F_{hand} = -F_{wall}$.
             `,
           },
+          {
+            id: "mass-and-weight",
+            title: "Mass and Weight",
+            content: `There is a key difference between mass and weight. Both defines an object's properties, but in different contexts.
+
+            <strong>Definition:<strong><strong>Mass:</strong> Measure of the inertia of an object (measured in kilograms).
+
+            <strong>Definition:<strong><strong>Weight:>/strong> The force exerted on that object by gravity.
+
+            By thinking about weight and that it is a force, we can conclude that it must be a vector because $\\sum F = ma$. Our acceleration in this scenario is gravity, $g$. By using gravity as our acceleration, the equation becomes $F_{g}=mg$. The force of gravity is always pointing downwards.
+
+            <strong>Formula:<strong>Gravity Formula:$$F_{g}=mg$$$F_{g}$ is the force of gravity, $m$ is mass in kilograms, and $g$ is gravity or also $9.8 \\frac{m}{s^2}$.
+
+            According to Newton's Third Law, there is an equal and opposite reaction. If an object exerts the force of gravity, then there is some kind of force going upwards. That is called the normal force ($F_{N}$). It will always be perpendicular to the surface that it is pushing on. 
+            `,
+          },
         ]
       },
       {
