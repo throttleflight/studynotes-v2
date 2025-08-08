@@ -1953,7 +1953,7 @@ abla f(x,y)||$$
 
             <strong>Law:</strong><strong>Newton's Second Law of Motion:</strong><br>The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.
 
-            <strong>Formula:</strong>$$\\sum{F} = m\\vec{a}$$<br>In this equation, $\\sum \\vec{F}$ is the net force, $m$ is the mass of the object, and $\\vec{a}$ is the acceleration of the object. 
+            <strong>Formula:<strong>$$\\sum \\vec{F} = m\\vec{a}$$<br>In this equation, $\\sum \\vec{F}$ is the net force, $m$ is the mass of the object, and $\\vec{a}$ is the acceleration of the object. 
 
 
             
