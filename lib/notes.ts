@@ -2005,7 +2005,7 @@ abla f(x,y)||$$
             id: "springs",
             title: "Springs",
             content: `Robert Hooke observed the relationship between force and the compression or stretching of a spring. He observed that the force exerted by a spring is not constant: the more you stretch it, the more force it exerts. That is where Hooke's Law comes in.
-            <strong>Formula:<strong>$$\\vec{F}_{s}=k|\\vec{x}|$$$\\vec{F}_{s}$ represents the spring force, $k$ is the spring constant ($\\frac{N}{m}$), and $\\vec{x}$ is the change in the length of the spring measured in meters.
+            <strong>Formula:<strong>$$|\\vec{F}_{s}|=k|\\vec{x}|$$$\\vec{F}_{s}$ represents the spring force, $k$ is the spring constant ($\\frac{N}{m}$), and $\\vec{x}$ is the change in the length of the spring measured in meters.
 
 
             `,
