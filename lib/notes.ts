@@ -2013,51 +2013,21 @@ abla f(x,y)||$$
         ]
       },
       {
-        id: "superposition-entanglement",
-        title: "Superposition and Quantum Entanglement",
-        content: `**Quantum Superposition** is the principle that a quantum system can exist in multiple states simultaneously until it is measured. This is one of the most counterintuitive aspects of quantum mechanics.
+        id: "2d-dynamics",
+        title: "2D Dynamics",
+        content: `This section covers...`,
+        subsections: [
+          {
+            id: "two-dimensional-forces",
+            title: "Two-Dimensional Forces",
+            content: `So far, we've only been exposed to one-dimensional forces. Sometimes, the forces are presented in two-dimensional forces. An example would be a wagon being pulled at an angle. In these types of problems, there is both forces of the horizontal ($x$) and vertical ($y$) components. 
 
-        **Schrödinger's Cat Thought Experiment:**
-        - A cat in a box with a quantum-triggered poison mechanism
-        - According to quantum mechanics, the cat is simultaneously alive and dead
-        - Measurement (opening the box) forces the system into a definite state
-        - Illustrates the absurdity of applying quantum rules to macroscopic objects
+            <strong>Example:<strong><img src="https://i.imgur.com/a9ah5hs.png"alt="Two-Dimensional-Forces"><br>In the example above, it shows a wagon being pulled at an angle.
 
-        **Mathematical Representation:**
-        A quantum state can be written as:
-        $$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$$
-
-        Where $\\alpha$ and $\\beta$ are complex probability amplitudes, and $|\\alpha|^2 + |\\beta|^2 = 1$
-
-        **Applications of Superposition:**
-        - Quantum computing uses superposition for parallel processing
-        - Quantum sensors achieve unprecedented precision
-        - Atomic clocks rely on superposition of energy states
-
-        **<strong>Quantum Entanglement</strong>** is a phenomenon where two or more particles become correlated in such a way that the quantum state of each particle cannot be described independently, regardless of the distance separating them.
-        
-        **Einstein-Podolsky-Rosen (EPR) Paradox** is testing.
-
-        <strong>Definition:<strong> testing.
-
-        **Properties of Entangled Systems:**
-        - Measurement of one particle instantly affects its entangled partner
-        - Einstein called this "spooky action at a distance"
-        - No information travels faster than light (no communication possible)
-        - Violates local realism but preserves causality
-
-        **Bell's Theorem and Bell Inequalities:**
-        - Proved that no local hidden variable theory can reproduce quantum predictions
-        - Experimental tests consistently violate Bell inequalities
-        - Confirms that quantum mechanics is fundamentally non-local
-
-        **Applications of Entanglement:**
-        - **Quantum cryptography:** Unbreakable communication security
-        - **Quantum computing:** Enables quantum algorithms
-        - **Quantum teleportation:** Transfer of quantum states
-        - **Quantum sensors:** Enhanced measurement precision
-
-        These phenomena form the foundation for emerging quantum technologies that promise to revolutionize computing, communication, and sensing.`,
+            To solve for those components, we would need to use the trigonometric functions for both $F_{x}$ and $F_{y}$. For acceleration, we assume that it wouldn't bounce up and down therefore, the acceleration is $0 \\space \\frac{m}{s^2}$. 
+            `,
+          },
+        ]
       },
     ],
     category: "science",
