@@ -2033,7 +2033,7 @@ abla f(x,y)||$$
     category: "science",
     categoryName: "Science",
     date: "August 1, 2025",
-    tags: ["Physics", "Quantum Mechanics", "Wave-Particle Duality", "Uncertainty Principle"],
+    tags: ["Physics", "Kinematics", "Dynamics", "1D", "2D", "Newton's Laws", "Forces", "Vectors"],
   },
 ]
 
