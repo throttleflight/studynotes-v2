@@ -2060,7 +2060,7 @@ abla f(x,y)||$$
         title: "Limits",
         content: `Sometimes, we have a value on the graph that becomes undefined because it is an open circle on the graph. In some rare cases, the value is defined even though there is an open circle on the graph. To find the $y$-value of the open circle, we can use something called limits.
 
-        <strong>Definition:<strong>Suppose $f(x)$ is defined when $x$ is near the number $a$, (This means that $f$ is defined on some open interval that contains $a$, except possibly at $a$ itself)\nThen we write\n$$\\lim_{ x \\to a } f(x) = L$$\band say "the limit of $f(x)$, as $x$ approaches $a$, equals $L$" where we can make the value of $f(x)$ arbitrarily close to $L$ by taking $x$ to be sufficiently close to $a$ (on either side of $a$) but not equal to $a$.
+        <strong>Definition:<strong>Suppose $f(x)$ is defined when $x$ is near the number $a$, (This means that $f$ is defined on some open interval that contains $a$, except possibly at $a$ itself), then we write$$\\lim_{ x \\to a } f(x) = L$$and say "the limit of $f(x)$, as $x$ approaches $a$, equals $L$" where we can make the value of $f(x)$ arbitrarily close to $L$ by taking $x$ to be sufficiently close to $a$ (on either side of $a$) but not equal to $a$.
 
         This is the general idea of what a limit is and does. To find values that aren't possibly there, we use limits to find where the graph approaches at this certain $x$-value. We get the $x$-value arbitrarily close. For example, if we had to find the limit of $f(x)$, as $x$ approaches $5$, the $x$-value can be $4.9$, $4.99$, $4.999$, or $5.1$, $5.01$, $5.001$.`,
         subsections: [
