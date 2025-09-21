@@ -2067,7 +2067,13 @@ abla f(x,y)||$$
           {
             id: "one-sided-limits",
             title: "One Sided Limits",
-            content: `Currently no content in this section. Please check back again later!`,
+            content: `Typically when we are solving limits, there are two sides of the graph that the limit can approach from. How do we actually define these limits. We have something called one-sided limits where we can determine the limit of the function when $x$ approaches a certain value.
+            <strong>Definition:<strong>We can write limits in two ways:$$\\lim_{ x \\to a^- } f(x) = L$$$$\\lim_{ x \\to a^+ } f(x) = L$$and the symbol $-$ represents approaching from the left side and the symbol $+$ represents approaching from the right side.
+
+            With the one-sided limit defined, there is a simple rule that is followed to obtain the two-sided limit.
+            <strong>Rule:<strong>$\\lim_{ x \\to a } f(x) = L$ if and only if $\\lim_{ x \\to a^- } f(x) = L$ and $\\lim_{ x \\to a^+ } f(x) = L$.
+
+            This says that if the left-sided limit equals the right-sided limit, that means that there is a two-sided limit. If the left-sided limit does not equal the right-sided limit, it means that there is no two-sided limit and the two-sided limit would equal to $DNE$ (Does Not Exist).`,
           },
         ],
       },
