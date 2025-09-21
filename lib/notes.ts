@@ -2,27 +2,27 @@
 // In a real app, you would fetch this data from an API or database
 
 export interface NoteSubsection {
-  id: string
-  title: string
-  content: string
+  id: string;
+  title: string;
+  content: string;
 }
 
 export interface NoteSection {
-  id: string
-  title: string
-  content: string
-  subsections?: NoteSubsection[]
+  id: string;
+  title: string;
+  content: string;
+  subsections?: NoteSubsection[];
 }
 
 export interface Note {
-  id: string
-  title: string
-  description: string
-  sections: NoteSection[]
-  category: string
-  categoryName: string
-  date: string
-  tags: string[]
+  id: string;
+  title: string;
+  description: string;
+  sections: NoteSection[];
+  category: string;
+  categoryName: string;
+  date: string;
+  tags: string[];
 }
 
 const mockNotes: Note[] = [
@@ -860,7 +860,12 @@ const mockNotes: Note[] = [
     category: "math",
     categoryName: "Mathematics",
     date: "July 17, 2024",
-    tags: ["Calculus", "Differential Equations", "Solution Methods", "Modeling"],
+    tags: [
+      "Calculus",
+      "Differential Equations",
+      "Solution Methods",
+      "Modeling",
+    ],
   },
   {
     id: "2",
@@ -1718,8 +1723,16 @@ abla f(x,y)||$$
     category: "math",
     categoryName: "Mathematics",
     date: "July 27, 2024",
-    tags: ["Calculus", "Multivariable", "Partial Derivatives", "Multiple Integrals", "Optimization", "Gradients"],
+    tags: [
+      "Calculus",
+      "Multivariable",
+      "Partial Derivatives",
+      "Multiple Integrals",
+      "Optimization",
+      "Gradients",
+    ],
   },
+  /*
   {
     id: "3",
     title: "Physics 1",
@@ -2035,12 +2048,41 @@ abla f(x,y)||$$
     date: "August 1, 2025",
     tags: ["Physics", "Kinematics", "Dynamics", "1D", "2D", "Newton's Laws", "Forces", "Vectors"],
   },
-]
+  */
+  {
+    id: "4",
+    title: "AP Calculus BC",
+    description:
+      "Consisting of topics in Calculus 1 and Calculus 2 based off the College Board's AP Calculus BC curriculum FY2026.",
+    sections: [
+      {
+        id: "limits",
+        title: "Limits",
+        content: `Sometimes, we have a value on the graph that becomes undefined because it is an open circle on the graph. In some rare cases, the value is defined even though there is an open circle on the graph. To find the $y$-value of the open circle, we can use something called limits.
+
+        <strong>Definition:<strong>Suppose $f(x)$ is defined when $x$ is near the number $a$, (This means that $f$ is defined on some open interval that contains $a$, except possibly at $a$ itself)\nThen we write\n$$\\lim_{ x \\to a } f(x) = L$$\band say "the limit of $f(x)$, as $x$ approaches $a$, equals $L$" where we can make the value of $f(x)$ arbitrarily close to $L$ by taking $x$ to be sufficiently close to $a$ (on either side of $a$) but not equal to $a$.
+
+        This is the general idea of what a limit is and does. To find values that aren't possibly there, we use limits to find where the graph approaches at this certain $x$-value. We get the $x$-value arbitrarily close. For example, if we had to find the limit of $f(x)$, as $x$ approaches $5$, the $x$-value can be $4.9$, $4.99$, $4.999$, or $5.1$, $5.01$, $5.001$.`,
+        subsections: [
+          {
+            id: "one-sided-limits",
+            title: "One Sided Limits",
+            content: `Currently no content in this section. Please check back again later!`,
+          },
+        ],
+      },
+    ],
+    category: "math",
+    categoryName: "Mathematics",
+    date: "September 20, 2025",
+    tags: ["Limits"],
+  },
+];
 
 export const getNotes = () => {
-  return mockNotes
-}
+  return mockNotes;
+};
 
 export const getNoteById = (id: string): Note | undefined => {
-  return mockNotes.find((note) => note.id === id)
-}
+  return mockNotes.find((note) => note.id === id);
+};
