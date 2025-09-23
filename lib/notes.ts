@@ -2083,6 +2083,78 @@ abla f(x,y)||$$
     date: "September 20, 2025",
     tags: ["Limits"],
   },
+  {
+    id: "5",
+    title: "AP Physics I",
+    description:
+      "Consisting of topics in Physics I based off the College Board's AP Physics I curriculum FY2026.",
+    sections: [
+      {
+        id: "introduction",
+        title: "Introduction",
+        content: ``,
+        subsections: [
+          {
+            id: "measurement-uncertainty",
+            title: "Measurement & Uncertainty",
+            content: `When measuring an object, the measurement will not always come out as perfect as it may seem. For example, it may be $0.001 \\space mm$ off. This comes across towards something we call "Uncertainty." Uncertainty is the limited accuracy of every measuring instrument beyond the smallest division shown on the measuring device. 
+
+          
+            
+            To calculate for uncertainty, the AP CollegeBoard says that the uncertainty value is half of the smallest point on the measuring device. Each measurement that is taken has a certain format. The format is as follows below:
+            $$measurement \\space \\pm \\space uncertainty$$
+
+
+
+            <strong>Example:<strong><img src="https://i.imgur.com/AyKZlQZ.png"alt="Measurement"><br>In this example, it is being measured in millimeters and every tick is 0.1 mm.
+
+
+
+            In the example posted above, the measurement would be $7.6 \\space mm \\space \\pm 0.05 \\space mm$. This is how we will be showing the measurement of any object. It can also be related to mass or truly anything else. 
+            `,
+          },
+          {
+            id: "significant-figures",
+            title: "Significant Figures",
+            content: `Whenever doing any science problems, there can be significant figures. We use this to round the answer/solution to maintain how many significant figures we have.
+
+
+
+            There are a few rules when maintaining significant numbers. You must always maintain significant numbers and never ignore it.
+
+
+
+            <strong>Rule:<strong>(Rule #1) When adding or subtracting numbers, we count the number of decimal places where the resulting number after the operation will have the same number of decimal places as the smallest number of decimal places.
+
+            <strong>Example:<strong>Example for Rule #1: $$56.1 + 4.33 = 60.43 \\approx 60.4$$The first term has $1$ decimal place while the second term has $2$ decimal places, therefore, we round to the first decimal place.
+
+            When finding how many significant figures there are in a number, the non-zero digits are always significant. If there are zeros that are placeholders, they do not count as significant. If there is zeros after a decimal point (trailing zeros), it counts as significant. Sometimes scientific notation is used to show the proper number of significant figures.
+
+            <strong>Rule:<strong>(Rule #2) When multiplying or dividing numbers, we count the number of significant figures where the resulting number after the operation will have the same number of significant figures as the smallest number of significant figures. 
+
+            <strong>Example:<strong>Example for Rule #2:$$5.67 \\times 10 = 56.7 \\approx 60$$The first term has $3$ significant figures while the second term has $1$ significant figure, therefore, we round to $1$ significant figure.
+            `,
+          },
+          {
+            id: "conversions",
+            title: "Conversions",
+            content: `On the AP Physics I reference sheet, there are metric conversions given. The conversions are also shown below.
+            <img src="https://i.imgur.com/7mPo9IO.png"alt="Metric-Conversions" class="center">
+            These are all the conversions that will be given on the day of the AP Physics I examination. The factors are the factor in relation to the base measurement. The base measurement is a measurement without a prefix such as meters, grams, etc. When converting, it is crucial to write everything out. An example is shown below.
+
+            <strong>Example:<strong>Convert 8000 meters to kilometers:$$8000 \\space m \\left(\\frac{1 \\space km}{10^3 \\space m}\\right) = 8 \\space km$$By maintaining the correct amount of significant figures, $8000 \\space m$ is equal to $8 \\space m$.
+
+            In the example above, you want to cancel out the original units to obtain new units. In this case, kilo is larger than the base, therefore there is $10^3$ meters in $1$ kilometer. 
+            `,
+          },
+        ],
+      },
+    ],
+    category: "science",
+    categoryName: "Science",
+    date: "September 23, 2025",
+    tags: ["Physics", "AP Physics I"],
+  },
 ];
 
 export const getNotes = () => {
